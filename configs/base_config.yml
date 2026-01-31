@@ -1,0 +1,87 @@
+
+seed: 8888
+text_prompt: ""
+gpu: 0
+background: [1.,1.,1.]
+# Mesh
+mesh: ./meshes/hound.obj
+retriangulate: 0
+# Render settings
+bsdf: diffuse
+#Hyper-parameters ("Test" is just for temporary testing)
+#[SDS, ActvnReplace]
+score: SDS 
+
+#the percentage of replacement
+
+
+#parameter used solely for the purpose of getting figures
+log: false
+lr: 0.0025
+epochs: 2500
+guidance_scale: 100
+image_weight: 100.0
+regularize_jacobians_weight: 50000
+batch_size: 8
+#iteration for gradient accumulation
+accum_iter: 2
+train_res: 512
+resize_method: cubic
+# Camera parameters
+fov_min: 30.0
+fov_max: 90.0
+# dist_min: 1.4
+# dist_max: 2.6
+# light_power: 5.0
+# elev_alpha: 1.0  
+# elev_beta: 5.0 
+# elev_max: 30.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0 
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+
+log_interval: 5
+log_interval_im: 150
+log_elev: 30.0
+log_fov: 60.0
+log_dist: 3.0
+log_res: 512
+log_light_power: 3.0
+#if true, save mesh obj everytime we save the image
+log_mesh: true
+
+#diffusion
+#["M", "L", "XL"]
+#**always turn cpu_offload off for training dreambooth
+#turn on cpu_offload during inference to fit memory
+model_size: XL
+dtype: float16
+cpu_offload: false
+modified_cfg: false
+
+
+#local deformation -> tbd
+local_def: 0
+local_sel: ./selection_configs/spot_head_vertices_faces.ply
+local_vert_face_sel: vert
+invert_sel: 0
+
+#TODO: add this to the main fuction
+#local deformation using attn
+local_weight: False
+target_vertice: 171
+
+output_path: ./outputs/test
+#argmuments used for ActvnReplace (blending)
+#this can either be a list of floats or just floats
+attn_ctrl_alphas: [0.8, 0.2]
+
