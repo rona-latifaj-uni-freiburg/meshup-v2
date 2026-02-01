@@ -45,7 +45,7 @@ log_mesh: true
 log_res: 512
 lr: 0.0025
 mesh: ./meshes/hound.obj
-model_size: M
+model_size: XL
 modified_cfg: false
 output_path: ./outputs/hippo
 regularize_jacobians_weight: 50000
