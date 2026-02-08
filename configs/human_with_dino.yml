@@ -1,0 +1,88 @@
+# Config for hound-to-human transformation with semantic correspondence
+# This config enables DINOv2 feature consistency loss for better correspondence
+
+seed: 8888
+gpu: 0
+log: false
+log_interval: 5
+log_interval_im: 150
+
+# Tracking settings
+track_correspondence: true
+color_method: position  # Options: position, axis_y, axis_x, axis_z, cluster
+n_parts: 8  # Number of parts for cluster method
+
+# ============================================================================
+# DINOv2 Feature Consistency Loss (ENABLED)
+# This is the key addition for maintaining semantic correspondence
+# ============================================================================
+use_dino_loss: true
+dino_model: dinov2_vits14  # vits14 is fastest; use vitb14 for better quality
+dino_weight: 0.15          # Increase if correspondence is breaking, decrease if shape is wrong
+
+# Advanced DINO settings
+dino_warmup_epochs: 150    # Let shape settle before enforcing correspondence
+dino_global_weight: 0.2    # Global semantic consistency
+dino_spatial_weight: 0.8   # Local patch correspondence (important for part mapping)
+dino_n_views: 8            # Reference views around the object
+dino_soft_matching: true   # Soft matching is more robust
+dino_temperature: 0.07     # Lower temperature for sharper correspondence
+
+# ============================================================================
+# Mesh and Output
+# ============================================================================
+output_path: ./outputs/human_tracked_dino_special_yml_file
+mesh: ./meshes/hound.obj
+text_prompt: "a human standing, 3d render"
+retriangulate: 0
+bsdf: diffuse
+background: [1., 1., 1.]
+
+# ============================================================================
+# Optimization settings
+# Slightly adjusted for drastic shape change
+# ============================================================================
+lr: 0.002                           # Slightly lower LR for stability
+epochs: 3000                        # More epochs for drastic transformation
+regularize_jacobians_weight: 40000  # Slightly lower to allow more deformation
+image_weight: 100.0
+guidance_scale: 100
+batch_size: 8
+accum_iter: 2
+
+# Rendering settings
+train_res: 512
+resize_method: cubic
+
+# Camera settings
+fov_min: 30.0
+fov_max: 90.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+
+# Logging render settings
+log_res: 512
+log_fov: 60.0
+log_elev: 30.0
+log_dist: 3.0
+log_light_power: 3.0
+
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+local_def: 0
+
+# Diffusion model settings
+model_size: XL
+dtype: float16
+cpu_offload: false
+score: SDS
+modified_cfg: false
+attn_ctrl_alphas: [1.0]

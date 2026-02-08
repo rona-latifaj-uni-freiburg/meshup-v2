@@ -1,0 +1,99 @@
+# Base config with semantic tracking enabled
+# Use this config to run MeshUp with correspondence tracking
+
+seed: 8888
+gpu: 0
+log: false
+log_interval: 5
+log_interval_im: 150
+
+# Tracking settings
+track_correspondence: true
+color_method: position  # Options: position, axis_y, axis_x, axis_z, cluster
+n_parts: 8  # Number of parts for cluster method
+
+# ========================================================================
+# Optional DINOv2 Feature Consistency Loss (Improved Version)
+# This helps maintain semantic correspondence during transformation
+# ========================================================================
+use_dino_loss: false
+dino_model: dinov2_vits14  # Options: dinov2_vits14, dinov2_vitb14, dinov2_vitl14, dinov2_vitg14
+dino_weight: 0.1           # Overall weight for DINO loss
+
+# DINO Loss Configuration (Advanced)
+dino_warmup_epochs: 100    # Epochs before DINO loss fully activates (allows shape to settle first)
+dino_global_weight: 0.3    # Weight for global (CLS) feature matching (overall semantic)
+dino_spatial_weight: 0.7   # Weight for spatial (patch) feature matching (local correspondence)
+dino_n_views: 8            # Number of canonical viewpoints for reference features
+dino_soft_matching: true   # Use soft assignment (true) vs hard matching (false)
+dino_temperature: 0.1      # Temperature for soft matching (lower = sharper matching)
+
+# ========================================================================
+# Optional Cross-Attention Semantic Guidance
+# Uses diffusion model's understanding of language-vision to guide deformation
+# Can be used alone OR combined with DINO for stronger guidance
+# ========================================================================
+use_cross_attn_loss: false
+cross_attn_weight: 0.1             # Overall weight for cross-attention loss
+cross_attn_warmup_epochs: 50       # Epochs before loss fully activates
+
+# Cross-Attention Loss Configuration (Advanced)
+cross_attn_consistency_weight: 0.5  # Weight for attention consistency (preserve attention patterns)
+cross_attn_entropy_weight: 0.3      # Weight for entropy regularization (confident attention)
+cross_attn_coverage_weight: 0.2     # Weight for coverage (all tokens represented)
+cross_attn_use_consistency: true    # Enable consistency guidance
+cross_attn_use_entropy: true        # Enable entropy guidance  
+cross_attn_use_coverage: true       # Enable coverage guidance
+
+output_path: ./outputs/tracked
+mesh: ./meshes/hound.obj
+text_prompt: "a hippo"
+retriangulate: 0
+bsdf: diffuse
+background: [1., 1., 1.]
+
+# Optimization settings (matching original base_config)
+lr: 0.0025
+epochs: 1700
+regularize_jacobians_weight: 50000
+image_weight: 100.0
+guidance_scale: 100
+batch_size: 8
+accum_iter: 2
+
+# Rendering settings
+train_res: 512
+resize_method: cubic
+
+# Camera settings (matching original base_config)
+fov_min: 30.0
+fov_max: 90.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+
+# Logging render settings
+log_res: 512
+log_fov: 60.0
+log_elev: 30.0
+log_dist: 3.0
+log_light_power: 3.0
+
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+local_def: 0
+
+# Diffusion model settings
+model_size: XL
+dtype: float16
+cpu_offload: false
+score: SDS
+modified_cfg: false
+attn_ctrl_alphas: [1.0]

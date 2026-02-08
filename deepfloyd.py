@@ -6,7 +6,15 @@ import torch.nn as nn
 import torch.nn.functional as F
 from diffusers import IFPipeline
 from diffusers.utils.import_utils import is_xformers_available
-from ptp_utils import register_activation_control, unregister_attention_control, save_forward
+from ptp_utils import (
+    register_activation_control, 
+    unregister_attention_control, 
+    save_forward,
+    register_attention_extraction,
+    unregister_attention_extraction,
+    get_attention_collector,
+    AttentionMapCollector
+)
 
 class DeepFloydGuidance(nn.Module):
     def __init__(self, cfg, device='cuda', t_range=[0.02, 0.98]):
@@ -151,6 +159,99 @@ class DeepFloydGuidance(nn.Module):
             "grad_norm": grad.norm(),
             "grad": grad,
         }
+    
+    def SDS_with_attention(
+        self,
+        rgb,
+        text_embeds,
+        rgb_as_latents=False,
+        extract_attention=True,
+        attention_resolution=16,
+        **kwargs,
+    ):
+        """
+        SDS loss computation with optional cross-attention map extraction.
+        
+        This is used for cross-attention semantic guidance. The attention maps
+        show which image regions correspond to which prompt words.
+        
+        Args:
+            rgb: Input images (B, C, H, W)
+            text_embeds: Text embeddings
+            rgb_as_latents: Whether rgb is already in latent space
+            extract_attention: Whether to extract attention maps
+            attention_resolution: Resolution of attention maps to return
+        
+        Returns:
+            dict with loss_sds, grad_norm, grad, and optionally attention_maps
+        """
+        batch_size = rgb.shape[0]
+        assert rgb_as_latents == False, f"No latent space in {self.__class__.__name__}"
+        rgb = rgb * 2.0 - 1.0  # scale to [-1, 1] to match the diffusion range
+        latents = F.interpolate(
+            rgb, (64, 64), mode="bilinear", align_corners=False
+        )
+        
+        # timestep ~ U(0.02, 0.98) to avoid very high/low noise level
+        t = torch.randint(
+            self.min_step,
+            int((self.max_step + 1)),
+            [batch_size],
+            dtype=torch.long,
+            device=self.device,
+        )
+        
+        # Set up attention extraction if requested
+        collector = None
+        if extract_attention:
+            collector = get_attention_collector()
+            collector.reset()
+            register_attention_extraction(self.pipe, collector)
+            collector.enable()
+        
+        # predict the noise residual with unet, NO grad!
+        with torch.no_grad():
+            # add noise
+            noise = torch.randn_like(latents)
+            latents_noisy = self.scheduler.add_noise(latents, noise, t)
+            # pred noise
+            latent_model_input = torch.cat([latents_noisy] * 2, dim=0)
+            noise_pred = self.forward_unet(
+                latent_model_input,
+                torch.cat([t] * 2),
+                text_embeds,
+            )
+        
+        # Extract attention maps before cleanup
+        attention_maps = None
+        if extract_attention and collector is not None:
+            collector.disable()
+            attention_maps = collector.get_aggregated_attention(resolution=attention_resolution)
+            unregister_attention_extraction(self.pipe)
+        
+        noise_pred_text, noise_pred_uncond = noise_pred.chunk(2)
+        noise_pred_text, predicted_variance = noise_pred_text.split(3, dim=1)
+        noise_pred_uncond, _ = noise_pred_uncond.split(3, dim=1)
+        noise_pred = noise_pred_text + self.cfg.guidance_scale * (
+            noise_pred_text - noise_pred_uncond
+        )
+        w = (1 - self.alphas[t]).view(-1, 1, 1, 1)
+        grad = w * (noise_pred - noise)
+        grad = torch.nan_to_num(grad)
+        target = (latents - grad).detach()
+        # d(loss)/d(latents) = latents - target = latents - (latents - grad) = grad
+        loss_sds = 0.5 * F.mse_loss(latents, target, reduction="sum") / batch_size
+        
+        result = {
+            "loss_sds": loss_sds,
+            "grad_norm": grad.norm(),
+            "grad": grad,
+        }
+        
+        if extract_attention:
+            result["attention_maps"] = attention_maps
+        
+        return result
    
         
     def ActvnReplace(

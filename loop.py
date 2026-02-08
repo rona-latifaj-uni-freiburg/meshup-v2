@@ -65,12 +65,18 @@ class Visualizer:
         if (epoch + 1) % self.cfg.log_interval_im != 0 and epoch != 0:
             return
 
+        # Get actual batch size from the tensor to avoid index out of bounds
+        actual_batch_size = train_render.shape[0]
+        
         if self.cfg.log:
-            idx_list = torch.arange(15)
+            # Clamp to actual batch size to prevent index out of bounds
+            max_images = min(15, actual_batch_size)
+            idx_list = torch.arange(max_images)
             fig_dir = self.out_path / "figure" / f"epoch_{epoch + 1}"
             os.makedirs(fig_dir, exist_ok=True)
         else:
-            idx_list = torch.randperm(self.cfg.batch_size)[:5]
+            max_images = min(5, actual_batch_size)
+            idx_list = torch.randperm(actual_batch_size)[:max_images]
             fig_dir = None
 
 

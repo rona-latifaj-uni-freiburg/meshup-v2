@@ -4,7 +4,8 @@ import torch
 import random
 import argparse
 import numpy as np
-from loop import loop
+# from loop import loop
+from loop_tracked import loop
 
 def main():
     parser = argparse.ArgumentParser()
@@ -74,6 +75,19 @@ def main():
     #this can be a list
     parser.add_argument('--attn_ctrl', action='store_true', help='Turn on blending capabilities', default=argparse.SUPPRESS)
     parser.add_argument('--attn_ctrl_alphas', type=float, nargs='+', default=argparse.SUPPRESS)
+
+    # DINOv2 Semantic Correspondence Loss
+    parser.add_argument('--use_dino_loss', action='store_true', help='Enable DINOv2 feature consistency loss for semantic correspondence', default=argparse.SUPPRESS)
+    parser.add_argument('--no-use_dino_loss', action='store_false', dest='use_dino_loss', default=argparse.SUPPRESS)
+    parser.add_argument('--dino_model', type=str, help='DINOv2 model variant (dinov2_vits14, dinov2_vitb14, dinov2_vitl14)', default=argparse.SUPPRESS)
+    parser.add_argument('--dino_weight', type=float, help='Weight for DINO loss', default=argparse.SUPPRESS)
+    parser.add_argument('--dino_warmup_epochs', type=int, help='Epochs before DINO loss fully activates', default=argparse.SUPPRESS)
+
+    # Cross-Attention Semantic Guidance (can be used alone or with DINO)
+    parser.add_argument('--use_cross_attn_loss', action='store_true', help='Enable cross-attention semantic guidance', default=argparse.SUPPRESS)
+    parser.add_argument('--no-use_cross_attn_loss', action='store_false', dest='use_cross_attn_loss', default=argparse.SUPPRESS)
+    parser.add_argument('--cross_attn_weight', type=float, help='Weight for cross-attention loss', default=argparse.SUPPRESS)
+    parser.add_argument('--cross_attn_warmup_epochs', type=int, help='Epochs before cross-attention loss fully activates', default=argparse.SUPPRESS)
 
     args = parser.parse_args()
     if args.config is not None:

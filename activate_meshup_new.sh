@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 set -e
+
+# Initialize conda for non-interactive shells (needed for batch jobs)
+source "$(conda info --base)/etc/profile.d/conda.sh"
+
 conda activate meshup_new
 module load devel/cuda/12.8
 export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:$LD_LIBRARY_PATH"

@@ -23,4 +23,9 @@ Thumbs.db
 # VSCode settings
 .vscode/
 
-.npy
+*.npy
+
+# Outputs - ignore everything except final correspondence meshes
+outputs/**/*
+!outputs/**/colored_meshes/
+!outputs/**/colored_meshes/mesh_final_correspondence.ply
