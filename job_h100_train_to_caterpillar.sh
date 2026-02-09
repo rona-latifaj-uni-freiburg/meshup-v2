@@ -18,9 +18,9 @@ mkdir -p logs
 source ./activate_meshup_new.sh
 
 python main.py --config ./configs/tracked_config.yml \
-  --mesh ./data/Omni6DPose/PAM/object_meshes/omniobject3d-toy_train_001/Aligned.obj \
+  --mesh ./data/Omni6DPose/PAM/object_meshes/omniobject3d-toy_train_005/Aligned.obj \
   --output_path ./outputs/h100_train_to_caterpillar \
-  --text_prompt "a green caterpillar with many legs and segments" \
+  --text_prompt "a caterpillar" \
   --use_dino_loss \
   --dino_weight 0.15 \
   --regularize_jacobians_weight 45000 \

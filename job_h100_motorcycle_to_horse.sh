@@ -20,7 +20,7 @@ source ./activate_meshup_new.sh
 python main.py --config ./configs/tracked_config.yml \
   --mesh ./data/Omni6DPose/PAM/object_meshes/omniobject3d-toy_motorcycle_001/Aligned.obj \
   --output_path ./outputs/h100_motorcycle_to_horse \
-  --text_prompt "a horse standing, side view, realistic" \
+  --text_prompt "a horse" \
   --use_dino_loss \
   --dino_weight 0.12 \
   --regularize_jacobians_weight 40000 \

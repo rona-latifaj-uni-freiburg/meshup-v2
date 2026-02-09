@@ -20,7 +20,7 @@ source ./activate_meshup_new.sh
 python main.py --config ./configs/tracked_config.yml \
   --mesh ./data/Omni6DPose/PAM/object_meshes/omniobject3d-helmet_002/Aligned.obj \
   --output_path ./outputs/h100_helmet_to_turtle \
-  --text_prompt "a turtle with shell, head and four legs visible" \
+  --text_prompt "a turtle" \
   --use_dino_loss \
   --dino_weight 0.12 \
   --regularize_jacobians_weight 35000 \

@@ -34,6 +34,8 @@ outputs/*/colored_meshes/*
 !outputs/*/colored_meshes/mesh_initial.ply
 !outputs/*/colored_meshes/mesh_final_correspondence.ply
 
+logs/
+
 # Data folder - large files, don't track
 data/
 

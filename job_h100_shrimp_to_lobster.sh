@@ -18,9 +18,9 @@ mkdir -p logs
 source ./activate_meshup_new.sh
 
 python main.py --config ./configs/tracked_config.yml \
-  --mesh ./data/Omni6DPose/PAM/object_meshes/omniobject3d-shrimp_001/Aligned.obj \
+  --mesh ./data/Omni6DPose/PAM/object_meshes/omniobject3d-shrimp_010/Aligned.obj \
   --output_path ./outputs/h100_shrimp_to_lobster \
-  --text_prompt "a red lobster with large claws and antennae" \
+  --text_prompt "a lobster" \
   --use_dino_loss \
   --dino_weight 0.2 \
   --regularize_jacobians_weight 55000 \

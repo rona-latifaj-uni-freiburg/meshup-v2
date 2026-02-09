@@ -20,7 +20,7 @@ source ./activate_meshup_new.sh
 python main.py --config ./configs/tracked_config.yml \
   --mesh ./data/Omni6DPose/PAM/object_meshes/omniobject3d-guitar_001/Aligned.obj \
   --output_path ./outputs/h100_guitar_to_violin \
-  --text_prompt "a classical violin, wooden, elegant" \
+  --text_prompt "a classical violin" \
   --use_dino_loss \
   --dino_weight 0.18 \
   --regularize_jacobians_weight 50000 \
