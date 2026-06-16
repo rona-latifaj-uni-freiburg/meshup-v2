@@ -1,0 +1,14 @@
+reg 1 500
+reg 2 500
+reg 1 1000
+reg 2 1000
+reg 1 1800
+reg 2 1800
+jneighbor 1 100
+jneighbor 2 100
+jneighbor 1 500
+jneighbor 2 500
+jneighbor 1 1000
+jneighbor 2 1000
+jneighbor 1 1800
+jneighbor 2 1800

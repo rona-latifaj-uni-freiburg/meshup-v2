@@ -17,7 +17,7 @@ n_parts: 8  # Number of parts for cluster method
 # This is the key addition for maintaining semantic correspondence
 # ============================================================================
 use_dino_loss: true
-dino_model: dinov2_vits14  # vits14 is fastest; use vitb14 for better quality
+dino_model: dinov2_vits14_reg  # vits14_reg is fastest; use vitb14_reg for better quality
 dino_weight: 0.15          # Increase if correspondence is breaking, decrease if shape is wrong
 
 # Advanced DINO settings

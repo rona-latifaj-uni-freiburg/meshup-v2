@@ -1,0 +1,76 @@
+# Test config for DINO PCA visualization
+# Minimal config to verify DINO PCA feature extraction and visualization
+
+seed: 8888
+gpu: 0
+log: false
+log_interval: 5
+log_interval_im: 10  # Save more frequently for testing
+
+# Tracking settings - ENABLE DINO PCA
+track_correspondence: true
+color_method: dino_pca  # NEW: Use DINO PCA for semantic feature visualization
+
+# DINO PCA Visualization Settings
+dino_pca_model: dinov2_vits14_reg  # Options: dinov2_vits14_reg, dinov2_vitb14_reg, dinov2_vitl14_reg
+dino_pca_n_views: 8            # Number of viewpoints for feature extraction
+dino_pca_image_size: 512       # Render resolution for feature extraction
+
+# Optional: Also enable DINO loss for better correspondence
+use_dino_loss: false
+dino_weight: 0.1
+dino_warmup_epochs: 100
+
+# Cross-attention guidance
+use_cross_attn_loss: false
+
+# Test with quick run
+output_path: ./outputs/test_dino_pca
+mesh: ./meshes/hound.obj
+text_prompt: "a hippo"
+epochs: 100  # Short test run
+batch_size: 4
+train_res: 512
+
+# Regularization (use standard values)
+regularize_jacobians_weight: 50000
+image_weight: 100.0
+guidance_scale: 100
+
+# Diffusion model settings (required)
+model_size: XL
+dtype: float16
+cpu_offload: false
+modified_cfg: false
+
+# Rendering
+retriangulate: true
+bsdf: diffuse
+dist_min: 2
+dist_max: 2
+azim_min: -180
+azim_max: 180
+elev_alpha: 0.03
+elev_beta: 0.03
+elev_max: 60
+fov_min: 25
+fov_max: 45
+aug_loc: 0.25
+aug_light: 0.2
+aug_bkg: false
+background: [1., 1., 1.]
+log_light_power: 2.0
+log_res: 512
+log_fov: 60.0
+log_elev: 30.0
+log_dist: 3.0
+log_mesh: true
+light_power: 5.0
+adapt_dist: 1
+
+# Optimization
+lr: 0.002
+score: SDS
+accum_iter: 1
+resize_method: lanczos3
+local_def: true

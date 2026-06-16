@@ -1,0 +1,124 @@
+# Configuration for hound → dinosaur_014 mesh transformation
+# with Target Mesh DINO Guidance + DINO PCA Visualization (Register Tokens)
+#
+# This transforms the hound mesh into dinosaur_014 while maintaining
+# semantic correspondence (tail→tail, head→head, legs→legs, body→body)
+# and uses DINOv2 with register tokens for cleaner PCA visualization.
+
+seed: 8888
+gpu: 0
+background: [1., 1., 1.]
+
+# Source mesh (starting point - the hound)
+mesh: ./meshes/hound.obj
+
+# Target mesh (goal - specific dinosaur we want to look like)
+target_mesh: ./data/Omni6DPose/PAM/object_meshes/omniobject3d-dinosaur_014/Aligned.obj
+
+# Text prompt (helps with general guidance alongside target mesh)
+text_prompt: "a dinosaur parasaurolophus"
+
+# Mesh processing
+retriangulate: 0
+
+# Render settings
+bsdf: diffuse
+
+# Score method
+score: SDS
+
+# Logging
+log: false
+
+# Optimization parameters
+lr: 0.003
+epochs: 5000
+guidance_scale: 100
+image_weight: 100.0
+batch_size: 8
+accum_iter: 2
+train_res: 512
+resize_method: cubic
+
+# Jacobian regularization (controls smoothness)
+regularize_jacobians_weight: 40000
+
+# Camera parameters
+fov_min: 30.0
+fov_max: 90.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+
+# Logging intervals
+log_interval: 5
+log_interval_im: 250
+log_elev: 30.0
+log_fov: 60.0
+log_dist: 3.0
+log_res: 512
+log_light_power: 3.0
+log_mesh: true
+
+# Diffusion model settings
+model_size: XL
+dtype: float16
+cpu_offload: false
+modified_cfg: false
+
+# =============================================================================
+# SEMANTIC TRACKING WITH DINO PCA (Register Tokens)
+# =============================================================================
+# Use dino_pca for semantic-based vertex coloring
+# Register tokens produce cleaner, more consistent feature maps
+track_correspondence: true
+color_method: dino_pca
+
+# DINO PCA Visualization Settings (uses register token model)
+dino_pca_model: dinov2_vits14_reg
+dino_pca_n_views: 8
+dino_pca_image_size: 512
+
+# =============================================================================
+# TARGET MESH DINO GUIDANCE
+# =============================================================================
+use_target_mesh_guidance: true
+
+# Weight for target mesh guidance
+target_mesh_weight: 0.4
+
+# Warmup epochs (let shape settle first)
+target_mesh_warmup_epochs: 150
+
+# DINO model for feature extraction (with register tokens)
+target_mesh_dino_model: dinov2_vits14_reg
+
+# Number of viewpoints for target feature extraction
+target_mesh_n_views: 8
+
+# Feature matching weights
+target_mesh_global_weight: 0.3
+target_mesh_spatial_weight: 0.7
+
+# =============================================================================
+# SOURCE DINO LOSS (preserve source mesh structure during transformation)
+# =============================================================================
+use_dino_loss: true
+dino_model: dinov2_vits14_reg
+dino_weight: 0.08
+dino_warmup_epochs: 50
+
+# Local deformation (disabled)
+local_def: 0
+
+# Output path
+output_path: ./outputs/hound_to_dino_014_pca_reg

@@ -1,0 +1,30 @@
+#!/bin/bash
+#SBATCH --job-name=dev_disp_viz
+#SBATCH --partition=dev_gpu_h100
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=50G
+#SBATCH --time=00:30:00
+#SBATCH --output=jobs_with_target_guidance/artur_soft_runs/logs/dev_disp_viz_%j.out
+#SBATCH --error=jobs_with_target_guidance/artur_soft_runs/logs/dev_disp_viz_%j.err
+
+set -euo pipefail
+
+cd /pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2
+
+export MPLBACKEND=Agg
+export MPLCONFIGDIR=/tmp/meshup_mplconfig_${SLURM_JOB_ID}
+mkdir -p "${MPLCONFIGDIR}" jobs_with_target_guidance/artur_soft_runs/logs
+
+/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/miniconda3/envs/meshup_new/bin/python \
+  jobs_with_target_guidance/visualize_run_displacements.py \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev/bulldog_to_dachshund_artur_soft_dev_h100_single_global_chamfer_only_2500ep_4807067 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev/bulldog_to_dachshund_artur_soft_dev_h100_single_hard_partfield_chamfer_only_2500ep_4807068 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev_cars/blueberry_to_santa_fe_artur_car_dev_h100_single_hard_partfield_chamfer_only_2500ep_4808219 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev_cars/blueberry_to_santa_fe_artur_car_dev_h100_single_global_chamfer_only_2500ep_4808218 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev_cars/f1_car_to_f1_verstappen_artur_car_dev_h100_single_global_chamfer_only_2500ep_4808221 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev_cars/f1_car_to_f1_verstappen_artur_car_dev_h100_single_hard_partfield_chamfer_only_2500ep_4808228 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev_cars/mini_cooper_to_g_class_artur_car_dev_h100_single_global_chamfer_only_2500ep_4808254 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev_cars/mini_cooper_to_g_class_artur_car_dev_h100_single_hard_partfield_chamfer_only_2500ep_4808255 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev/bulldog_to_dachshund_artur_soft_dev_h100_single_artur_soft_partfield_chamfer_only_2500ep_4807069 \
+  jobs_with_target_guidance/artur_soft_runs/outputs_dev_cars/blueberry_to_santa_fe_artur_car_dev_h100_single_artur_soft_partfield_chamfer_only_2500ep_4808220

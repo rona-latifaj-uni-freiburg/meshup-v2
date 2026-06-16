@@ -27,7 +27,7 @@ class DINOv2FeatureExtractor(nn.Module):
     
     def __init__(
         self,
-        model_name: str = 'dinov2_vits14',
+        model_name: str = 'dinov2_vits14_reg',
         device: str = 'cuda',
         frozen: bool = True
     ):
@@ -36,10 +36,10 @@ class DINOv2FeatureExtractor(nn.Module):
         
         Args:
             model_name: DINOv2 model variant:
-                - 'dinov2_vits14': Small (fastest)
-                - 'dinov2_vitb14': Base
-                - 'dinov2_vitl14': Large
-                - 'dinov2_vitg14': Giant (best quality)
+                - 'dinov2_vits14_reg': Small with registers (fastest, recommended)
+                - 'dinov2_vitb14_reg': Base with registers
+                - 'dinov2_vitl14_reg': Large with registers
+                - 'dinov2_vitg14_reg': Giant with registers (best quality)
             device: Device to run on
             frozen: Whether to freeze the model weights
         """
@@ -324,7 +324,7 @@ class PartClusteringWithDINO:
 
 def create_dino_feature_loss(
     device: str = 'cuda',
-    model_name: str = 'dinov2_vits14',
+    model_name: str = 'dinov2_vits14_reg',
     weight: float = 0.1,
     feature_type: str = 'patches'
 ) -> Tuple[DINOv2FeatureExtractor, SemanticCorrespondenceLoss]:

@@ -1,0 +1,79 @@
+# Hound to Bulldog (best-quality run with DINO + PCA evolution + evaluation)
+seed: 8888
+gpu: 0
+log: false
+log_interval: 5
+log_interval_im: 150
+
+# Tracking settings
+track_correspondence: true
+color_method: dino_pca
+dino_pca_model: dinov2_vitl14_reg
+dino_pca_n_views: 8
+dino_pca_image_size: 512
+
+# Save intermediate renders for PCA evolution
+save_epoch_renders: true
+save_renders_interval: 150
+epoch_render_res: 512
+
+# Main deformation settings
+output_path: ./experiments/dog_morphs/outputs/hound_to_bulldog_exp
+mesh: ./meshes/hound.obj
+text_prompt: "a bulldog"
+retriangulate: 0
+bsdf: diffuse
+background: [1., 1., 1.]
+
+# Optimization
+lr: 0.0025
+epochs: 2000
+regularize_jacobians_weight: 35000
+image_weight: 100.0
+guidance_scale: 100
+batch_size: 8
+accum_iter: 2
+
+# Rendering
+train_res: 512
+resize_method: cubic
+
+# Camera
+fov_min: 30.0
+fov_max: 90.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+
+# Logging render settings
+log_res: 512
+log_fov: 60.0
+log_elev: 30.0
+log_dist: 3.0
+log_light_power: 3.0
+
+# Augmentations
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+local_def: 0
+
+# Diffusion model
+model_size: XL
+dtype: float16
+cpu_offload: false
+score: SDS
+modified_cfg: false
+attn_ctrl_alphas: [1.0]
+
+# DINO correspondence loss
+use_dino_loss: true
+dino_model: dinov2_vits14_reg
+dino_weight: 0.08
+dino_warmup_epochs: 100

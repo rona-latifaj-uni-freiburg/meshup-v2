@@ -9,15 +9,21 @@ log_interval_im: 150
 
 # Tracking settings
 track_correspondence: true
-color_method: position  # Options: position, axis_y, axis_x, axis_z, cluster
+color_method: position  # Options: position, dino_pca, axis_y, axis_x, axis_z, cluster
 n_parts: 8  # Number of parts for cluster method
+
+# DINO PCA Visualization (for color_method: dino_pca)
+# Uses DINOv2 features + PCA to color vertices semantically
+dino_pca_model: dinov2_vits14_reg   # Options: dinov2_vits14_reg, dinov2_vitb14_reg, dinov2_vitl14_reg
+dino_pca_n_views: 8             # Number of viewpoints for feature extraction
+dino_pca_image_size: 512        # Render resolution for features
 
 # ========================================================================
 # Optional DINOv2 Feature Consistency Loss (Improved Version)
 # This helps maintain semantic correspondence during transformation
 # ========================================================================
 use_dino_loss: false
-dino_model: dinov2_vits14  # Options: dinov2_vits14, dinov2_vitb14, dinov2_vitl14, dinov2_vitg14
+dino_model: dinov2_vits14_reg  # Options: dinov2_vits14_reg, dinov2_vitb14_reg, dinov2_vitl14_reg, dinov2_vitg14_reg
 dino_weight: 0.1           # Overall weight for DINO loss
 
 # DINO Loss Configuration (Advanced)

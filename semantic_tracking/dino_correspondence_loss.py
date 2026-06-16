@@ -43,7 +43,7 @@ class DINOv2Extractor(nn.Module):
     
     def __init__(
         self,
-        model_name: str = 'dinov2_vits14',
+        model_name: str = 'dinov2_vits14_reg',
         device: str = 'cuda',
     ):
         super().__init__()
@@ -89,7 +89,6 @@ class DINOv2Extractor(nn.Module):
         
         return images
     
-    @torch.no_grad()
     def forward(
         self,
         images: torch.Tensor,
@@ -103,6 +102,9 @@ class DINOv2Extractor(nn.Module):
             Dict with 'cls' (B, D) and/or 'patches' (B, H, W, D)
         """
         images = self.preprocess(images)
+        # Keep this path differentiable with respect to the input render.
+        # The DINO parameters are frozen, but MeshUp needs gradients through
+        # the rendered image so DINO losses can move the mesh vertices.
         features = self.model.forward_features(images)
         
         result = {}
@@ -138,7 +140,7 @@ class DINOCorrespondenceLoss(nn.Module):
     
     def __init__(
         self,
-        model_name: str = 'dinov2_vits14',
+        model_name: str = 'dinov2_vits14_reg',
         device: str = 'cuda',
         weight: float = 0.1,
         # Loss composition weights
@@ -450,7 +452,7 @@ class DINOCorrespondenceLoss(nn.Module):
 
 def create_dino_correspondence_loss(
     device: str = 'cuda',
-    model_name: str = 'dinov2_vits14',
+    model_name: str = 'dinov2_vits14_reg',
     weight: float = 0.1,
     warmup_epochs: int = 100,
     **kwargs

@@ -1,0 +1,114 @@
+# ============================================================================
+# EXPERIMENT B: TEXT + TARGET MESH GUIDANCE
+# ============================================================================
+# Transform dinosaur_032 into a Parasaurolophus using BOTH text guidance
+# AND target mesh DINO guidance from dinosaur_014.
+#
+# The hypothesis: Target mesh guidance should produce better results because:
+# 1. DINO features encode semantic structure (head→head, tail→tail)
+# 2. The target mesh provides a concrete shape goal beyond text
+# 3. Feature matching ensures semantic correspondence is preserved
+#
+# Parasaurolophus: A hadrosaurid (duck-billed) dinosaur known for its 
+# distinctive backward-curving cranial crest.
+#
+# Compare this with Experiment A (text-only) to see the difference!
+# ============================================================================
+
+seed: 42
+gpu: 0
+background: [1., 1., 1.]
+
+# Source mesh: decimated dinosaur_032 (~7.5k vertices)
+mesh: ./meshes/decimated/dinosaur_032_decimated.obj
+
+# TARGET MESH: decimated dinosaur_014 (provides shape guidance via DINO features)
+target_mesh: ./meshes/decimated/dinosaur_014_decimated.obj
+
+# Text prompt (same as Experiment A for fair comparison)
+text_prompt: "a Parasaurolophus dinosaur toy with backward curving head crest, a 3d rendering"
+
+# Mesh processing
+retriangulate: 0
+
+# Render settings
+bsdf: diffuse
+score: SDS
+
+# Logging
+log: false
+
+# Optimization parameters (same as Experiment A)
+lr: 0.003
+epochs: 7000
+guidance_scale: 100
+image_weight: 100.0
+batch_size: 8
+accum_iter: 2
+train_res: 512
+resize_method: cubic
+
+# Jacobian regularization (same as Experiment A)
+regularize_jacobians_weight: 40000
+
+# Camera parameters (same as Experiment A)
+fov_min: 30.0
+fov_max: 90.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+
+# Logging intervals (same as Experiment A)
+log_interval: 5
+log_interval_im: 200
+log_elev: 30.0
+log_fov: 60.0
+log_dist: 3.0
+log_res: 512
+log_light_power: 3.0
+log_mesh: true
+
+# Diffusion model (same as Experiment A)
+model_size: XL
+dtype: float16
+cpu_offload: false
+modified_cfg: false
+
+# Semantic tracking
+track_correspondence: true
+color_method: position
+
+# =============================================================================
+# TARGET MESH GUIDANCE: ENABLED
+# =============================================================================
+use_target_mesh_guidance: true
+
+# Weight for target guidance (moderate - let text guide overall shape)
+target_mesh_weight: 0.4
+
+# Warmup (let text guidance establish rough shape first)
+target_mesh_warmup_epochs: 100
+
+# DINO model settings
+target_mesh_dino_model: dinov2_vits14_reg
+target_mesh_n_views: 8
+target_mesh_global_weight: 0.3
+target_mesh_spatial_weight: 0.7
+
+# Source DINO loss (same as Experiment A)
+use_dino_loss: true
+dino_model: dinov2_vits14_reg
+dino_weight: 0.1
+dino_warmup_epochs: 50
+
+# Output
+output_path: ./outputs/experiment_B_text_plus_target_mesh

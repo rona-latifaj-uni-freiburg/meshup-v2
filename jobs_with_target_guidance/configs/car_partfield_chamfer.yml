@@ -1,0 +1,161 @@
+seed: 8888
+text_prompt: "a sports car"
+gpu: 0
+background: [1., 1., 1.]
+
+# Mesh
+mesh: ./jobs_with_sam3D/meshes/5k_upright_wheels_down/blueberry_5k_upright_wheels_down.ply
+retriangulate: 0
+
+# Render settings
+bsdf: diffuse
+
+# Hyper-parameters
+score: SDS
+log: false
+lr: 0.0025
+epochs: 3000
+guidance_scale: 7
+image_weight: 1.0
+image_weight_start_factor: 0.05
+image_weight_ramp_epochs: 900
+loss_schedule: three_stage
+loss_schedule_stage1_epochs: 900
+loss_schedule_stage2_epochs: 2100
+loss_schedule_sds_start: 0.04
+loss_schedule_sds_mid: 0.20
+loss_schedule_target_floor: 0.98
+regularize_jacobians_weight: 1800
+edge_stretch_weight: 0.0
+edge_stretch_threshold: 1.5
+edge_stretch_max_weight: 1.0
+edge_displacement_jump_weight: 0.0
+edge_displacement_jump_threshold: 1.25
+edge_displacement_jump_max_weight: 1.0
+batch_size: 8
+accum_iter: 2
+train_res: 512
+resize_method: cubic
+
+# Camera parameters
+fov_min: 30.0
+fov_max: 90.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+
+# Logging
+log_interval: 5
+log_interval_im: 300
+log_elev: 30.0
+log_fov: 60.0
+log_dist: 3.0
+log_res: 512
+log_light_power: 3.0
+log_mesh: true
+save_epoch_renders: true
+save_renders_interval: 300
+epoch_render_res: 512
+
+# Diffusion
+model_size: XL
+dtype: float16
+cpu_offload: false
+modified_cfg: false
+
+# Local deformation
+local_def: 0
+local_sel: ./selection_configs/spot_head_vertices_faces.ply
+local_vert_face_sel: vert
+invert_sel: 0
+local_weight: false
+target_vertice: 171
+
+# Semantic tracking/visualization
+track_correspondence: true
+color_method: position
+save_pca_visualization: false
+pca_interval: 300
+pca_n_views: 8
+pca_render_res: 518
+pca_dino_model: dinov2_vitl14
+
+# Existing target mesh DINO/render guidance
+use_dino_loss: false
+use_target_mesh_guidance: true
+target_mesh: ./jobs_with_sam3D/meshes/5k_upright_wheels_down/bugatti-centodieci_5k_upright_wheels_down.ply
+target_mesh_weight: 130.0
+target_mesh_warmup_epochs: 15
+target_mesh_dino_model: dinov2_vits14_reg
+target_mesh_global_weight: 1.0
+target_mesh_spatial_weight: 4.0
+target_mesh_render_weight: 8.0
+target_mesh_n_azimuths: 16
+target_mesh_n_elevations: 4
+target_mesh_online_render: true
+target_mesh_online_cache: true
+target_mesh_online_cache_max: 4096
+target_mesh_view_rounding_deg: 5.0
+target_mesh_view_rounding_dist: 0.1
+target_mesh_view_rounding_fov: 2.0
+
+# Geometry guidance: small global glue plus PartField semantic buckets.
+target_mesh_chamfer_weight: 750.0
+target_mesh_chamfer_warmup_epochs: 20
+target_mesh_chamfer_points: 3072
+target_mesh_part_chamfer_weight: 0.0
+target_mesh_semantic_bucket_chamfer_weight: 0.0
+target_mesh_sampart3d_chamfer_weight: 0.0
+target_mesh_partfield_chamfer_weight: 8000.0
+target_mesh_partfield_chamfer_warmup_epochs: 20
+target_mesh_partfield_chamfer_points: 512
+target_mesh_partfield_chamfer_global_weight: 0.0
+
+# Preferred mode: point both paths at PartField part_feat_*.npy outputs.
+# Official mesh inference usually exports face-level features; auto detects that.
+partfield_source_features: ""
+partfield_target_features: ""
+partfield_source_labels: ""
+partfield_target_labels: ""
+partfield_feature_mode: auto
+partfield_label_mode: auto
+partfield_labels_aligned: false
+partfield_n_buckets: 12
+partfield_min_points: 12
+partfield_position_weight: 0.05
+partfield_normal_weight: 0.0
+partfield_guidance_mode: hard
+partfield_hard_weight: 1.0
+partfield_source_to_target_weight: 1.0
+partfield_target_to_source_weight: 1.0
+partfield_soft_weight: 1.0
+partfield_soft_points: 512
+partfield_soft_semantic_weight: 0.10
+partfield_soft_temperature: 0.03
+# latent: PartField-only correspondences; hybrid: previous geometry+PartField matching.
+partfield_soft_match_space: hybrid
+partfield_soft_geometry_sigma: 1.0
+partfield_balanced_sinkhorn_iters: 30
+partfield_containment_weight: 0.0
+partfield_containment_margin: 0.02
+partfield_containment_max_weight: 1.0
+partfield_multiscale_enabled: false
+partfield_multiscale_buckets: [8, 12, 20]
+partfield_multiscale_stage_epochs: []
+partfield_multiscale_blend_epochs: 150
+partfield_multiscale_source_labels: []
+partfield_multiscale_target_labels: []
+partfield_multiscale_label_dirs: []
+partfield_multiscale_cache_dir: ""
+
+output_path: ./jobs_with_target_guidance/outputs/test_partfield
+attn_ctrl_alphas: [0.8, 0.2]

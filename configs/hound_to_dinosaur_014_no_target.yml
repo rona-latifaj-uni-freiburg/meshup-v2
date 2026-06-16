@@ -1,0 +1,100 @@
+# Configuration for hound → dinosaur_014 mesh transformation
+# WITHOUT Target Mesh DINO Guidance (just text-based SDS)
+#
+# This uses only the text prompt "a dinosaur toy" for guidance
+# Compare with hound_to_dinosaur_014_target.yml to see if target mesh helps
+
+seed: 8888
+gpu: 0
+background: [1., 1., 1.]
+
+# Source mesh (starting point - the hound)
+mesh: ./meshes/hound.obj
+
+# NO target_mesh - pure text-based guidance
+
+# Text prompt (the only guidance signal)
+text_prompt: "a dinosaur toy, a 3d rendering"
+
+# Mesh processing
+retriangulate: 0
+
+# Render settings
+bsdf: diffuse
+
+# Score method
+score: SDS
+
+# Logging
+log: false
+
+# Optimization parameters
+lr: 0.003
+epochs: 5000
+guidance_scale: 100
+image_weight: 100.0
+batch_size: 8
+accum_iter: 2
+train_res: 512
+resize_method: cubic
+
+# Jacobian regularization (controls smoothness)
+# Higher = more constrained, prevents collapse
+regularize_jacobians_weight: 40000
+
+# Camera parameters
+fov_min: 30.0
+fov_max: 90.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+
+# Logging intervals
+log_interval: 5
+log_interval_im: 250
+log_elev: 30.0
+log_fov: 60.0
+log_dist: 3.0
+log_res: 512
+log_light_power: 3.0
+log_mesh: true
+
+# Diffusion model settings
+model_size: XL
+dtype: float16
+cpu_offload: false
+modified_cfg: false
+
+# Semantic tracking - output both position and DINO PCA colors
+track_correspondence: true
+color_method: dino_pca
+
+# =============================================================================
+# NO TARGET MESH GUIDANCE
+# =============================================================================
+use_target_mesh_guidance: false
+
+# =============================================================================
+# SOURCE DINO LOSS (preserve source mesh structure during transformation)
+# =============================================================================
+# Keep same DINO loss as the target version for fair comparison
+use_dino_loss: true
+dino_model: dinov2_vits14_reg
+dino_weight: 0.08
+dino_warmup_epochs: 50
+
+# Local deformation (disabled)
+local_def: 0
+
+# Output path
+output_path: ./outputs/hound_to_dino_014_no_target
+

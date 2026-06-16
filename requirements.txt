@@ -12,5 +12,9 @@ PyGLM==2.7.1
 torch_sparse==0.6.18
 torch_scatter==2.1.2
 scipy==1.8.0
+scikit-learn
 pymeshlab
 plyfile
+ftfy
+regex
+openai-clip @ git+https://github.com/openai/CLIP.git

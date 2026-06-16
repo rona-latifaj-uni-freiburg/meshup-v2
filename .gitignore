@@ -13,6 +13,8 @@ venv/
 
 # Logs
 *.log
+*.out
+*.err
 *.png
 *.pt
 
@@ -24,20 +26,57 @@ Thumbs.db
 .vscode/
 
 *.npy
+*.npz
 
-# Outputs - ignore everything except specific mesh files
-outputs/*
-!outputs/*/
-outputs/*/*
-!outputs/*/colored_meshes/
-outputs/*/colored_meshes/*
-!outputs/*/colored_meshes/mesh_initial.ply
-!outputs/*/colored_meshes/mesh_final_correspondence.ply
+# Generated experiment artifacts
+outputs/
+**/outputs/
+**/outputs_*/
+**/logs/
+**/slurm_logs/
+**/wandb/
+**/tensorboard/
+**/epoch_renders/
+**/colored_meshes/
+**/correspondence/
+**/evaluation/
+**/images/
+**/jacobians/
+**/mesh_final/
+**/partfield_labels/
+**/pca_initial_final/
+**/tmp/
+*.mp4
+*.tfevents.*
 
-logs/
+# Generated PartField caches and local third-party checkouts
+jobs_with_target_guidance/partfield_features/
+jobs_with_target_guidance/partfield_segments/
+jobs_with_target_guidance/component_analysis/
+external/
+
+# Local mesh/data drops used by experiments
+meshes_from_SAM3D/
+new_car_meshes/
+jobs_with_sam3D/meshes/
+
+# Older local job collections not needed for the target-guidance handoff
+dino_jobs/
+jobs/
+jobs_with_sam3D/
+jobs_with_sampart3d_guidance/
+jobs_with_semantic_buckets/
+experiments/simple_meshes/
 
 # Data folder - large files, don't track
 data/
 
 # External dependencies
 nvdiffrast/
+
+# Local assistant/editor state
+.codex/
+.codex
+
+# Download scratch logs
+wget-log*

@@ -1,0 +1,120 @@
+# Configuration for dinosaur-to-dinosaur mesh transformation
+# with Target Mesh DINO Guidance for semantic correspondence preservation
+#
+# This transforms dinosaur_032 into dinosaur_014 while maintaining
+# semantic correspondence (tail→tail, head→head, etc.)
+
+seed: 8888
+gpu: 0
+background: [1., 1., 1.]
+
+# Source mesh (starting point)
+mesh: ./data/Omni6DPose/PAM/object_meshes/omniobject3d-dinosaur_032/Aligned.obj
+
+# Target mesh (goal - what we want to look like)
+target_mesh: ./data/Omni6DPose/PAM/object_meshes/omniobject3d-dinosaur_014/Aligned.obj
+
+# Text prompt (can be used alongside target mesh guidance)
+# The text helps with general guidance while target mesh provides specific shape
+text_prompt: "a dinosaur toy, a 3d rendering"
+
+# Mesh processing
+retriangulate: 0
+
+# Render settings
+bsdf: diffuse
+
+# Score method
+score: SDS
+
+# Logging
+log: false
+
+# Optimization parameters
+lr: 0.003
+epochs: 5000
+guidance_scale: 100
+image_weight: 100.0
+batch_size: 8
+accum_iter: 2
+train_res: 512
+resize_method: cubic
+
+# Jacobian regularization (controls smoothness)
+# Lower value = more freedom to deform, higher = more constrained
+regularize_jacobians_weight: 30000
+
+# Camera parameters
+fov_min: 30.0
+fov_max: 90.0
+dist_min: 2.5
+dist_max: 3.5
+light_power: 5.0
+elev_alpha: 1.0
+elev_beta: 5.0
+elev_max: 60.0
+azim_min: 0.0
+azim_max: 360.0
+aug_loc: 0
+aug_light: 1
+aug_bkg: 1
+adapt_dist: 1
+
+# Logging intervals
+log_interval: 5
+log_interval_im: 250
+log_elev: 30.0
+log_fov: 60.0
+log_dist: 3.0
+log_res: 512
+log_light_power: 3.0
+log_mesh: true
+
+# Diffusion model settings
+model_size: XL
+dtype: float16
+cpu_offload: false
+modified_cfg: false
+
+# Semantic tracking
+track_correspondence: true
+color_method: position
+
+# =============================================================================
+# TARGET MESH DINO GUIDANCE (NEW FEATURE)
+# =============================================================================
+# Enable target mesh DINO guidance
+use_target_mesh_guidance: true
+
+# Weight for target mesh guidance (higher = stronger pull towards target)
+# Recommended: 0.3-0.7 for good balance
+target_mesh_weight: 0.5
+
+# Warmup epochs before target guidance kicks in
+# Early epochs focus on rough shape, target guidance refines later
+target_mesh_warmup_epochs: 100
+
+# DINO model for feature extraction
+target_mesh_dino_model: dinov2_vits14_reg
+
+# Number of viewpoints for target feature extraction
+target_mesh_n_views: 8
+
+# Feature matching weights
+target_mesh_global_weight: 0.3  # Global (overall) feature matching
+target_mesh_spatial_weight: 0.7  # Spatial (local) feature matching
+
+# =============================================================================
+# OPTIONAL: SOURCE DINO LOSS (for additional correspondence preservation)
+# =============================================================================
+# This can be used alongside target mesh guidance for even better correspondence
+use_dino_loss: false  # Set to true if you want both
+dino_model: dinov2_vits14_reg
+dino_weight: 0.1
+dino_warmup_epochs: 50
+
+# Local deformation (disabled by default)
+local_def: 0
+
+# Output path
+output_path: ./outputs/dino_032_to_014_target_guided

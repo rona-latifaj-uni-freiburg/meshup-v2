@@ -15,7 +15,7 @@ color_method: position
 # DINO Loss: ENABLED
 # ========================================================================
 use_dino_loss: true
-dino_model: dinov2_vits14
+dino_model: dinov2_vits14_reg
 dino_weight: 0.1
 dino_warmup_epochs: 100
 dino_global_weight: 0.3

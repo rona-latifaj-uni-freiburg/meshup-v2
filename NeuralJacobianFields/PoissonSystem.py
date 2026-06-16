@@ -88,8 +88,46 @@ class SparseMat:
     def to_csc(self):
         return sp_csc((self.vals, (self.inds[0,:], self.inds[1,:])), shape = (self.n, self.m))
 
+    def _with_diagonal_jitter(self, eps):
+        inds = self.inds
+        vals = self.vals.clone()
+        diag_mask = inds[0, :] == inds[1, :]
+
+        if torch.any(diag_mask):
+            vals[diag_mask] = vals[diag_mask] + eps
+
+        present_diag = torch.zeros(self.n, dtype=torch.bool, device=inds.device)
+        if torch.any(diag_mask):
+            present_diag[inds[0, diag_mask]] = True
+
+        if not torch.all(present_diag):
+            missing = torch.nonzero(~present_diag, as_tuple=False).squeeze(1)
+            missing_diag_inds = torch.stack((missing, missing), dim=0)
+            missing_diag_vals = torch.full((missing.shape[0],), eps, dtype=vals.dtype, device=vals.device)
+            inds = torch.cat((inds, missing_diag_inds), dim=1)
+            vals = torch.cat((vals, missing_diag_vals), dim=0)
+
+        return inds, vals
+
     def to_cholesky(self):
-        return CholeskySolverD(self.n, self.inds[0,:], self.inds[1,:], self.vals, MatrixType.COO)
+        try:
+            return CholeskySolverD(self.n, self.inds[0,:], self.inds[1,:], self.vals, MatrixType.COO)
+        except ValueError as err:
+            if "positive definite" not in str(err).lower():
+                raise
+
+            # Numerical guard: if factorization fails, retry with progressively stronger diagonal jitter.
+            eps = 1e-8
+            for _ in range(6):
+                inds_reg, vals_reg = self._with_diagonal_jitter(eps)
+                try:
+                    return CholeskySolverD(self.n, inds_reg[0, :], inds_reg[1, :], vals_reg, MatrixType.COO)
+                except ValueError as retry_err:
+                    if "positive definite" not in str(retry_err).lower():
+                        raise
+                    eps *= 10.0
+
+            raise
 
     def to(self,device):
         self.vals = self.vals.to(device)
