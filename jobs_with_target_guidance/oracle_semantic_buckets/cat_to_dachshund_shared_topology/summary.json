@@ -1,0 +1,178 @@
+{
+  "source_mesh": "experiments/dog_morphs/outputs/hound_to_cat_no_dino_exp/mesh_final/mesh.obj",
+  "target_mesh": "experiments/dog_morphs/outputs/hound_to_dachshund_exp/mesh_final/mesh.obj",
+  "n_buckets": 10,
+  "bucket_names": [
+    "head_ears",
+    "neck_chest",
+    "torso_front",
+    "torso_mid",
+    "rump_rear",
+    "tail",
+    "front_left_leg",
+    "front_right_leg",
+    "hind_left_leg",
+    "hind_right_leg"
+  ],
+  "source_counts": {
+    "00_head_ears": 1106,
+    "01_neck_chest": 561,
+    "02_torso_front": 637,
+    "03_torso_mid": 783,
+    "04_rump_rear": 118,
+    "05_tail": 290,
+    "06_front_left_leg": 394,
+    "07_front_right_leg": 293,
+    "08_hind_left_leg": 187,
+    "09_hind_right_leg": 343
+  },
+  "target_counts": {
+    "00_head_ears": 1106,
+    "01_neck_chest": 561,
+    "02_torso_front": 637,
+    "03_torso_mid": 783,
+    "04_rump_rear": 118,
+    "05_tail": 290,
+    "06_front_left_leg": 394,
+    "07_front_right_leg": 293,
+    "08_hind_left_leg": 187,
+    "09_hind_right_leg": 343
+  },
+  "note": "Labels are assigned on the source/reference mesh and copied to the target by vertex id because the meshes share identical topology.",
+  "partfield_counts": {
+    "source": {
+      "bucket_00": 436,
+      "bucket_01": 537,
+      "bucket_02": 625,
+      "bucket_03": 736,
+      "bucket_04": 767,
+      "bucket_05": 520,
+      "bucket_06": 634,
+      "bucket_07": 457
+    },
+    "target": {
+      "bucket_00": 584,
+      "bucket_01": 456,
+      "bucket_02": 520,
+      "bucket_03": 684,
+      "bucket_04": 775,
+      "bucket_05": 710,
+      "bucket_06": 651,
+      "bucket_07": 332
+    }
+  },
+  "same_topology_label_agreement": {
+    "oracle": {
+      "matches": 4712,
+      "mismatches": 0,
+      "agreement": 1.0
+    },
+    "partfield": {
+      "matches": 4152,
+      "mismatches": 560,
+      "agreement": 0.8811544991511036
+    }
+  },
+  "oracle_x_partfield_source_confusion": [
+    [
+      0,
+      114,
+      0,
+      242,
+      750,
+      0,
+      0,
+      0
+    ],
+    [
+      112,
+      131,
+      0,
+      167,
+      17,
+      0,
+      134,
+      0
+    ],
+    [
+      196,
+      0,
+      58,
+      0,
+      0,
+      2,
+      381,
+      0
+    ],
+    [
+      128,
+      0,
+      326,
+      0,
+      0,
+      260,
+      20,
+      49
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      118
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      290
+    ],
+    [
+      0,
+      292,
+      0,
+      49,
+      0,
+      0,
+      53,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      278,
+      0,
+      0,
+      15,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      167,
+      20,
+      0
+    ],
+    [
+      0,
+      0,
+      241,
+      0,
+      0,
+      91,
+      11,
+      0
+    ]
+  ]
+}

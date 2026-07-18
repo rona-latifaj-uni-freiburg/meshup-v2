@@ -1,0 +1,91 @@
+{
+  "prepared_dir": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear",
+  "variants": [
+    {
+      "variant": "fullmatch145127",
+      "entries": [
+        {
+          "object": "071b8_toy_animals_017",
+          "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/meshes/071b8_toy_animals_017_densecorr3d_fullmatch145127.obj",
+          "labels": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/labels/071b8_toy_animals_017_densecorr3d_fullmatch145127_labels.npz",
+          "colored_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/colored/071b8_toy_animals_017_densecorr3d_fullmatch145127_groups.ply",
+          "vertices": 145127,
+          "faces": 290250,
+          "n_buckets": 8,
+          "bucket_vertex_counts": {
+            "group_00": 10542,
+            "group_01": 75020,
+            "group_02": 12204,
+            "group_03": 8000,
+            "group_04": 13967,
+            "group_05": 7338,
+            "group_06": 16702,
+            "group_07": 1354
+          }
+        },
+        {
+          "object": "bdfd0_toy_animals_016",
+          "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/meshes/bdfd0_toy_animals_016_densecorr3d_fullmatch145127.obj",
+          "labels": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/labels/bdfd0_toy_animals_016_densecorr3d_fullmatch145127_labels.npz",
+          "colored_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/colored/bdfd0_toy_animals_016_densecorr3d_fullmatch145127_groups.ply",
+          "vertices": 145127,
+          "faces": 290262,
+          "n_buckets": 8,
+          "bucket_vertex_counts": {
+            "group_00": 11122,
+            "group_01": 72573,
+            "group_02": 10667,
+            "group_03": 17759,
+            "group_04": 13853,
+            "group_05": 2105,
+            "group_06": 15589,
+            "group_07": 1459
+          }
+        }
+      ]
+    },
+    {
+      "variant": "equal4996",
+      "entries": [
+        {
+          "object": "071b8_toy_animals_017",
+          "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/meshes/071b8_toy_animals_017_densecorr3d_equal4996.obj",
+          "labels": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/labels/071b8_toy_animals_017_densecorr3d_equal4996_labels.npz",
+          "colored_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/colored/071b8_toy_animals_017_densecorr3d_equal4996_groups.ply",
+          "vertices": 4996,
+          "faces": 9988,
+          "n_buckets": 8,
+          "bucket_vertex_counts": {
+            "group_00": 427,
+            "group_01": 2260,
+            "group_02": 443,
+            "group_03": 326,
+            "group_04": 510,
+            "group_05": 321,
+            "group_06": 636,
+            "group_07": 73
+          }
+        },
+        {
+          "object": "bdfd0_toy_animals_016",
+          "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/meshes/bdfd0_toy_animals_016_densecorr3d_equal4996.obj",
+          "labels": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/labels/bdfd0_toy_animals_016_densecorr3d_equal4996_labels.npz",
+          "colored_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/panther_bear/colored/bdfd0_toy_animals_016_densecorr3d_equal4996_groups.ply",
+          "vertices": 4996,
+          "faces": 10000,
+          "n_buckets": 8,
+          "bucket_vertex_counts": {
+            "group_00": 391,
+            "group_01": 2454,
+            "group_02": 392,
+            "group_03": 617,
+            "group_04": 457,
+            "group_05": 84,
+            "group_06": 540,
+            "group_07": 61
+          }
+        }
+      ]
+    }
+  ]
+}

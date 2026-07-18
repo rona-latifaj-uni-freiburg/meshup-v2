@@ -1,0 +1,247 @@
+{
+  "n_buckets": 8,
+  "cluster_mode": "joint_kmeans",
+  "feature_mode": "auto",
+  "position_weight": 0.05,
+  "normal_weight": 0.0,
+  "items": {
+    "2d6b3_toy_animals_009_densecorr3d_5k": {
+      "mesh_path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/2d6b3_toy_animals_009_densecorr3d_5k.obj",
+      "feature_path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/densecorr3d_elephant_giraffe_5k_pf8/part_feat_2d6b3_toy_animals_009_densecorr3d_5k_0_batch.npy",
+      "feature_rows": 10000,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 5000,
+      "n_faces": 10000,
+      "face_labels": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8/labels/2d6b3_toy_animals_009_densecorr3d_5k_face_labels.npy",
+      "vertex_labels": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8/labels/2d6b3_toy_animals_009_densecorr3d_5k_vertex_labels.npy",
+      "label_npz": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8/labels/2d6b3_toy_animals_009_densecorr3d_5k_partfield_labels.npz",
+      "colored_mesh": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8/colored/2d6b3_toy_animals_009_densecorr3d_5k_partfield_08_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 1714,
+          "centroid_xyz01": [
+            0.14419999718666077,
+            0.36730000376701355,
+            0.7020999789237976
+          ],
+          "extent_xyz01": [
+            0.2711000144481659,
+            0.7800999879837036,
+            0.6449999809265137
+          ]
+        },
+        "bucket_01": {
+          "count": 10,
+          "centroid_xyz01": [
+            0.572700023651123,
+            0.7967000007629395,
+            0.38359999656677246
+          ],
+          "extent_xyz01": [
+            0.20489999651908875,
+            0.07850000262260437,
+            0.14740000665187836
+          ]
+        },
+        "bucket_02": {
+          "count": 904,
+          "centroid_xyz01": [
+            0.5220999717712402,
+            0.23649999499320984,
+            0.8187999725341797
+          ],
+          "extent_xyz01": [
+            0.19990000128746033,
+            0.6518999934196472,
+            0.3928000032901764
+          ]
+        },
+        "bucket_03": {
+          "count": 1545,
+          "centroid_xyz01": [
+            0.3398999869823456,
+            0.5774999856948853,
+            0.5001000165939331
+          ],
+          "extent_xyz01": [
+            0.4810999929904938,
+            0.5396000146865845,
+            0.9302999973297119
+          ]
+        },
+        "bucket_04": {
+          "count": 1347,
+          "centroid_xyz01": [
+            0.864300012588501,
+            0.7116000056266785,
+            0.48350000381469727
+          ],
+          "extent_xyz01": [
+            0.274399995803833,
+            0.41940000653266907,
+            0.5462999939918518
+          ]
+        },
+        "bucket_05": {
+          "count": 894,
+          "centroid_xyz01": [
+            0.5095000267028809,
+            0.23240000009536743,
+            0.1728000044822693
+          ],
+          "extent_xyz01": [
+            0.2272000014781952,
+            0.6011000275611877,
+            0.38530001044273376
+          ]
+        },
+        "bucket_06": {
+          "count": 2479,
+          "centroid_xyz01": [
+            0.6111000180244446,
+            0.6269999742507935,
+            0.49380001425743103
+          ],
+          "extent_xyz01": [
+            0.2782999873161316,
+            0.43950000405311584,
+            0.925000011920929
+          ]
+        },
+        "bucket_07": {
+          "count": 1107,
+          "centroid_xyz01": [
+            0.15369999408721924,
+            0.3474000096321106,
+            0.18219999969005585
+          ],
+          "extent_xyz01": [
+            0.27219998836517334,
+            0.7475000023841858,
+            0.3840000033378601
+          ]
+        }
+      }
+    },
+    "34fb4_toy_animals_019_densecorr3d_5k": {
+      "mesh_path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/34fb4_toy_animals_019_densecorr3d_5k.obj",
+      "feature_path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/densecorr3d_elephant_giraffe_5k_pf8/part_feat_34fb4_toy_animals_019_densecorr3d_5k_0_batch.npy",
+      "feature_rows": 10000,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 4996,
+      "n_faces": 10000,
+      "face_labels": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8/labels/34fb4_toy_animals_019_densecorr3d_5k_face_labels.npy",
+      "vertex_labels": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8/labels/34fb4_toy_animals_019_densecorr3d_5k_vertex_labels.npy",
+      "label_npz": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8/labels/34fb4_toy_animals_019_densecorr3d_5k_partfield_labels.npz",
+      "colored_mesh": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8/colored/34fb4_toy_animals_019_densecorr3d_5k_partfield_08_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 1980,
+          "centroid_xyz01": [
+            0.07980000227689743,
+            0.28780001401901245,
+            0.6771000027656555
+          ],
+          "extent_xyz01": [
+            0.21320000290870667,
+            0.5335000157356262,
+            0.5752000212669373
+          ]
+        },
+        "bucket_01": {
+          "count": 1720,
+          "centroid_xyz01": [
+            0.6398000121116638,
+            0.7164999842643738,
+            0.5156999826431274
+          ],
+          "extent_xyz01": [
+            0.504800021648407,
+            0.45260000228881836,
+            0.5340999960899353
+          ]
+        },
+        "bucket_02": {
+          "count": 1297,
+          "centroid_xyz01": [
+            0.4185999929904938,
+            0.24899999797344208,
+            0.7282000184059143
+          ],
+          "extent_xyz01": [
+            0.1670999974012375,
+            0.5663999915122986,
+            0.5246000289916992
+          ]
+        },
+        "bucket_03": {
+          "count": 997,
+          "centroid_xyz01": [
+            0.29510000348091125,
+            0.44369998574256897,
+            0.4986000061035156
+          ],
+          "extent_xyz01": [
+            0.42649999260902405,
+            0.322299987077713,
+            0.8876000046730042
+          ]
+        },
+        "bucket_04": {
+          "count": 930,
+          "centroid_xyz01": [
+            0.8913999795913696,
+            0.9218999743461609,
+            0.5001999735832214
+          ],
+          "extent_xyz01": [
+            0.1851000040769577,
+            0.17820000648498535,
+            0.46540001034736633
+          ]
+        },
+        "bucket_05": {
+          "count": 1381,
+          "centroid_xyz01": [
+            0.4731999933719635,
+            0.2538999915122986,
+            0.2167000025510788
+          ],
+          "extent_xyz01": [
+            0.22769999504089355,
+            0.5809999704360962,
+            0.46799999475479126
+          ]
+        },
+        "bucket_06": {
+          "count": 189,
+          "centroid_xyz01": [
+            0.45739999413490295,
+            0.5580000281333923,
+            0.5170000195503235
+          ],
+          "extent_xyz01": [
+            0.2037999927997589,
+            0.19740000367164612,
+            0.6486999988555908
+          ]
+        },
+        "bucket_07": {
+          "count": 1506,
+          "centroid_xyz01": [
+            0.18000000715255737,
+            0.249099999666214,
+            0.20819999277591705
+          ],
+          "extent_xyz01": [
+            0.24639999866485596,
+            0.5346999764442444,
+            0.47269999980926514
+          ]
+        }
+      }
+    }
+  }
+}

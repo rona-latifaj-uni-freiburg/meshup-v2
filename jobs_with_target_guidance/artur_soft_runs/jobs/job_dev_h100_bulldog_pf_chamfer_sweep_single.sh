@@ -14,7 +14,7 @@ set -euo pipefail
 
 if [[ "$#" -lt 2 ]]; then
   echo "Usage: sbatch $0 MODE VARIANT_ID [WEIGHT]"
-  echo "MODE: dino | reg | jneighbor | contain | contain_edge | balanced | jump | asym_jump"
+  echo "MODE: dino | reg | jneighbor | contain | contain_edge | balanced | jump | asym_jump | robust_jump | unbalanced_jump | mutual_jump"
   echo "VARIANT_ID: 1 hard PartField, 2 Artur soft PartField"
   exit 2
 fi
@@ -156,8 +156,74 @@ case "${MODE}" in
     export EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT=${EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT:-2.0}
     export ENABLE_TARGET_DINO_GUIDANCE=0
     ;;
+  robust_jump)
+    JUMP_WEIGHT="${WEIGHT:-500}"
+    if [[ "${JUMP_WEIGHT}" == "0" ]]; then
+      JUMP_WEIGHT=500
+    fi
+    OUTPUT_ROOT=./jobs_with_target_guidance/artur_soft_runs/outputs_dev_bulldog_partfield_chamfer_robust_jump_${JUMP_WEIGHT}
+    RUN_TAG=artur_pf_chamfer_robustjump${JUMP_WEIGHT}_dev_h100_single
+    export VARIANT_SUFFIX=pf_chamfer_jneighbor1000_robustt2sauto_jump${JUMP_WEIGHT}
+    export JACOBIAN_REG_WEIGHT=${JACOBIAN_REG_WEIGHT:-0.0}
+    export JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT=${JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT:-1000.0}
+    export JACOBIAN_OUTLIER_WEIGHT=${JACOBIAN_OUTLIER_WEIGHT:-0.0}
+    export PARTFIELD_CONTAINMENT_WEIGHT=${PARTFIELD_CONTAINMENT_WEIGHT:-0.0}
+    export PARTFIELD_TGT_TO_SRC_ROBUST_SCALE=${PARTFIELD_TGT_TO_SRC_ROBUST_SCALE:--1.0}
+    export EDGE_STRETCH_WEIGHT=${EDGE_STRETCH_WEIGHT:-0.0}
+    export EDGE_DISPLACEMENT_JUMP_WEIGHT="${JUMP_WEIGHT}"
+    export EDGE_DISPLACEMENT_JUMP_THRESHOLD=${EDGE_DISPLACEMENT_JUMP_THRESHOLD:-1.2}
+    export EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT=${EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT:-2.0}
+    export ENABLE_TARGET_DINO_GUIDANCE=0
+    ;;
+  unbalanced_jump)
+    JUMP_WEIGHT="${WEIGHT:-500}"
+    if [[ "${JUMP_WEIGHT}" == "0" ]]; then
+      JUMP_WEIGHT=500
+    fi
+    OUTPUT_ROOT=./jobs_with_target_guidance/artur_soft_runs/outputs_dev_bulldog_partfield_chamfer_unbalanced_jump_${JUMP_WEIGHT}
+    RUN_TAG=artur_pf_chamfer_unbalancedjump${JUMP_WEIGHT}_dev_h100_single
+    export VARIANT_SUFFIX=pf_chamfer_jneighbor1000_unbalanced020_rho030_jump${JUMP_WEIGHT}
+    export PARTFIELD_GUIDANCE_MODE=hard_unbalanced
+    export PARTFIELD_HARD_WEIGHT=1.0
+    export PARTFIELD_SOFT_WEIGHT=0.0
+    export PARTFIELD_UNBALANCED_TRANSPORT_WEIGHT=${PARTFIELD_UNBALANCED_TRANSPORT_WEIGHT:-0.20}
+    export PARTFIELD_UNBALANCED_TRANSPORT_RHO=${PARTFIELD_UNBALANCED_TRANSPORT_RHO:-0.30}
+    export PARTFIELD_BALANCED_SINKHORN_ITERS=${PARTFIELD_BALANCED_SINKHORN_ITERS:-20}
+    export ARTUR_SOFT_MATCH_SPACE=${ARTUR_SOFT_MATCH_SPACE:-hybrid}
+    export ARTUR_SOFT_GEOMETRY_SIGMA=${ARTUR_SOFT_GEOMETRY_SIGMA:-0.5}
+    export ARTUR_SOFT_SEMANTIC_WEIGHT=${ARTUR_SOFT_SEMANTIC_WEIGHT:-1.0}
+    export ARTUR_SOFT_TEMPERATURE=${ARTUR_SOFT_TEMPERATURE:-0.04}
+    export JACOBIAN_REG_WEIGHT=${JACOBIAN_REG_WEIGHT:-0.0}
+    export JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT=${JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT:-1000.0}
+    export JACOBIAN_OUTLIER_WEIGHT=${JACOBIAN_OUTLIER_WEIGHT:-0.0}
+    export PARTFIELD_CONTAINMENT_WEIGHT=${PARTFIELD_CONTAINMENT_WEIGHT:-0.0}
+    export EDGE_STRETCH_WEIGHT=${EDGE_STRETCH_WEIGHT:-0.0}
+    export EDGE_DISPLACEMENT_JUMP_WEIGHT="${JUMP_WEIGHT}"
+    export EDGE_DISPLACEMENT_JUMP_THRESHOLD=${EDGE_DISPLACEMENT_JUMP_THRESHOLD:-1.2}
+    export EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT=${EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT:-2.0}
+    export ENABLE_TARGET_DINO_GUIDANCE=0
+    ;;
+  mutual_jump)
+    JUMP_WEIGHT="${WEIGHT:-500}"
+    if [[ "${JUMP_WEIGHT}" == "0" ]]; then
+      JUMP_WEIGHT=500
+    fi
+    OUTPUT_ROOT=./jobs_with_target_guidance/artur_soft_runs/outputs_dev_bulldog_partfield_chamfer_mutual_jump_${JUMP_WEIGHT}
+    RUN_TAG=artur_pf_chamfer_mutualjump${JUMP_WEIGHT}_dev_h100_single
+    export VARIANT_SUFFIX=pf_chamfer_jneighbor1000_mutual015_jump${JUMP_WEIGHT}
+    export JACOBIAN_REG_WEIGHT=${JACOBIAN_REG_WEIGHT:-0.0}
+    export JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT=${JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT:-1000.0}
+    export JACOBIAN_OUTLIER_WEIGHT=${JACOBIAN_OUTLIER_WEIGHT:-0.0}
+    export PARTFIELD_SRC_TO_TGT_UNMATCHED_WEIGHT=${PARTFIELD_SRC_TO_TGT_UNMATCHED_WEIGHT:-0.15}
+    export PARTFIELD_CONTAINMENT_WEIGHT=${PARTFIELD_CONTAINMENT_WEIGHT:-0.0}
+    export EDGE_STRETCH_WEIGHT=${EDGE_STRETCH_WEIGHT:-0.0}
+    export EDGE_DISPLACEMENT_JUMP_WEIGHT="${JUMP_WEIGHT}"
+    export EDGE_DISPLACEMENT_JUMP_THRESHOLD=${EDGE_DISPLACEMENT_JUMP_THRESHOLD:-1.2}
+    export EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT=${EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT:-2.0}
+    export ENABLE_TARGET_DINO_GUIDANCE=0
+    ;;
   *)
-    echo "Unknown MODE=${MODE}. Expected dino, reg, jneighbor, contain, contain_edge, balanced, jump, or asym_jump."
+    echo "Unknown MODE=${MODE}. Expected dino, reg, jneighbor, contain, contain_edge, balanced, jump, asym_jump, robust_jump, unbalanced_jump, or mutual_jump."
     exit 2
     ;;
 esac

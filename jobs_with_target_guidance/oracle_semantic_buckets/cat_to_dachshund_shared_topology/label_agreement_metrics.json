@@ -1,0 +1,172 @@
+{
+  "oracle": {
+    "n_vertices": 4712,
+    "n_buckets": 10,
+    "same_vertex_label_agreement": 1.0,
+    "same_vertex_label_matches": 4712,
+    "same_vertex_label_mismatches": 0,
+    "source_counts": {
+      "0": 1106,
+      "1": 561,
+      "2": 637,
+      "3": 783,
+      "4": 118,
+      "5": 290,
+      "6": 394,
+      "7": 293,
+      "8": 187,
+      "9": 343
+    },
+    "target_counts": {
+      "0": 1106,
+      "1": 561,
+      "2": 637,
+      "3": 783,
+      "4": 118,
+      "5": 290,
+      "6": 394,
+      "7": 293,
+      "8": 187,
+      "9": 343
+    },
+    "per_source_bucket_agreement": [
+      {
+        "bucket": 0,
+        "source_count": 1106,
+        "target_same_bucket_at_true_vertex": 1106,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 1,
+        "source_count": 561,
+        "target_same_bucket_at_true_vertex": 561,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 2,
+        "source_count": 637,
+        "target_same_bucket_at_true_vertex": 637,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 3,
+        "source_count": 783,
+        "target_same_bucket_at_true_vertex": 783,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 4,
+        "source_count": 118,
+        "target_same_bucket_at_true_vertex": 118,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 5,
+        "source_count": 290,
+        "target_same_bucket_at_true_vertex": 290,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 6,
+        "source_count": 394,
+        "target_same_bucket_at_true_vertex": 394,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 7,
+        "source_count": 293,
+        "target_same_bucket_at_true_vertex": 293,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 8,
+        "source_count": 187,
+        "target_same_bucket_at_true_vertex": 187,
+        "agreement_inside_source_bucket": 1.0
+      },
+      {
+        "bucket": 9,
+        "source_count": 343,
+        "target_same_bucket_at_true_vertex": 343,
+        "agreement_inside_source_bucket": 1.0
+      }
+    ]
+  },
+  "partfield": {
+    "n_vertices": 4712,
+    "n_buckets": 8,
+    "same_vertex_label_agreement": 0.8811544991511036,
+    "same_vertex_label_matches": 4152,
+    "same_vertex_label_mismatches": 560,
+    "source_counts": {
+      "0": 436,
+      "1": 537,
+      "2": 625,
+      "3": 736,
+      "4": 767,
+      "5": 520,
+      "6": 634,
+      "7": 457
+    },
+    "target_counts": {
+      "0": 584,
+      "1": 456,
+      "2": 520,
+      "3": 684,
+      "4": 775,
+      "5": 710,
+      "6": 651,
+      "7": 332
+    },
+    "per_source_bucket_agreement": [
+      {
+        "bucket": 0,
+        "source_count": 436,
+        "target_same_bucket_at_true_vertex": 414,
+        "agreement_inside_source_bucket": 0.9495412844036697
+      },
+      {
+        "bucket": 1,
+        "source_count": 537,
+        "target_same_bucket_at_true_vertex": 448,
+        "agreement_inside_source_bucket": 0.8342644320297952
+      },
+      {
+        "bucket": 2,
+        "source_count": 625,
+        "target_same_bucket_at_true_vertex": 520,
+        "agreement_inside_source_bucket": 0.832
+      },
+      {
+        "bucket": 3,
+        "source_count": 736,
+        "target_same_bucket_at_true_vertex": 641,
+        "agreement_inside_source_bucket": 0.8709239130434783
+      },
+      {
+        "bucket": 4,
+        "source_count": 767,
+        "target_same_bucket_at_true_vertex": 731,
+        "agreement_inside_source_bucket": 0.9530638852672751
+      },
+      {
+        "bucket": 5,
+        "source_count": 520,
+        "target_same_bucket_at_true_vertex": 508,
+        "agreement_inside_source_bucket": 0.9769230769230769
+      },
+      {
+        "bucket": 6,
+        "source_count": 634,
+        "target_same_bucket_at_true_vertex": 561,
+        "agreement_inside_source_bucket": 0.8848580441640379
+      },
+      {
+        "bucket": 7,
+        "source_count": 457,
+        "target_same_bucket_at_true_vertex": 329,
+        "agreement_inside_source_bucket": 0.7199124726477024
+      }
+    ]
+  }
+}

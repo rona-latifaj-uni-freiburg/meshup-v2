@@ -1,0 +1,40 @@
+{
+  "base_variant": "cheetah_panther_cleanbase",
+  "objects": {
+    "071b8_toy_animals_017": {
+      "colored": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/colored/071b8_toy_animals_017_densecorr3d_cheetah_panther_cleanbase_groups.ply",
+      "counts": [
+        428,
+        2263,
+        443,
+        326,
+        510,
+        321,
+        638,
+        73
+      ],
+      "faces": 10000,
+      "labels": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/071b8_toy_animals_017_densecorr3d_cheetah_panther_cleanbase_labels.npz",
+      "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/071b8_toy_animals_017_densecorr3d_cheetah_panther_cleanbase.obj",
+      "vertices": 5002
+    },
+    "bdfd0_toy_animals_016": {
+      "colored": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/colored/bdfd0_toy_animals_016_densecorr3d_cheetah_panther_cleanbase_groups.ply",
+      "counts": [
+        391,
+        2450,
+        392,
+        617,
+        457,
+        84,
+        540,
+        61
+      ],
+      "faces": 9996,
+      "labels": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/bdfd0_toy_animals_016_densecorr3d_cheetah_panther_cleanbase_labels.npz",
+      "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/bdfd0_toy_animals_016_densecorr3d_cheetah_panther_cleanbase.obj",
+      "removed_vertices": 4,
+      "vertices": 4992
+    }
+  }
+}

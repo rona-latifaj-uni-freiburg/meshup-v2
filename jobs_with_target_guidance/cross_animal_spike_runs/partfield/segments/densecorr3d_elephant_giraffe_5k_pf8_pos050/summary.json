@@ -1,0 +1,247 @@
+{
+  "n_buckets": 8,
+  "cluster_mode": "joint_kmeans",
+  "feature_mode": "auto",
+  "position_weight": 0.5,
+  "normal_weight": 0.0,
+  "items": {
+    "2d6b3_toy_animals_009_densecorr3d_5k": {
+      "mesh_path": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/2d6b3_toy_animals_009_densecorr3d_5k.obj",
+      "feature_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/densecorr3d_elephant_giraffe_5k_pf8/part_feat_2d6b3_toy_animals_009_densecorr3d_5k_0_batch.npy",
+      "feature_rows": 10000,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 5000,
+      "n_faces": 10000,
+      "face_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8_pos050/labels/2d6b3_toy_animals_009_densecorr3d_5k_face_labels.npy",
+      "vertex_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8_pos050/labels/2d6b3_toy_animals_009_densecorr3d_5k_vertex_labels.npy",
+      "label_npz": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8_pos050/labels/2d6b3_toy_animals_009_densecorr3d_5k_partfield_labels.npz",
+      "colored_mesh": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8_pos050/colored/2d6b3_toy_animals_009_densecorr3d_5k_partfield_08_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 1365,
+          "centroid_xyz01": [
+            0.862500011920929,
+            0.7116000056266785,
+            0.4837000072002411
+          ],
+          "extent_xyz01": [
+            0.2775000035762787,
+            0.41940000653266907,
+            0.5462999939918518
+          ]
+        },
+        "bucket_01": {
+          "count": 1535,
+          "centroid_xyz01": [
+            0.33399999141693115,
+            0.5831000208854675,
+            0.5160999894142151
+          ],
+          "extent_xyz01": [
+            0.4724000096321106,
+            0.5396000146865845,
+            0.9101999998092651
+          ]
+        },
+        "bucket_02": {
+          "count": 1128,
+          "centroid_xyz01": [
+            0.15729999542236328,
+            0.3506999909877777,
+            0.17919999361038208
+          ],
+          "extent_xyz01": [
+            0.27390000224113464,
+            0.7416999936103821,
+            0.38940000534057617
+          ]
+        },
+        "bucket_03": {
+          "count": 2476,
+          "centroid_xyz01": [
+            0.6098999977111816,
+            0.6274999976158142,
+            0.4932999908924103
+          ],
+          "extent_xyz01": [
+            0.2782999873161316,
+            0.43950000405311584,
+            0.925000011920929
+          ]
+        },
+        "bucket_04": {
+          "count": 579,
+          "centroid_xyz01": [
+            0.05510000139474869,
+            0.43880000710487366,
+            0.4691999852657318
+          ],
+          "extent_xyz01": [
+            0.15880000591278076,
+            0.44679999351501465,
+            0.26669999957084656
+          ]
+        },
+        "bucket_05": {
+          "count": 905,
+          "centroid_xyz01": [
+            0.5220999717712402,
+            0.23649999499320984,
+            0.8185999989509583
+          ],
+          "extent_xyz01": [
+            0.19990000128746033,
+            0.644599974155426,
+            0.3928000032901764
+          ]
+        },
+        "bucket_06": {
+          "count": 910,
+          "centroid_xyz01": [
+            0.5087000131607056,
+            0.23669999837875366,
+            0.17339999973773956
+          ],
+          "extent_xyz01": [
+            0.2272000014781952,
+            0.6011000275611877,
+            0.40470001101493835
+          ]
+        },
+        "bucket_07": {
+          "count": 1102,
+          "centroid_xyz01": [
+            0.19059999287128448,
+            0.31700000166893005,
+            0.8217999935150146
+          ],
+          "extent_xyz01": [
+            0.20630000531673431,
+            0.762499988079071,
+            0.4431999921798706
+          ]
+        }
+      }
+    },
+    "34fb4_toy_animals_019_densecorr3d_5k": {
+      "mesh_path": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/34fb4_toy_animals_019_densecorr3d_5k.obj",
+      "feature_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/densecorr3d_elephant_giraffe_5k_pf8/part_feat_34fb4_toy_animals_019_densecorr3d_5k_0_batch.npy",
+      "feature_rows": 10000,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 4996,
+      "n_faces": 10000,
+      "face_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8_pos050/labels/34fb4_toy_animals_019_densecorr3d_5k_face_labels.npy",
+      "vertex_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8_pos050/labels/34fb4_toy_animals_019_densecorr3d_5k_vertex_labels.npy",
+      "label_npz": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8_pos050/labels/34fb4_toy_animals_019_densecorr3d_5k_partfield_labels.npz",
+      "colored_mesh": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/densecorr3d_elephant_giraffe_5k_pf8_pos050/colored/34fb4_toy_animals_019_densecorr3d_5k_partfield_08_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 2080,
+          "centroid_xyz01": [
+            0.7886000275611877,
+            0.8343999981880188,
+            0.5047000050544739
+          ],
+          "extent_xyz01": [
+            0.4742000102996826,
+            0.49160000681877136,
+            0.46540001034736633
+          ]
+        },
+        "bucket_01": {
+          "count": 899,
+          "centroid_xyz01": [
+            0.2971999943256378,
+            0.4438000023365021,
+            0.5335999727249146
+          ],
+          "extent_xyz01": [
+            0.4115000069141388,
+            0.3197999894618988,
+            0.8848000168800354
+          ]
+        },
+        "bucket_02": {
+          "count": 1561,
+          "centroid_xyz01": [
+            0.18459999561309814,
+            0.2540000081062317,
+            0.20319999754428864
+          ],
+          "extent_xyz01": [
+            0.28610000014305115,
+            0.5346999764442444,
+            0.47269999980926514
+          ]
+        },
+        "bucket_03": {
+          "count": 764,
+          "centroid_xyz01": [
+            0.49239999055862427,
+            0.607200026512146,
+            0.525600016117096
+          ],
+          "extent_xyz01": [
+            0.34119999408721924,
+            0.2287999987602234,
+            0.6414999961853027
+          ]
+        },
+        "bucket_04": {
+          "count": 889,
+          "centroid_xyz01": [
+            0.045099999755620956,
+            0.34940001368522644,
+            0.5622000098228455
+          ],
+          "extent_xyz01": [
+            0.18170000612735748,
+            0.3765999972820282,
+            0.388700008392334
+          ]
+        },
+        "bucket_05": {
+          "count": 1300,
+          "centroid_xyz01": [
+            0.4187000095844269,
+            0.24950000643730164,
+            0.7282000184059143
+          ],
+          "extent_xyz01": [
+            0.16830000281333923,
+            0.5663999915122986,
+            0.5246000289916992
+          ]
+        },
+        "bucket_06": {
+          "count": 1398,
+          "centroid_xyz01": [
+            0.47209998965263367,
+            0.2563999891281128,
+            0.21610000729560852
+          ],
+          "extent_xyz01": [
+            0.2289000004529953,
+            0.583299994468689,
+            0.46799999475479126
+          ]
+        },
+        "bucket_07": {
+          "count": 1109,
+          "centroid_xyz01": [
+            0.10769999772310257,
+            0.24150000512599945,
+            0.7649000287055969
+          ],
+          "extent_xyz01": [
+            0.18459999561309814,
+            0.5223000049591064,
+            0.4090000092983246
+          ]
+        }
+      }
+    }
+  }
+}

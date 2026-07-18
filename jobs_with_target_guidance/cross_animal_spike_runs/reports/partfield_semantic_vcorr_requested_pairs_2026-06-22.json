@@ -1,0 +1,468 @@
+{
+  "pair_summaries": {
+    "bulldog_to_cat": {
+      "cache_path": "jobs_with_target_guidance/cross_animal_spike_runs/correspondences/bulldog_to_cat_partfield_semantic_vcorr.npz",
+      "confidence_floor": 0.25,
+      "confidence_margin": 0.04,
+      "feature_mode": "auto",
+      "identity_fraction": 0.5036078098471987,
+      "identity_prior_kept_fraction": 0.5036078098471987,
+      "label_agreement_fraction": 0.890704584040747,
+      "label_filter": "soft",
+      "label_mismatch_penalty": 0.25,
+      "label_mode": "auto",
+      "mean_similarity": 0.6394338011741638,
+      "mean_weight": 0.33490264415740967,
+      "min_similarity": 0.05,
+      "mutual_fraction": 0.043505942275042446,
+      "n_source_vertices": 4712,
+      "n_target_vertices": 4712,
+      "nonmutual_weight": 0.6,
+      "normal_weight": 0.05,
+      "p05_similarity": 0.43635687232017517,
+      "p05_weight": 0.25,
+      "position_weight": 0.2,
+      "same_topology": true,
+      "semantic_weight": 1.0,
+      "source_features_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_bulldog_no_dino_0_batch.npy",
+      "source_labels_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_bulldog_no_dino_partfield_labels.npz",
+      "target_features_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_cat_no_dino_0_batch.npy",
+      "target_labels_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_cat_no_dino_partfield_labels.npz",
+      "topk": 32,
+      "topology_prior_weight": 0.2,
+      "unique_target_fraction": 0.5592105263157895
+    },
+    "bulldog_to_dachshund": {
+      "cache_path": "jobs_with_target_guidance/cross_animal_spike_runs/correspondences/bulldog_to_dachshund_partfield_semantic_vcorr.npz",
+      "confidence_floor": 0.25,
+      "confidence_margin": 0.04,
+      "feature_mode": "auto",
+      "identity_fraction": 0.7332342954159593,
+      "identity_prior_kept_fraction": 0.7332342954159593,
+      "label_agreement_fraction": 0.9915110356536503,
+      "label_filter": "soft",
+      "label_mismatch_penalty": 0.25,
+      "label_mode": "auto",
+      "mean_similarity": 0.7763577699661255,
+      "mean_weight": 0.3099241256713867,
+      "min_similarity": 0.05,
+      "mutual_fraction": 0.06897283531409168,
+      "n_source_vertices": 4712,
+      "n_target_vertices": 4712,
+      "nonmutual_weight": 0.6,
+      "normal_weight": 0.05,
+      "p05_similarity": 0.5814480364322663,
+      "p05_weight": 0.25,
+      "position_weight": 0.2,
+      "same_topology": true,
+      "semantic_weight": 1.0,
+      "source_features_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_bulldog_no_dino_0_batch.npy",
+      "source_labels_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_bulldog_no_dino_partfield_labels.npz",
+      "target_features_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_dachshund_0_batch.npy",
+      "target_labels_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_dachshund_partfield_labels.npz",
+      "topk": 32,
+      "topology_prior_weight": 0.2,
+      "unique_target_fraction": 0.7563667232597623
+    },
+    "cat_to_bulldog": {
+      "cache_path": "jobs_with_target_guidance/cross_animal_spike_runs/correspondences/cat_to_bulldog_partfield_semantic_vcorr.npz",
+      "confidence_floor": 0.25,
+      "confidence_margin": 0.04,
+      "feature_mode": "auto",
+      "identity_fraction": 0.47877758913412566,
+      "identity_prior_kept_fraction": 0.47877758913412566,
+      "label_agreement_fraction": 0.8792444821731749,
+      "label_filter": "soft",
+      "label_mismatch_penalty": 0.25,
+      "label_mode": "auto",
+      "mean_similarity": 0.6465131044387817,
+      "mean_weight": 0.3429383635520935,
+      "min_similarity": 0.05,
+      "mutual_fraction": 0.042869269949066216,
+      "n_source_vertices": 4712,
+      "n_target_vertices": 4712,
+      "nonmutual_weight": 0.6,
+      "normal_weight": 0.05,
+      "p05_similarity": 0.4252695858478546,
+      "p05_weight": 0.25,
+      "position_weight": 0.2,
+      "same_topology": true,
+      "semantic_weight": 1.0,
+      "source_features_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_cat_no_dino_0_batch.npy",
+      "source_labels_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_cat_no_dino_partfield_labels.npz",
+      "target_features_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_bulldog_no_dino_0_batch.npy",
+      "target_labels_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_bulldog_no_dino_partfield_labels.npz",
+      "topk": 32,
+      "topology_prior_weight": 0.2,
+      "unique_target_fraction": 0.54053480475382
+    },
+    "dachshund_to_bulldog": {
+      "cache_path": "jobs_with_target_guidance/cross_animal_spike_runs/correspondences/dachshund_to_bulldog_partfield_semantic_vcorr.npz",
+      "confidence_floor": 0.25,
+      "confidence_margin": 0.04,
+      "feature_mode": "auto",
+      "identity_fraction": 0.7444821731748726,
+      "identity_prior_kept_fraction": 0.7444821731748726,
+      "label_agreement_fraction": 0.9872665534804754,
+      "label_filter": "soft",
+      "label_mismatch_penalty": 0.25,
+      "label_mode": "auto",
+      "mean_similarity": 0.7633619904518127,
+      "mean_weight": 0.3151291310787201,
+      "min_similarity": 0.05,
+      "mutual_fraction": 0.06706281833616298,
+      "n_source_vertices": 4712,
+      "n_target_vertices": 4712,
+      "nonmutual_weight": 0.6,
+      "normal_weight": 0.05,
+      "p05_similarity": 0.5777583658695221,
+      "p05_weight": 0.25,
+      "position_weight": 0.2,
+      "same_topology": true,
+      "semantic_weight": 1.0,
+      "source_features_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_dachshund_0_batch.npy",
+      "source_labels_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_dachshund_partfield_labels.npz",
+      "target_features_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_bulldog_no_dino_0_batch.npy",
+      "target_labels_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_bulldog_no_dino_partfield_labels.npz",
+      "topk": 32,
+      "topology_prior_weight": 0.2,
+      "unique_target_fraction": 0.7646434634974533
+    }
+  },
+  "part_summaries": {
+    "bulldog": [
+      {
+        "bucket": 0,
+        "centroid": [
+          -0.6605638861656189,
+          -0.22858943045139313,
+          -0.08450812101364136
+        ],
+        "extent": [
+          0.5574589371681213,
+          1.2807217836380005,
+          0.4354510009288788
+        ],
+        "faces": 2230,
+        "vertices": 1114
+      },
+      {
+        "bucket": 1,
+        "centroid": [
+          0.29303938150405884,
+          0.11917627602815628,
+          0.2760756015777588
+        ],
+        "extent": [
+          0.36678940057754517,
+          0.9015231728553772,
+          0.31761229038238525
+        ],
+        "faces": 453,
+        "vertices": 228
+      },
+      {
+        "bucket": 2,
+        "centroid": [
+          -0.6481035351753235,
+          0.17764411866664886,
+          0.07096771150827408
+        ],
+        "extent": [
+          0.02218729257583618,
+          0.009604156017303467,
+          0.021076679229736328
+        ],
+        "faces": 8,
+        "vertices": 3
+      },
+      {
+        "bucket": 3,
+        "centroid": [
+          0.3024832308292389,
+          -0.5721802711486816,
+          -0.3734327554702759
+        ],
+        "extent": [
+          0.41753947734832764,
+          1.077497124671936,
+          0.32393574714660645
+        ],
+        "faces": 628,
+        "vertices": 313
+      },
+      {
+        "bucket": 4,
+        "centroid": [
+          -0.11209506541490555,
+          -0.027679091319441795,
+          0.20241442322731018
+        ],
+        "extent": [
+          0.6776019930839539,
+          0.9073200225830078,
+          0.378910094499588
+        ],
+        "faces": 986,
+        "vertices": 492
+      },
+      {
+        "bucket": 5,
+        "centroid": [
+          -0.09475690126419067,
+          0.09024055302143097,
+          -0.14792567491531372
+        ],
+        "extent": [
+          0.5930207967758179,
+          0.9444591999053955,
+          0.42995813488960266
+        ],
+        "faces": 925,
+        "vertices": 465
+      },
+      {
+        "bucket": 6,
+        "centroid": [
+          0.2938554286956787,
+          -0.652738094329834,
+          0.31392061710357666
+        ],
+        "extent": [
+          0.39758390188217163,
+          0.9490369558334351,
+          0.2597631812095642
+        ],
+        "faces": 571,
+        "vertices": 286
+      },
+      {
+        "bucket": 8,
+        "centroid": [
+          0.5025632381439209,
+          0.6286871433258057,
+          -0.019154658541083336
+        ],
+        "extent": [
+          0.7902208566665649,
+          0.8190463781356812,
+          0.6476330757141113
+        ],
+        "faces": 1399,
+        "vertices": 699
+      },
+      {
+        "bucket": 9,
+        "centroid": [
+          -0.5792532563209534,
+          -0.26789894700050354,
+          0.3242728114128113
+        ],
+        "extent": [
+          0.4739105701446533,
+          1.3353567123413086,
+          0.5169044733047485
+        ],
+        "faces": 1472,
+        "vertices": 743
+      },
+      {
+        "bucket": 10,
+        "centroid": [
+          0.3629506826400757,
+          0.030614538118243217,
+          -0.17536738514900208
+        ],
+        "extent": [
+          0.4148157835006714,
+          0.8322018384933472,
+          0.6120316386222839
+        ],
+        "faces": 718,
+        "vertices": 355
+      },
+      {
+        "bucket": 11,
+        "centroid": [
+          -0.3540228009223938,
+          0.13346830010414124,
+          -0.10509151220321655
+        ],
+        "extent": [
+          0.022815972566604614,
+          0.3794741630554199,
+          0.12802962958812714
+        ],
+        "faces": 30,
+        "vertices": 14
+      }
+    ],
+    "cat": [
+      {
+        "bucket": 0,
+        "centroid": [
+          -0.39874348044395447,
+          0.18625664710998535,
+          -0.14058226346969604
+        ],
+        "extent": [
+          0.26563724875450134,
+          0.43029654026031494,
+          0.14104345440864563
+        ],
+        "faces": 82,
+        "vertices": 41
+      },
+      {
+        "bucket": 1,
+        "centroid": [
+          0.7544282078742981,
+          0.1704661250114441,
+          0.29371580481529236
+        ],
+        "extent": [
+          0.4927011728286743,
+          0.6967301368713379,
+          0.34484031796455383
+        ],
+        "faces": 613,
+        "vertices": 306
+      },
+      {
+        "bucket": 2,
+        "centroid": [
+          -0.9060571193695068,
+          0.4670378565788269,
+          -0.3642531633377075
+        ],
+        "extent": [
+          1.1201978921890259,
+          0.2500452399253845,
+          0.5459300875663757
+        ],
+        "faces": 910,
+        "vertices": 455
+      },
+      {
+        "bucket": 3,
+        "centroid": [
+          0.7055402398109436,
+          -0.4679465591907501,
+          -0.24617430567741394
+        ],
+        "extent": [
+          0.38155990839004517,
+          1.011136531829834,
+          0.43602800369262695
+        ],
+        "faces": 622,
+        "vertices": 310
+      },
+      {
+        "bucket": 4,
+        "centroid": [
+          0.24453093111515045,
+          0.13862451910972595,
+          0.15900136530399323
+        ],
+        "extent": [
+          0.7050204873085022,
+          0.6789883375167847,
+          0.35620176792144775
+        ],
+        "faces": 904,
+        "vertices": 455
+      },
+      {
+        "bucket": 5,
+        "centroid": [
+          0.23684829473495483,
+          0.2269619107246399,
+          -0.11959543824195862
+        ],
+        "extent": [
+          0.8482186198234558,
+          0.6772557497024536,
+          0.3648086190223694
+        ],
+        "faces": 915,
+        "vertices": 456
+      },
+      {
+        "bucket": 6,
+        "centroid": [
+          0.8599605560302734,
+          -0.43659770488739014,
+          0.43473273515701294
+        ],
+        "extent": [
+          0.5908894538879395,
+          0.8486543297767639,
+          0.40663212537765503
+        ],
+        "faces": 583,
+        "vertices": 292
+      },
+      {
+        "bucket": 8,
+        "centroid": [
+          1.1536178588867188,
+          0.565108060836792,
+          0.1838715374469757
+        ],
+        "extent": [
+          0.7125190496444702,
+          0.6755126714706421,
+          0.4631991684436798
+        ],
+        "faces": 1463,
+        "vertices": 732
+      },
+      {
+        "bucket": 9,
+        "centroid": [
+          -0.31597477197647095,
+          -0.11204800754785538,
+          0.04385092481970787
+        ],
+        "extent": [
+          0.520237147808075,
+          1.3078176975250244,
+          0.27216607332229614
+        ],
+        "faces": 1139,
+        "vertices": 575
+      },
+      {
+        "bucket": 10,
+        "centroid": [
+          0.8200188875198364,
+          0.12898723781108856,
+          0.008787965402007103
+        ],
+        "extent": [
+          0.6040542721748352,
+          0.6893285512924194,
+          0.4359169602394104
+        ],
+        "faces": 888,
+        "vertices": 440
+      },
+      {
+        "bucket": 11,
+        "centroid": [
+          -0.22968749701976776,
+          -0.051792267709970474,
+          -0.2790634334087372
+        ],
+        "extent": [
+          0.4926835000514984,
+          1.2980376482009888,
+          0.3069339692592621
+        ],
+        "faces": 1301,
+        "vertices": 650
+      }
+    ]
+  }
+}

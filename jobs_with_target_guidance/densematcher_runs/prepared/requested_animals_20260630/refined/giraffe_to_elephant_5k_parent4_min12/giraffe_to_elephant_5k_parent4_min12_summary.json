@@ -1,0 +1,157 @@
+{
+  "buckets": [
+    {
+      "center": [
+        -0.07004169374704361,
+        -0.5109370946884155,
+        0.14577071368694305
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 0,
+      "refined_bucket": 0,
+      "source_count": 497,
+      "target_count": 391
+    },
+    {
+      "center": [
+        -0.852882981300354,
+        -0.1960870921611786,
+        0.009119738824665546
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 1,
+      "refined_bucket": 1,
+      "source_count": 617,
+      "target_count": 366
+    },
+    {
+      "center": [
+        -0.5914489030838013,
+        0.1748715043067932,
+        0.020708419382572174
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 1,
+      "refined_bucket": 2,
+      "source_count": 194,
+      "target_count": 528
+    },
+    {
+      "center": [
+        -0.40833091735839844,
+        -0.20212937891483307,
+        -0.05264066159725189
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 1,
+      "refined_bucket": 3,
+      "source_count": 468,
+      "target_count": 346
+    },
+    {
+      "center": [
+        -0.1033303439617157,
+        0.0782473236322403,
+        0.01266612857580185
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 1,
+      "refined_bucket": 4,
+      "source_count": 476,
+      "target_count": 499
+    },
+    {
+      "center": [
+        -0.04945411905646324,
+        -0.3206638693809509,
+        -0.18280814588069916
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 2,
+      "refined_bucket": 5,
+      "source_count": 210,
+      "target_count": 293
+    },
+    {
+      "center": [
+        0.05344410985708237,
+        -0.7216421365737915,
+        -0.16229651868343353
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 2,
+      "refined_bucket": 6,
+      "source_count": 305,
+      "target_count": 111
+    },
+    {
+      "center": [
+        -0.7055087089538574,
+        -0.5327945947647095,
+        0.16604380309581757
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 3,
+      "refined_bucket": 7,
+      "source_count": 431,
+      "target_count": 318
+    },
+    {
+      "center": [
+        0.3830869197845459,
+        0.39218997955322266,
+        -0.0002571697114035487
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 4,
+      "refined_bucket": 8,
+      "source_count": 1078,
+      "target_count": 672
+    },
+    {
+      "center": [
+        0.7750222086906433,
+        0.3118347227573395,
+        -0.0084949666634202
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 5,
+      "refined_bucket": 9,
+      "source_count": 87,
+      "target_count": 609
+    },
+    {
+      "center": [
+        -0.6514634490013123,
+        -0.5388866662979126,
+        -0.1721964180469513
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 6,
+      "refined_bucket": 10,
+      "source_count": 527,
+      "target_count": 314
+    },
+    {
+      "center": [
+        0.2279052734375,
+        0.2875122129917145,
+        0.0030635560397058725
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 7,
+      "refined_bucket": 11,
+      "source_count": 106,
+      "target_count": 553
+    }
+  ],
+  "min_count": 12,
+  "n_buckets": 12,
+  "source_features": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/refined/giraffe_to_elephant_5k_parent4_min12/features/giraffe_to_elephant_5k_parent4_min12_source_onehot.npy",
+  "source_labels": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/34fb4_toy_animals_019_densecorr3d_5k_labels.npz",
+  "source_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/34fb4_toy_animals_019_densecorr3d_5k.obj",
+  "subparts_per_parent": 4,
+  "target_features": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/refined/giraffe_to_elephant_5k_parent4_min12/features/giraffe_to_elephant_5k_parent4_min12_target_onehot.npy",
+  "target_labels": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/2d6b3_toy_animals_009_densecorr3d_5k_labels.npz",
+  "target_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/2d6b3_toy_animals_009_densecorr3d_5k.obj"
+}

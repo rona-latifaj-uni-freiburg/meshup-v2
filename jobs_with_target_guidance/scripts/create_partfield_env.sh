@@ -8,7 +8,18 @@ TORCHVISION_VERSION=${PARTFIELD_TORCHVISION_VERSION:-0.19.0}
 TORCHAUDIO_VERSION=${PARTFIELD_TORCHAUDIO_VERSION:-2.4.0}
 CUDA_TAG=${PARTFIELD_CUDA_TAG:-cu124}
 
-source "$(conda info --base)/etc/profile.d/conda.sh"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MESHUP_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+WORKSPACE_ROOT="$(cd "${MESHUP_ROOT}/../.." && pwd)"
+MESHUP_CONDA_ROOT="${MESHUP_CONDA_ROOT:-${WORKSPACE_ROOT}/miniconda3}"
+
+if [[ ! -f "${MESHUP_CONDA_ROOT}/etc/profile.d/conda.sh" ]]; then
+  echo "Conda init script not found: ${MESHUP_CONDA_ROOT}/etc/profile.d/conda.sh" >&2
+  echo "Set MESHUP_CONDA_ROOT=/path/to/miniconda3 if the workspace layout changed." >&2
+  exit 1
+fi
+
+source "${MESHUP_CONDA_ROOT}/etc/profile.d/conda.sh"
 
 if conda env list | awk '{print $1}' | grep -qx "${ENV_NAME}"; then
   echo "Conda env '${ENV_NAME}' already exists; updating pip packages."

@@ -1,0 +1,11 @@
+source,output,verts,faces,target_faces_used,abs_vert_error
+blueberry.ply,blueberry_5k_upright_wheels_down.ply,4986,10000,10000,14
+bugatti-centodieci.ply,bugatti-centodieci_5k_upright_wheels_down.ply,4950,10000,10000,50
+kona.ply,kona_5k_upright_wheels_down.ply,5020,10000,10000,20
+old_car.ply,old_car_5k_upright_wheels_down.ply,4938,10000,10000,62
+oldie.ply,oldie_5k_upright_wheels_down.ply,4936,10000,10000,64
+passati.ply,passati_5k_upright_wheels_down.ply,5020,10000,10000,20
+red_car.ply,red_car_5k_upright_wheels_down.ply,5032,10000,10000,32
+santa_fe.ply,santa_fe_5k_upright_wheels_down.ply,4992,10000,10000,8
+usa_suv.ply,usa_suv_5k_upright_wheels_down.ply,5040,10000,10000,40
+vintage_car.ply,vintage_car_5k_upright_wheels_down.ply,4974,10000,10000,26

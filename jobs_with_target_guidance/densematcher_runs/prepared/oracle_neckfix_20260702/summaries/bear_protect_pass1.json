@@ -1,0 +1,72 @@
+{
+  "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/oracle_neckfix_20260702/base/meshes/96615_toy_animals_018_densecorr3d_5k.obj",
+  "labels": "jobs_with_target_guidance/densematcher_runs/prepared/oracle_neckfix_20260702/base/labels/96615_toy_animals_018_densecorr3d_5k_labels.npz",
+  "min_bucket_vertices": 300,
+  "max_vertices": 7000,
+  "input_vertices": 5002,
+  "output_vertices": 5391,
+  "split_meta": {
+    "buckets": {
+      "0": {
+        "start": 487,
+        "added": 0,
+        "end": 487,
+        "passes": 0
+      },
+      "1": {
+        "start": 2256,
+        "added": 0,
+        "end": 2256,
+        "passes": 0
+      },
+      "2": {
+        "start": 400,
+        "added": 0,
+        "end": 400,
+        "passes": 0
+      },
+      "3": {
+        "start": 480,
+        "added": 0,
+        "end": 480,
+        "passes": 0
+      },
+      "4": {
+        "start": 606,
+        "added": 0,
+        "end": 606,
+        "passes": 0
+      },
+      "5": {
+        "start": 99,
+        "added": 201,
+        "end": 300,
+        "passes": 1,
+        "reached_floor": true
+      },
+      "6": {
+        "start": 562,
+        "added": 0,
+        "end": 562,
+        "passes": 0
+      },
+      "7": {
+        "start": 112,
+        "added": 188,
+        "end": 300,
+        "passes": 1,
+        "reached_floor": true
+      }
+    },
+    "hit_vertex_cap": false
+  },
+  "output_geometry_check": {
+    "n_vertices": 5391,
+    "n_faces": 10778,
+    "duplicate_vertices": 0,
+    "zero_area_faces": 0,
+    "non_manifold_edges": 0,
+    "boundary_edges": 0,
+    "unreferenced_vertices": 0
+  }
+}

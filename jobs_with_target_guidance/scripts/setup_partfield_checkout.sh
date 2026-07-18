@@ -1,7 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-MESHUP_ROOT=${MESHUP_ROOT:-/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2}
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DEFAULT_MESHUP_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+
+MESHUP_ROOT=${MESHUP_ROOT:-${DEFAULT_MESHUP_ROOT}}
 PARTFIELD_REPO=${PARTFIELD_REPO:-${MESHUP_ROOT}/external/PartField}
 PARTFIELD_CKPT=${PARTFIELD_CKPT:-${PARTFIELD_REPO}/model/model_objaverse.ckpt}
 PARTFIELD_REPO_URL=${PARTFIELD_REPO_URL:-https://github.com/nv-tlabs/PartField.git}

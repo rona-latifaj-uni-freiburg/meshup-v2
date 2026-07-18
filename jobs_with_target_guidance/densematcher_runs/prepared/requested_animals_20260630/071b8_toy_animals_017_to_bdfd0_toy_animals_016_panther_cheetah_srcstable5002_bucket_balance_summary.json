@@ -1,0 +1,206 @@
+{
+  "base_variant": "5k",
+  "max_vertices": 6000,
+  "n_buckets": 8,
+  "output_variant": "panther_cheetah_srcstable5002",
+  "prepared_dir": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630",
+  "shared_bucket_counts": {
+    "group_00": 428,
+    "group_01": 2263,
+    "group_02": 443,
+    "group_03": 326,
+    "group_04": 510,
+    "group_05": 321,
+    "group_06": 638,
+    "group_07": 73
+  },
+  "smooth_alpha": 0.08,
+  "smooth_steps": 0,
+  "source": {
+    "balancing": {
+      "bucket_counts_after": {
+        "group_00": 428,
+        "group_01": 2263,
+        "group_02": 443,
+        "group_03": 326,
+        "group_04": 510,
+        "group_05": 321,
+        "group_06": 638,
+        "group_07": 73
+      },
+      "bucket_counts_before": {
+        "group_00": 428,
+        "group_01": 2263,
+        "group_02": 443,
+        "group_03": 326,
+        "group_04": 510,
+        "group_05": 321,
+        "group_06": 638,
+        "group_07": 73
+      },
+      "faces_after": 10000,
+      "operations_by_bucket": {
+        "group_00": {
+          "collapse": 0,
+          "split": 0
+        },
+        "group_01": {
+          "collapse": 0,
+          "split": 0
+        },
+        "group_02": {
+          "collapse": 0,
+          "split": 0
+        },
+        "group_03": {
+          "collapse": 0,
+          "split": 0
+        },
+        "group_04": {
+          "collapse": 0,
+          "split": 0
+        },
+        "group_05": {
+          "collapse": 0,
+          "split": 0
+        },
+        "group_06": {
+          "collapse": 0,
+          "split": 0
+        },
+        "group_07": {
+          "collapse": 0,
+          "split": 0
+        }
+      },
+      "operations_by_type": {
+        "collapse": 0,
+        "split": 0
+      },
+      "vertices_after": 5002,
+      "vertices_before": 5002
+    },
+    "bucket_vertex_counts": {
+      "group_00": 428,
+      "group_01": 2263,
+      "group_02": 443,
+      "group_03": 326,
+      "group_04": 510,
+      "group_05": 321,
+      "group_06": 638,
+      "group_07": 73
+    },
+    "colored_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/colored/071b8_toy_animals_017_densecorr3d_panther_cheetah_srcstable5002_groups.ply",
+    "faces": 10000,
+    "labels": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/071b8_toy_animals_017_densecorr3d_panther_cheetah_srcstable5002_labels.npz",
+    "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/071b8_toy_animals_017_densecorr3d_panther_cheetah_srcstable5002.obj",
+    "n_buckets": 8,
+    "object": "071b8_toy_animals_017",
+    "vertices": 5002
+  },
+  "source_base_bucket_counts": {
+    "group_00": 428,
+    "group_01": 2263,
+    "group_02": 443,
+    "group_03": 326,
+    "group_04": 510,
+    "group_05": 321,
+    "group_06": 638,
+    "group_07": 73
+  },
+  "source_object": "071b8_toy_animals_017",
+  "target": {
+    "balancing": {
+      "bucket_counts_after": {
+        "group_00": 428,
+        "group_01": 2263,
+        "group_02": 443,
+        "group_03": 326,
+        "group_04": 510,
+        "group_05": 321,
+        "group_06": 638,
+        "group_07": 73
+      },
+      "bucket_counts_before": {
+        "group_00": 391,
+        "group_01": 2454,
+        "group_02": 392,
+        "group_03": 617,
+        "group_04": 457,
+        "group_05": 84,
+        "group_06": 540,
+        "group_07": 61
+      },
+      "faces_after": 10006,
+      "operations_by_bucket": {
+        "group_00": {
+          "collapse": 0,
+          "split": 37
+        },
+        "group_01": {
+          "collapse": 191,
+          "split": 0
+        },
+        "group_02": {
+          "collapse": 0,
+          "split": 51
+        },
+        "group_03": {
+          "collapse": 291,
+          "split": 0
+        },
+        "group_04": {
+          "collapse": 0,
+          "split": 53
+        },
+        "group_05": {
+          "collapse": 0,
+          "split": 237
+        },
+        "group_06": {
+          "collapse": 0,
+          "split": 98
+        },
+        "group_07": {
+          "collapse": 0,
+          "split": 12
+        }
+      },
+      "operations_by_type": {
+        "collapse": 482,
+        "split": 488
+      },
+      "vertices_after": 5002,
+      "vertices_before": 4996
+    },
+    "bucket_vertex_counts": {
+      "group_00": 428,
+      "group_01": 2263,
+      "group_02": 443,
+      "group_03": 326,
+      "group_04": 510,
+      "group_05": 321,
+      "group_06": 638,
+      "group_07": 73
+    },
+    "colored_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/colored/bdfd0_toy_animals_016_densecorr3d_panther_cheetah_srcstable5002_groups.ply",
+    "faces": 10006,
+    "labels": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/bdfd0_toy_animals_016_densecorr3d_panther_cheetah_srcstable5002_labels.npz",
+    "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/bdfd0_toy_animals_016_densecorr3d_panther_cheetah_srcstable5002.obj",
+    "n_buckets": 8,
+    "object": "bdfd0_toy_animals_016",
+    "vertices": 5002
+  },
+  "target_base_bucket_counts": {
+    "group_00": 391,
+    "group_01": 2454,
+    "group_02": 392,
+    "group_03": 617,
+    "group_04": 457,
+    "group_05": 84,
+    "group_06": 540,
+    "group_07": 61
+  },
+  "target_mode": "source",
+  "target_object": "bdfd0_toy_animals_016"
+}

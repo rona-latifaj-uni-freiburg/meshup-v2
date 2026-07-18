@@ -1,0 +1,187 @@
+#!/bin/bash
+#SBATCH --job-name=sam3d_pf4000
+#SBATCH --partition=dev_gpu_h100
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=50G
+#SBATCH --time=00:30:00
+#SBATCH --array=0-8
+#SBATCH --output=jobs_with_target_guidance/cross_animal_spike_runs/logs/sam3d_pf4000_%A_%a.out
+#SBATCH --error=jobs_with_target_guidance/cross_animal_spike_runs/logs/sam3d_pf4000_%A_%a.err
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=latifajrona@gmail.com
+
+set -euo pipefail
+
+cd /pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2
+
+if [[ -z "${TASK_IDS:-}" && -n "${TASK_IDS_RANGE:-}" ]]; then
+  IFS='-' read -r TASK_RANGE_START TASK_RANGE_END <<< "${TASK_IDS_RANGE}"
+  if [[ -z "${TASK_RANGE_START:-}" || -z "${TASK_RANGE_END:-}" ]]; then
+    echo "Malformed TASK_IDS_RANGE=${TASK_IDS_RANGE}; expected START-END"
+    exit 2
+  fi
+  TASK_IDS=""
+  for ((task_id = TASK_RANGE_START; task_id <= TASK_RANGE_END; task_id++)); do
+    TASK_IDS+="${task_id} "
+  done
+fi
+
+if [[ -n "${TASK_IDS:-}" && -z "${SELECTED_PF4000_SINGLE_TASK:-}" && -z "${SAM3D_PF4000_SINGLE_TASK:-}" ]]; then
+  TASK_IDS="${TASK_IDS//,/ }"
+  echo "Running bundled selected PartField tasks: ${TASK_IDS}"
+  for task_id in ${TASK_IDS}; do
+    echo "======================================================"
+    echo "Starting bundled task ${task_id}"
+    SELECTED_PF4000_SINGLE_TASK=1 TASK_IDS= "$0" "${task_id}"
+    echo "Finished bundled task ${task_id}"
+  done
+  exit 0
+fi
+
+SPEC_FILE=${SPEC_FILE:-jobs_with_target_guidance/cross_animal_spike_runs/jobs/sam3d_selected_partfield_4000_specs.tsv}
+TASK_ID=${1:-${SLURM_ARRAY_TASK_ID:-}}
+
+if [[ -z "${TASK_ID}" ]]; then
+  echo "Missing task id. Submit as an array job or pass a zero-based task id."
+  exit 2
+fi
+
+if ! LINE=$(awk -F '\t' -v task_id="${TASK_ID}" '
+  BEGIN { n = 0; found = 0 }
+  /^[[:space:]]*#/ || NF == 0 { next }
+  {
+    if (n == task_id) {
+      print
+      found = 1
+      exit
+    }
+    n++
+  }
+  END { if (!found) exit 1 }
+' "${SPEC_FILE}"); then
+  echo "No spec row found for task id ${TASK_ID} in ${SPEC_FILE}"
+  exit 2
+fi
+
+IFS=$'\t' read -r \
+  PAIR_SLUG \
+  SOURCE \
+  TARGET \
+  SOURCE_NAME \
+  TARGET_NAME \
+  BUCKET \
+  SOURCE_PARTFIELD_LABELS \
+  TARGET_PARTFIELD_LABELS \
+  SOURCE_PARTFIELD_FEATURES \
+  TARGET_PARTFIELD_FEATURES \
+  PROMPT <<< "${LINE}"
+
+if [[ -z "${PAIR_SLUG}" || -z "${SOURCE}" || -z "${TARGET}" || -z "${BUCKET}" || -z "${PROMPT}" ]]; then
+  echo "Malformed spec row for task id ${TASK_ID}: ${LINE}"
+  exit 2
+fi
+
+OUTPUT_ROOT=${OUTPUT_ROOT:-./jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000}
+RUN_TAG_PREFIX=${RUN_TAG_PREFIX:-sam3d_selected}
+RUN_TAG=${RUN_TAG:-${RUN_TAG_PREFIX}_pf${BUCKET}_4000}
+
+export SOURCE TARGET SOURCE_NAME TARGET_NAME PAIR_SLUG PROMPT
+export SOURCE_PARTFIELD_LABELS TARGET_PARTFIELD_LABELS
+export SOURCE_PARTFIELD_FEATURES TARGET_PARTFIELD_FEATURES
+
+export PARTFIELD_N_BUCKETS="${BUCKET}"
+export PARTFIELD_USE_FEATURES=1
+export PARTFIELD_LABELS_ALIGNED=1
+export PARTFIELD_GUIDANCE_MODE=hard
+export PARTFIELD_HARD_WEIGHT=1.0
+export PARTFIELD_SOFT_WEIGHT=0.0
+export PARTFIELD_CHAMFER_WEIGHT_OVERRIDE=8000.0
+export GLOBAL_CHAMFER_WEIGHT_OVERRIDE=0.0
+
+export DEFORMATION_PARAMETERIZATION=jacobian
+export JACOBIAN_REG_WEIGHT=0.0
+export JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT=1000.0
+export JACOBIAN_OUTLIER_WEIGHT=0.0
+export JACOBIAN_OUTLIER_POWER=4.0
+export DEFORMATION_GRAD_CLIP_NORM=0.0
+export EDGE_STRETCH_WEIGHT=0.0
+export EDGE_STRETCH_THRESHOLD=1.5
+export EDGE_STRETCH_MAX_WEIGHT=1.0
+export EDGE_DISPLACEMENT_JUMP_WEIGHT=500.0
+export EDGE_DISPLACEMENT_JUMP_THRESHOLD=1.2
+export EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT=2.0
+
+export TARGET_VERTEX_CORRESPONDENCE_WEIGHT=0.0
+export TARGET_VERTEX_CORRESPONDENCE_WARMUP_EPOCHS=0
+export TARGET_SEMANTIC_VERTEX_CORRESPONDENCE_WEIGHT=0.0
+export TARGET_SEMANTIC_VERTEX_CORRESPONDENCE_WARMUP_EPOCHS=0
+export SEMANTIC_VERTEX_CORRESPONDENCE_REBUILD_CACHE=0
+export SEMANTIC_VERTEX_CORRESPONDENCE_LABEL_FILTER=soft
+export SEMANTIC_VERTEX_CORRESPONDENCE_SEMANTIC_WEIGHT=1.0
+export SEMANTIC_VERTEX_CORRESPONDENCE_POSITION_WEIGHT=0.20
+export SEMANTIC_VERTEX_CORRESPONDENCE_NORMAL_WEIGHT=0.05
+export SEMANTIC_VERTEX_CORRESPONDENCE_LABEL_MISMATCH_PENALTY=0.25
+export SEMANTIC_VERTEX_CORRESPONDENCE_TOPK=32
+export SEMANTIC_VERTEX_CORRESPONDENCE_MIN_SIMILARITY=0.05
+export SEMANTIC_VERTEX_CORRESPONDENCE_CONFIDENCE_MARGIN=0.04
+export SEMANTIC_VERTEX_CORRESPONDENCE_CONFIDENCE_FLOOR=0.25
+export SEMANTIC_VERTEX_CORRESPONDENCE_NONMUTUAL_WEIGHT=0.60
+export SEMANTIC_VERTEX_CORRESPONDENCE_TOPOLOGY_PRIOR_WEIGHT=0.0
+
+export TARGET_CHAMFER_WARMUP_EPOCHS=0
+export PARTFIELD_CHAMFER_WARMUP_EPOCHS=0
+export ENABLE_SOURCE_DINO_LOSS=0
+export ENABLE_TARGET_DINO_GUIDANCE=0
+export PARTFIELD_SOURCE_TO_TARGET_WEIGHT=0.35
+export PARTFIELD_TARGET_TO_SOURCE_WEIGHT=1.0
+export PARTFIELD_TGT_TO_SRC_ROBUST_SCALE=0.0
+export PARTFIELD_SRC_TO_TGT_UNMATCHED_WEIGHT=1.0
+export PARTFIELD_HARD_SEMANTIC_WEIGHT=0.0
+export PARTFIELD_HARD_GEOMETRY_SIGMA=1.0
+export PARTFIELD_SEMANTIC_CONFIDENCE_MIN_SIMILARITY=-1.0
+export PARTFIELD_SEMANTIC_CONFIDENCE_MARGIN=0.0
+export PARTFIELD_SEMANTIC_CONFIDENCE_FLOOR=1.0
+export PARTFIELD_SEMANTIC_CONFIDENCE_POWER=1.0
+export PARTFIELD_UNBALANCED_TRANSPORT_WEIGHT=0.0
+export PARTFIELD_UNBALANCED_TRANSPORT_RHO=0.30
+export ARTUR_SOFT_MATCH_SPACE=hybrid
+export ARTUR_SOFT_GEOMETRY_SIGMA=0.5
+export ARTUR_SOFT_SEMANTIC_WEIGHT=1.0
+export ARTUR_SOFT_TEMPERATURE=0.1
+export PARTFIELD_BALANCED_SINKHORN_ITERS=30
+export PARTFIELD_MIN_POINTS=12
+export PARTFIELD_CONTAINMENT_WEIGHT=0.0
+export PARTFIELD_CONTAINMENT_MARGIN=0.02
+export PARTFIELD_CONTAINMENT_MAX_WEIGHT=1.0
+export PARTFIELD_MOMENT_WEIGHT=0.0
+export PARTFIELD_MOMENT_EXTENT_WEIGHT=0.0
+export PARTFIELD_PROFILE_WEIGHT=0.0
+export PARTFIELD_PROFILE_BINS=9
+export PARTFIELD_PROFILE_TRIM=0.08
+export PARTFIELD_ANCHOR_WEIGHT=0.0
+export PARTFIELD_ANCHOR_GEOMETRY_SIGMA=0.35
+export PARTFIELD_ANCHOR_SEMANTIC_WEIGHT=0.50
+
+export LOG_INTERVAL_IM=250
+export SAVE_RENDERS_INTERVAL=250
+export SAVE_PCA_VISUALIZATION=0
+export PCA_INTERVAL=250
+export PCA_N_VIEWS=8
+export PCA_RENDER_RES=518
+export PCA_DINO_MODEL=dinov2_vitl14
+export PCA_USE_EXTRA_LOG_EPOCHS=0
+export EXTRA_LOG_EPOCHS=
+export VARIANT_SUFFIX="${PAIR_SLUG}_pf${BUCKET}_pfonly_best_asym035_jneighbor1000_jump500_4000ep"
+
+echo "Running selected PartField deformation task ${TASK_ID}: ${PAIR_SLUG} bucket ${BUCKET}"
+echo "SOURCE=${SOURCE}"
+echo "TARGET=${TARGET}"
+echo "OUTPUT_ROOT=${OUTPUT_ROOT}"
+echo "RUN_TAG=${RUN_TAG}"
+
+bash ./jobs_with_target_guidance/artur_soft_runs/jobs/run_artur_chamfer_ablation.sh \
+  1 \
+  4000 \
+  "${OUTPUT_ROOT}" \
+  "${RUN_TAG}"

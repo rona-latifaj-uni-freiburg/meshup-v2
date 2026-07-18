@@ -1,0 +1,76 @@
+{
+  "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/oracle_neckfix_20260702/meshes/panther_oracle_neckfix.obj",
+  "labels": "jobs_with_target_guidance/densematcher_runs/prepared/oracle_neckfix_20260702/labels/panther_oracle_neckfix_9buckets_unprotected_labels.npz",
+  "min_bucket_vertices": 300,
+  "max_vertices": 7000,
+  "input_vertices": 5229,
+  "output_vertices": 5229,
+  "split_meta": {
+    "buckets": {
+      "0": {
+        "start": 428,
+        "added": 0,
+        "end": 428,
+        "passes": 0
+      },
+      "1": {
+        "start": 1132,
+        "added": 0,
+        "end": 1132,
+        "passes": 0
+      },
+      "2": {
+        "start": 443,
+        "added": 0,
+        "end": 443,
+        "passes": 0
+      },
+      "3": {
+        "start": 326,
+        "added": 0,
+        "end": 326,
+        "passes": 0
+      },
+      "4": {
+        "start": 510,
+        "added": 0,
+        "end": 510,
+        "passes": 0
+      },
+      "5": {
+        "start": 321,
+        "added": 0,
+        "end": 321,
+        "passes": 0
+      },
+      "6": {
+        "start": 638,
+        "added": 0,
+        "end": 638,
+        "passes": 0
+      },
+      "7": {
+        "start": 300,
+        "added": 0,
+        "end": 300,
+        "passes": 0
+      },
+      "8": {
+        "start": 1131,
+        "added": 0,
+        "end": 1131,
+        "passes": 0
+      }
+    },
+    "hit_vertex_cap": false
+  },
+  "output_geometry_check": {
+    "n_vertices": 5229,
+    "n_faces": 10454,
+    "duplicate_vertices": 0,
+    "zero_area_faces": 0,
+    "non_manifold_edges": 0,
+    "boundary_edges": 0,
+    "unreferenced_vertices": 0
+  }
+}

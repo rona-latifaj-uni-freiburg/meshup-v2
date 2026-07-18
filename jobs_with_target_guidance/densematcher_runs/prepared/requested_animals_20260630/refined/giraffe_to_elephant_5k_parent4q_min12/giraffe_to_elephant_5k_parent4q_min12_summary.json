@@ -1,0 +1,398 @@
+{
+  "buckets": [
+    {
+      "center": [
+        -0.012380490079522133,
+        -0.7683398127555847,
+        0.13289043307304382
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 0,
+      "refined_bucket": 0,
+      "source_count": 125,
+      "target_count": 98
+    },
+    {
+      "center": [
+        -0.06582263112068176,
+        -0.6076345443725586,
+        0.15278279781341553
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 0,
+      "refined_bucket": 1,
+      "source_count": 124,
+      "target_count": 98
+    },
+    {
+      "center": [
+        -0.09710420668125153,
+        -0.4144652187824249,
+        0.1521778553724289
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 0,
+      "refined_bucket": 2,
+      "source_count": 124,
+      "target_count": 98
+    },
+    {
+      "center": [
+        -0.10527794063091278,
+        -0.25097793340682983,
+        0.14528746902942657
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 0,
+      "refined_bucket": 3,
+      "source_count": 124,
+      "target_count": 97
+    },
+    {
+      "center": [
+        -0.8804293870925903,
+        -0.15901601314544678,
+        0.007583014201372862
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 1,
+      "refined_bucket": 4,
+      "source_count": 439,
+      "target_count": 435
+    },
+    {
+      "center": [
+        -0.6318586468696594,
+        -0.035562094300985336,
+        -0.005755514372140169
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 1,
+      "refined_bucket": 5,
+      "source_count": 439,
+      "target_count": 435
+    },
+    {
+      "center": [
+        -0.35846108198165894,
+        -0.013413910754024982,
+        -0.015474384650588036
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 1,
+      "refined_bucket": 6,
+      "source_count": 439,
+      "target_count": 435
+    },
+    {
+      "center": [
+        -0.07326479256153107,
+        0.029837146401405334,
+        0.00595560297369957
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 1,
+      "refined_bucket": 7,
+      "source_count": 438,
+      "target_count": 434
+    },
+    {
+      "center": [
+        0.08446057140827179,
+        -0.7606241703033447,
+        -0.16416077315807343
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 2,
+      "refined_bucket": 8,
+      "source_count": 129,
+      "target_count": 101
+    },
+    {
+      "center": [
+        0.03966471925377846,
+        -0.5971733331680298,
+        -0.18034397065639496
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 2,
+      "refined_bucket": 9,
+      "source_count": 129,
+      "target_count": 101
+    },
+    {
+      "center": [
+        -0.03946573659777641,
+        -0.40836039185523987,
+        -0.17657388746738434
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 2,
+      "refined_bucket": 10,
+      "source_count": 129,
+      "target_count": 101
+    },
+    {
+      "center": [
+        -0.09611990302801132,
+        -0.24315163493156433,
+        -0.1729225367307663
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 2,
+      "refined_bucket": 11,
+      "source_count": 128,
+      "target_count": 101
+    },
+    {
+      "center": [
+        -0.681757926940918,
+        -0.7643141150474548,
+        0.14444895088672638
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 3,
+      "refined_bucket": 12,
+      "source_count": 108,
+      "target_count": 80
+    },
+    {
+      "center": [
+        -0.7231414914131165,
+        -0.6304728984832764,
+        0.15158984065055847
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 3,
+      "refined_bucket": 13,
+      "source_count": 108,
+      "target_count": 79
+    },
+    {
+      "center": [
+        -0.7078925371170044,
+        -0.44976478815078735,
+        0.18089064955711365
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 3,
+      "refined_bucket": 14,
+      "source_count": 108,
+      "target_count": 80
+    },
+    {
+      "center": [
+        -0.7093780636787415,
+        -0.2845058739185333,
+        0.1873958557844162
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 3,
+      "refined_bucket": 15,
+      "source_count": 107,
+      "target_count": 79
+    },
+    {
+      "center": [
+        0.10088475793600082,
+        0.22626625001430511,
+        -0.012826697900891304
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 4,
+      "refined_bucket": 16,
+      "source_count": 270,
+      "target_count": 168
+    },
+    {
+      "center": [
+        0.2929425537586212,
+        0.3120252192020416,
+        0.011476133018732071
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 4,
+      "refined_bucket": 17,
+      "source_count": 269,
+      "target_count": 168
+    },
+    {
+      "center": [
+        0.48011043667793274,
+        0.477939635515213,
+        0.003680890891700983
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 4,
+      "refined_bucket": 18,
+      "source_count": 270,
+      "target_count": 168
+    },
+    {
+      "center": [
+        0.6588329672813416,
+        0.552712082862854,
+        -0.0033392724581062794
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 4,
+      "refined_bucket": 19,
+      "source_count": 269,
+      "target_count": 168
+    },
+    {
+      "center": [
+        0.6265228986740112,
+        0.2246440351009369,
+        -0.0037612172309309244
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 5,
+      "refined_bucket": 20,
+      "source_count": 22,
+      "target_count": 153
+    },
+    {
+      "center": [
+        0.7317218780517578,
+        0.2484416514635086,
+        -0.0043639750219881535
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 5,
+      "refined_bucket": 21,
+      "source_count": 22,
+      "target_count": 152
+    },
+    {
+      "center": [
+        0.8243404626846313,
+        0.3010188043117523,
+        -0.0019297508988529444
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 5,
+      "refined_bucket": 22,
+      "source_count": 22,
+      "target_count": 152
+    },
+    {
+      "center": [
+        0.9191825985908508,
+        0.474670946598053,
+        -0.02404147945344448
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 5,
+      "refined_bucket": 23,
+      "source_count": 21,
+      "target_count": 152
+    },
+    {
+      "center": [
+        -0.5892408490180969,
+        -0.7889804840087891,
+        -0.17737750709056854
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 6,
+      "refined_bucket": 24,
+      "source_count": 132,
+      "target_count": 79
+    },
+    {
+      "center": [
+        -0.6399210095405579,
+        -0.6367213129997253,
+        -0.17350028455257416
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 6,
+      "refined_bucket": 25,
+      "source_count": 132,
+      "target_count": 78
+    },
+    {
+      "center": [
+        -0.6581380367279053,
+        -0.45271962881088257,
+        -0.17234601080417633
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 6,
+      "refined_bucket": 26,
+      "source_count": 132,
+      "target_count": 79
+    },
+    {
+      "center": [
+        -0.7191406488418579,
+        -0.27508649230003357,
+        -0.1655043661594391
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 6,
+      "refined_bucket": 27,
+      "source_count": 131,
+      "target_count": 78
+    },
+    {
+      "center": [
+        0.20343978703022003,
+        0.29522138833999634,
+        -0.2567608952522278
+      ],
+      "local_bucket": 0,
+      "parent_bucket": 7,
+      "refined_bucket": 28,
+      "source_count": 27,
+      "target_count": 139
+    },
+    {
+      "center": [
+        0.2715223729610443,
+        0.2834427058696747,
+        -0.12447639554738998
+      ],
+      "local_bucket": 1,
+      "parent_bucket": 7,
+      "refined_bucket": 29,
+      "source_count": 26,
+      "target_count": 138
+    },
+    {
+      "center": [
+        0.24615372717380524,
+        0.2810610830783844,
+        0.17255178093910217
+      ],
+      "local_bucket": 2,
+      "parent_bucket": 7,
+      "refined_bucket": 30,
+      "source_count": 27,
+      "target_count": 138
+    },
+    {
+      "center": [
+        0.1906919628381729,
+        0.29026952385902405,
+        0.22307486832141876
+      ],
+      "local_bucket": 3,
+      "parent_bucket": 7,
+      "refined_bucket": 31,
+      "source_count": 26,
+      "target_count": 138
+    }
+  ],
+  "method": "quantile",
+  "min_count": 12,
+  "n_buckets": 32,
+  "source_features": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/refined/giraffe_to_elephant_5k_parent4q_min12/features/giraffe_to_elephant_5k_parent4q_min12_source_onehot.npy",
+  "source_labels": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/34fb4_toy_animals_019_densecorr3d_5k_labels.npz",
+  "source_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/34fb4_toy_animals_019_densecorr3d_5k.obj",
+  "subparts_per_parent": 4,
+  "target_features": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/refined/giraffe_to_elephant_5k_parent4q_min12/features/giraffe_to_elephant_5k_parent4q_min12_target_onehot.npy",
+  "target_labels": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/2d6b3_toy_animals_009_densecorr3d_5k_labels.npz",
+  "target_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/2d6b3_toy_animals_009_densecorr3d_5k.obj"
+}

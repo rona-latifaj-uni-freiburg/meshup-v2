@@ -1,0 +1,106 @@
+{
+  "oracle": {
+    "raw_loss_at_initial_source": 0.15980377793312073,
+    "bucket_raw": 0.15980377793312073,
+    "active_buckets": 10,
+    "bucket_counts": {
+      "bucket_00": {
+        "source": 1106,
+        "target": 1106,
+        "active": true
+      },
+      "bucket_01": {
+        "source": 561,
+        "target": 561,
+        "active": true
+      },
+      "bucket_02": {
+        "source": 637,
+        "target": 637,
+        "active": true
+      },
+      "bucket_03": {
+        "source": 783,
+        "target": 783,
+        "active": true
+      },
+      "bucket_04": {
+        "source": 118,
+        "target": 118,
+        "active": true
+      },
+      "bucket_05": {
+        "source": 290,
+        "target": 290,
+        "active": true
+      },
+      "bucket_06": {
+        "source": 394,
+        "target": 394,
+        "active": true
+      },
+      "bucket_07": {
+        "source": 293,
+        "target": 293,
+        "active": true
+      },
+      "bucket_08": {
+        "source": 187,
+        "target": 187,
+        "active": true
+      },
+      "bucket_09": {
+        "source": 343,
+        "target": 343,
+        "active": true
+      }
+    }
+  },
+  "partfield": {
+    "raw_loss_at_initial_source": 0.13793763518333435,
+    "bucket_raw": 0.13793763518333435,
+    "active_buckets": 8,
+    "bucket_counts": {
+      "bucket_00": {
+        "source": 436,
+        "target": 584,
+        "active": true
+      },
+      "bucket_01": {
+        "source": 537,
+        "target": 456,
+        "active": true
+      },
+      "bucket_02": {
+        "source": 625,
+        "target": 520,
+        "active": true
+      },
+      "bucket_03": {
+        "source": 736,
+        "target": 684,
+        "active": true
+      },
+      "bucket_04": {
+        "source": 767,
+        "target": 775,
+        "active": true
+      },
+      "bucket_05": {
+        "source": 520,
+        "target": 710,
+        "active": true
+      },
+      "bucket_06": {
+        "source": 634,
+        "target": 651,
+        "active": true
+      },
+      "bucket_07": {
+        "source": 457,
+        "target": 332,
+        "active": true
+      }
+    }
+  }
+}

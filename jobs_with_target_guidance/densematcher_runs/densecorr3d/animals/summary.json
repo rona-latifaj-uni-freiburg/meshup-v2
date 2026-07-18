@@ -1,0 +1,92 @@
+{
+  "source": "DenseCorr3D",
+  "category": "animals",
+  "objects": [
+    {
+      "name": "071b8_toy_animals_017",
+      "object_dir": "external/DenseCorr3D/animals/071b8_toy_animals_017",
+      "mesh": "external/DenseCorr3D/animals/071b8_toy_animals_017/simple_mesh.obj",
+      "groups": "external/DenseCorr3D/animals/071b8_toy_animals_017/groups.txt",
+      "label_npz": "jobs_with_target_guidance/densematcher_runs/densecorr3d/animals/labels/071b8_toy_animals_017_densecorr3d_labels.npz",
+      "vertex_labels": "jobs_with_target_guidance/densematcher_runs/densecorr3d/animals/labels/071b8_toy_animals_017_vertex_labels.npy",
+      "face_labels": "jobs_with_target_guidance/densematcher_runs/densecorr3d/animals/labels/071b8_toy_animals_017_face_labels.npy",
+      "colored_mesh": "jobs_with_target_guidance/densematcher_runs/densecorr3d/animals/colored/071b8_toy_animals_017_densecorr3d_groups.ply",
+      "bucket_stats": {
+        "group_00": {
+          "vertices": 140
+        },
+        "group_01": {
+          "vertices": 766
+        },
+        "group_02": {
+          "vertices": 151
+        },
+        "group_03": {
+          "vertices": 112
+        },
+        "group_04": {
+          "vertices": 147
+        },
+        "group_05": {
+          "vertices": 102
+        },
+        "group_06": {
+          "vertices": 218
+        },
+        "group_07": {
+          "vertices": 20
+        }
+      },
+      "groups_path": "external/DenseCorr3D/animals/071b8_toy_animals_017/groups.txt",
+      "index_base": 0,
+      "n_groups": 8,
+      "n_vertices": 1656,
+      "duplicate_assignments": 0,
+      "unassigned_vertices_filled": 1,
+      "fill_unassigned": "nearest"
+    },
+    {
+      "name": "13cf7_toy_animals_055",
+      "object_dir": "external/DenseCorr3D/animals/13cf7_toy_animals_055",
+      "mesh": "external/DenseCorr3D/animals/13cf7_toy_animals_055/simple_mesh.obj",
+      "groups": "external/DenseCorr3D/animals/13cf7_toy_animals_055/groups.txt",
+      "label_npz": "jobs_with_target_guidance/densematcher_runs/densecorr3d/animals/labels/13cf7_toy_animals_055_densecorr3d_labels.npz",
+      "vertex_labels": "jobs_with_target_guidance/densematcher_runs/densecorr3d/animals/labels/13cf7_toy_animals_055_vertex_labels.npy",
+      "face_labels": "jobs_with_target_guidance/densematcher_runs/densecorr3d/animals/labels/13cf7_toy_animals_055_face_labels.npy",
+      "colored_mesh": "jobs_with_target_guidance/densematcher_runs/densecorr3d/animals/colored/13cf7_toy_animals_055_densecorr3d_groups.ply",
+      "bucket_stats": {
+        "group_00": {
+          "vertices": 99
+        },
+        "group_01": {
+          "vertices": 668
+        },
+        "group_02": {
+          "vertices": 107
+        },
+        "group_03": {
+          "vertices": 131
+        },
+        "group_04": {
+          "vertices": 253
+        },
+        "group_05": {
+          "vertices": 78
+        },
+        "group_06": {
+          "vertices": 155
+        },
+        "group_07": {
+          "vertices": 127
+        }
+      },
+      "groups_path": "external/DenseCorr3D/animals/13cf7_toy_animals_055/groups.txt",
+      "index_base": 0,
+      "n_groups": 8,
+      "n_vertices": 1618,
+      "duplicate_assignments": 0,
+      "unassigned_vertices_filled": 13,
+      "fill_unassigned": "nearest"
+    }
+  ]
+}

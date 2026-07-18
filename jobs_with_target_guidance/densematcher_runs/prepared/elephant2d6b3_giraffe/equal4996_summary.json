@@ -1,0 +1,36 @@
+{
+  "variant": "equal4996",
+  "source_object": "2d6b3_toy_animals_009",
+  "target_object": "34fb4_toy_animals_019",
+  "source_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/elephant2d6b3_giraffe/meshes/2d6b3_toy_animals_009_densecorr3d_equal4996.obj",
+  "target_mesh": "jobs_with_target_guidance/densematcher_runs/prepared/elephant2d6b3_giraffe/meshes/34fb4_toy_animals_019_densecorr3d_equal4996.obj",
+  "source_labels": "jobs_with_target_guidance/densematcher_runs/prepared/elephant2d6b3_giraffe/labels/2d6b3_toy_animals_009_densecorr3d_equal4996_labels.npz",
+  "target_labels": "jobs_with_target_guidance/densematcher_runs/prepared/elephant2d6b3_giraffe/labels/34fb4_toy_animals_019_densecorr3d_equal4996_labels.npz",
+  "source_colored": "jobs_with_target_guidance/densematcher_runs/prepared/elephant2d6b3_giraffe/colored/2d6b3_toy_animals_009_densecorr3d_equal4996_groups.ply",
+  "target_colored": "jobs_with_target_guidance/densematcher_runs/prepared/elephant2d6b3_giraffe/colored/34fb4_toy_animals_019_densecorr3d_equal4996_groups.ply",
+  "source_vertices": 4996,
+  "source_faces": 9992,
+  "target_vertices": 4996,
+  "target_faces": 10000,
+  "n_buckets": 8,
+  "source_bucket_vertex_counts": {
+    "group_00": 391,
+    "group_01": 1739,
+    "group_02": 404,
+    "group_03": 318,
+    "group_04": 668,
+    "group_05": 609,
+    "group_06": 314,
+    "group_07": 553
+  },
+  "target_bucket_vertex_counts": {
+    "group_00": 497,
+    "group_01": 1755,
+    "group_02": 515,
+    "group_03": 431,
+    "group_04": 1078,
+    "group_05": 87,
+    "group_06": 527,
+    "group_07": 106
+  }
+}

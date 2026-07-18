@@ -156,6 +156,16 @@ except ImportError as e:
     print(f"Warning: PartField Chamfer guidance not available: {e}")
     PARTFIELD_CHAMFER_AVAILABLE = False
 
+# Import semantic dense vertex correspondence guidance.
+try:
+    from jobs_with_target_guidance.semantic_vertex_correspondence import (
+        create_semantic_vertex_correspondence_loss,
+    )
+    SEMANTIC_VERTEX_CORRESPONDENCE_AVAILABLE = True
+except ImportError as e:
+    print(f"Warning: Semantic vertex correspondence guidance not available: {e}")
+    SEMANTIC_VERTEX_CORRESPONDENCE_AVAILABLE = False
+
 ################################################################################
 
 class TrackedVisualizer:
@@ -222,7 +232,9 @@ class TrackedVisualizer:
         """
         # Check if we should save at this epoch
         save_interval = getattr(self.cfg, 'save_renders_interval', self.cfg.log_interval_im)
-        if (epoch + 1) % save_interval != 0 and epoch != 0:
+        extra_epochs = set(int(e) for e in getattr(self.cfg, "extra_log_epochs", []) or [])
+        epoch_num = epoch + 1
+        if epoch != 0 and epoch_num % save_interval != 0 and epoch_num not in extra_epochs:
             return
         
         # Check if rendering is enabled
@@ -339,7 +351,12 @@ class TrackedVisualizer:
         """
         # Check if we should save at this epoch
         pca_interval = getattr(self.cfg, 'pca_interval', self.cfg.log_interval_im)
-        if (epoch + 1) % pca_interval != 0 and epoch != 0:
+        if bool(getattr(self.cfg, "pca_use_extra_log_epochs", False)):
+            extra_epochs = set(int(e) for e in getattr(self.cfg, "extra_log_epochs", []) or [])
+        else:
+            extra_epochs = set()
+        epoch_num = epoch + 1
+        if epoch != 0 and epoch_num % pca_interval != 0 and epoch_num not in extra_epochs:
             return
         
         # Check if PCA visualization is enabled
@@ -454,8 +471,20 @@ class TrackedVisualizer:
             fg_mask = ~bg_mask
 
             # Polarity guard for mesh renders: if fg/bg assignment is flipped,
-            # invert masks so the mesh region is treated as foreground.
-            all_fg_prior = np.concatenate([m.reshape(-1) for m in fg_prior_masks], axis=0)
+            # invert masks so the mesh region is treated as foreground. DINO
+            # PCA masks live on the patch grid, so downsample the render-space
+            # foreground prior to the same H_patches x W_patches layout.
+            fg_prior_patch_masks = []
+            for prior in fg_prior_masks:
+                prior_crop = prior[: H_patches * patch_size, : W_patches * patch_size]
+                prior_patch = prior_crop.reshape(
+                    H_patches,
+                    patch_size,
+                    W_patches,
+                    patch_size,
+                ).mean(axis=(1, 3)) > 0.05
+                fg_prior_patch_masks.append(prior_patch)
+            all_fg_prior = np.concatenate([m.reshape(-1) for m in fg_prior_patch_masks], axis=0)
 
             def _iou(a, b):
                 inter = np.logical_and(a, b).sum()
@@ -1117,6 +1146,23 @@ def loop_with_tracking(cfg):
     target_chamfer_warmup_epochs = int(
         getattr(cfg, 'target_mesh_chamfer_warmup_epochs', getattr(cfg, 'target_mesh_warmup_epochs', 0))
     )
+    target_vertex_corr_weight = float(getattr(cfg, 'target_mesh_vertex_correspondence_weight', 0.0))
+    target_vertex_corr_warmup_epochs = int(
+        getattr(cfg, 'target_mesh_vertex_correspondence_warmup_epochs', target_chamfer_warmup_epochs)
+    )
+    target_vertex_corr_available = False
+    target_semantic_vertex_corr_weight = float(
+        getattr(cfg, 'target_mesh_semantic_vertex_correspondence_weight', 0.0)
+    )
+    target_semantic_vertex_corr_warmup_epochs = int(
+        getattr(
+            cfg,
+            'target_mesh_semantic_vertex_correspondence_warmup_epochs',
+            target_chamfer_warmup_epochs,
+        )
+    )
+    target_semantic_vertex_corr_fn = None
+    target_semantic_vertex_corr_metadata = None
     target_part_chamfer_weight = float(getattr(cfg, 'target_mesh_part_chamfer_weight', 0.0))
     target_part_chamfer_points = int(getattr(cfg, 'target_mesh_part_chamfer_points', 512))
     target_part_chamfer_warmup_epochs = int(
@@ -1147,6 +1193,8 @@ def loop_with_tracking(cfg):
 
     if (
         target_chamfer_weight > 0
+        or target_vertex_corr_weight > 0
+        or target_semantic_vertex_corr_weight > 0
         or target_part_chamfer_weight > 0
         or target_semantic_bucket_weight > 0
         or target_sampart3d_weight > 0
@@ -1156,6 +1204,8 @@ def loop_with_tracking(cfg):
         if target_mesh_path is None:
             print("Warning: target mesh geometry guidance requested but no target_mesh path provided")
             target_chamfer_weight = 0.0
+            target_vertex_corr_weight = 0.0
+            target_semantic_vertex_corr_weight = 0.0
             target_part_chamfer_weight = 0.0
             target_semantic_bucket_weight = 0.0
             target_sampart3d_weight = 0.0
@@ -1174,12 +1224,119 @@ def loop_with_tracking(cfg):
                 import traceback
                 traceback.print_exc()
                 target_chamfer_weight = 0.0
+                target_vertex_corr_weight = 0.0
+                target_semantic_vertex_corr_weight = 0.0
                 target_part_chamfer_weight = 0.0
                 target_semantic_bucket_weight = 0.0
                 target_sampart3d_weight = 0.0
                 target_partfield_weight = 0.0
                 target_mesh_vertices = None
                 target_mesh_faces = None
+
+    if target_vertex_corr_weight > 0:
+        if target_mesh_vertices is None or target_mesh_faces is None:
+            print("Warning: vertex-correspondence target loss requested but target mesh arrays were not loaded")
+            target_vertex_corr_weight = 0.0
+        else:
+            source_faces_for_match = load_mesh.t_pos_idx.to(device)
+            same_vertices = target_mesh_vertices.shape[0] == load_mesh.v_pos.shape[0]
+            same_faces = target_mesh_faces.shape == source_faces_for_match.shape and torch.equal(
+                target_mesh_faces,
+                source_faces_for_match,
+            )
+            if same_vertices and same_faces:
+                target_vertex_corr_available = True
+                print("Topology-matched target vertex correspondence enabled:")
+                print(f"  - Vertices: {target_mesh_vertices.shape[0]}")
+                print(f"  - Weight: {target_vertex_corr_weight}")
+                print(f"  - Warmup epochs: {target_vertex_corr_warmup_epochs}")
+            else:
+                print("Warning: vertex-correspondence target loss disabled because source/target topology differs")
+                print(f"  - Source vertices/faces: {load_mesh.v_pos.shape[0]} / {source_faces_for_match.shape[0]}")
+                print(f"  - Target vertices/faces: {target_mesh_vertices.shape[0]} / {target_mesh_faces.shape[0]}")
+                target_vertex_corr_weight = 0.0
+
+    if target_semantic_vertex_corr_weight > 0:
+        if not SEMANTIC_VERTEX_CORRESPONDENCE_AVAILABLE:
+            print("Warning: semantic vertex correspondence requested but module is not available")
+            target_semantic_vertex_corr_weight = 0.0
+        elif target_mesh_vertices is None or target_mesh_faces is None:
+            print("Warning: semantic vertex correspondence requested but target mesh arrays were not loaded")
+            target_semantic_vertex_corr_weight = 0.0
+        else:
+            source_features_path = getattr(cfg, 'partfield_source_features', None)
+            target_features_path = getattr(cfg, 'partfield_target_features', None)
+            if source_features_path is None or target_features_path is None:
+                print("Warning: semantic vertex correspondence needs partfield_source_features and partfield_target_features")
+                target_semantic_vertex_corr_weight = 0.0
+            else:
+                try:
+                    semantic_vcorr_cache = getattr(cfg, 'semantic_vertex_correspondence_cache', None)
+                    if semantic_vcorr_cache is None:
+                        semantic_vcorr_cache = str(out_path / "semantic_vertex_correspondence" / "source_to_target.npz")
+                    target_semantic_vertex_corr_fn, semantic_vcorr = create_semantic_vertex_correspondence_loss(
+                        source_vertices=load_mesh.v_pos.to(device),
+                        source_faces=load_mesh.t_pos_idx.to(device),
+                        target_vertices=target_mesh_vertices,
+                        target_faces=target_mesh_faces,
+                        source_features_path=source_features_path,
+                        target_features_path=target_features_path,
+                        source_labels_path=getattr(cfg, 'partfield_source_labels', None),
+                        target_labels_path=getattr(cfg, 'partfield_target_labels', None),
+                        feature_mode=getattr(cfg, 'partfield_feature_mode', 'auto'),
+                        label_mode=getattr(cfg, 'partfield_label_mode', 'auto'),
+                        label_filter=getattr(cfg, 'semantic_vertex_correspondence_label_filter', 'soft'),
+                        semantic_weight=float(getattr(cfg, 'semantic_vertex_correspondence_semantic_weight', 1.0)),
+                        position_weight=float(getattr(cfg, 'semantic_vertex_correspondence_position_weight', 0.20)),
+                        normal_weight=float(getattr(cfg, 'semantic_vertex_correspondence_normal_weight', 0.05)),
+                        label_mismatch_penalty=float(
+                            getattr(cfg, 'semantic_vertex_correspondence_label_mismatch_penalty', 0.25)
+                        ),
+                        topk=int(getattr(cfg, 'semantic_vertex_correspondence_topk', 32)),
+                        min_similarity=float(getattr(cfg, 'semantic_vertex_correspondence_min_similarity', 0.05)),
+                        confidence_margin=float(
+                            getattr(cfg, 'semantic_vertex_correspondence_confidence_margin', 0.04)
+                        ),
+                        confidence_floor=float(
+                            getattr(cfg, 'semantic_vertex_correspondence_confidence_floor', 0.25)
+                        ),
+                        nonmutual_weight=float(
+                            getattr(cfg, 'semantic_vertex_correspondence_nonmutual_weight', 0.60)
+                        ),
+                        topology_prior_weight=float(
+                            getattr(cfg, 'semantic_vertex_correspondence_topology_prior_weight', 0.0)
+                        ),
+                        cache_path=semantic_vcorr_cache,
+                        rebuild_cache=bool(getattr(cfg, 'semantic_vertex_correspondence_rebuild_cache', False)),
+                    )
+                    target_semantic_vertex_corr_metadata = semantic_vcorr.metadata
+                    print("Semantic target vertex correspondence enabled:")
+                    print(f"  - Source features: {source_features_path}")
+                    print(f"  - Target features: {target_features_path}")
+                    print(f"  - Cache: {semantic_vcorr_cache}")
+                    print(f"  - Weight: {target_semantic_vertex_corr_weight}")
+                    print(f"  - Warmup epochs: {target_semantic_vertex_corr_warmup_epochs}")
+                    for key in (
+                        "same_topology",
+                        "mean_similarity",
+                        "p05_similarity",
+                        "mean_weight",
+                        "p05_weight",
+                        "mutual_fraction",
+                        "identity_fraction",
+                        "identity_prior_kept_fraction",
+                        "unique_target_fraction",
+                        "label_agreement_fraction",
+                    ):
+                        if key in target_semantic_vertex_corr_metadata:
+                            print(f"  - {key}: {target_semantic_vertex_corr_metadata[key]}")
+                except Exception as e:
+                    print(f"Warning: Could not initialize semantic vertex correspondence guidance: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    target_semantic_vertex_corr_weight = 0.0
+                    target_semantic_vertex_corr_fn = None
+                    target_semantic_vertex_corr_metadata = None
 
     if target_part_chamfer_weight > 0:
         if not PART_AWARE_CHAMFER_AVAILABLE:
@@ -1414,6 +1571,18 @@ def loop_with_tracking(cfg):
                         hard_weight=float(getattr(cfg, 'partfield_hard_weight', 1.0)),
                         source_to_target_weight=float(getattr(cfg, 'partfield_source_to_target_weight', 1.0)),
                         target_to_source_weight=float(getattr(cfg, 'partfield_target_to_source_weight', 1.0)),
+                        tgt_to_src_robust_scale=float(getattr(cfg, 'partfield_tgt_to_src_robust_scale', 0.0)),
+                        src_to_tgt_unmatched_weight=float(getattr(cfg, 'partfield_src_to_tgt_unmatched_weight', 1.0)),
+                        hard_semantic_weight=float(getattr(cfg, 'partfield_hard_semantic_weight', 0.0)),
+                        hard_geometry_sigma=float(getattr(cfg, 'partfield_hard_geometry_sigma', 1.0)),
+                        semantic_confidence_min_similarity=float(
+                            getattr(cfg, 'partfield_semantic_confidence_min_similarity', -1.0)
+                        ),
+                        semantic_confidence_margin=float(getattr(cfg, 'partfield_semantic_confidence_margin', 0.0)),
+                        semantic_confidence_floor=float(getattr(cfg, 'partfield_semantic_confidence_floor', 1.0)),
+                        semantic_confidence_power=float(getattr(cfg, 'partfield_semantic_confidence_power', 1.0)),
+                        unbalanced_transport_weight=float(getattr(cfg, 'partfield_unbalanced_transport_weight', 0.0)),
+                        unbalanced_transport_rho=float(getattr(cfg, 'partfield_unbalanced_transport_rho', 0.30)),
                         soft_weight=float(getattr(cfg, 'partfield_soft_weight', 1.0)),
                         soft_points=int(getattr(cfg, 'partfield_soft_points', target_partfield_points)),
                         soft_semantic_weight=float(getattr(cfg, 'partfield_soft_semantic_weight', 0.10)),
@@ -1423,6 +1592,14 @@ def loop_with_tracking(cfg):
                         containment_weight=float(getattr(cfg, 'partfield_containment_weight', 0.0)),
                         containment_margin=float(getattr(cfg, 'partfield_containment_margin', 0.02)),
                         containment_max_weight=float(getattr(cfg, 'partfield_containment_max_weight', 1.0)),
+                        moment_weight=float(getattr(cfg, 'partfield_moment_weight', 0.0)),
+                        moment_extent_weight=float(getattr(cfg, 'partfield_moment_extent_weight', 0.5)),
+                        profile_weight=float(getattr(cfg, 'partfield_profile_weight', 0.0)),
+                        profile_bins=int(getattr(cfg, 'partfield_profile_bins', 9)),
+                        profile_trim=float(getattr(cfg, 'partfield_profile_trim', 0.08)),
+                        anchor_weight=float(getattr(cfg, 'partfield_anchor_weight', 0.0)),
+                        anchor_geometry_sigma=float(getattr(cfg, 'partfield_anchor_geometry_sigma', 0.35)),
+                        anchor_semantic_weight=float(getattr(cfg, 'partfield_anchor_semantic_weight', 0.0)),
                         balanced_sinkhorn_iters=int(getattr(cfg, 'partfield_balanced_sinkhorn_iters', 30)),
                     )
                     target_partfield_scales.append({
@@ -1448,6 +1625,16 @@ def loop_with_tracking(cfg):
                 print(f"  - Hard/soft weights: {getattr(cfg, 'partfield_hard_weight', 1.0)} / {getattr(cfg, 'partfield_soft_weight', 1.0)}")
                 print(f"  - Hard Chamfer source->target weight: {getattr(cfg, 'partfield_source_to_target_weight', 1.0)}")
                 print(f"  - Hard Chamfer target->source weight: {getattr(cfg, 'partfield_target_to_source_weight', 1.0)}")
+                print(f"  - Hard Chamfer target->source robust scale: {getattr(cfg, 'partfield_tgt_to_src_robust_scale', 0.0)}")
+                print(f"  - Hard Chamfer source->target unmatched weight: {getattr(cfg, 'partfield_src_to_tgt_unmatched_weight', 1.0)}")
+                print(f"  - Hard Chamfer semantic match weight: {getattr(cfg, 'partfield_hard_semantic_weight', 0.0)}")
+                print(f"  - Hard Chamfer geometry sigma: {getattr(cfg, 'partfield_hard_geometry_sigma', 1.0)}")
+                print(f"  - Semantic confidence min similarity: {getattr(cfg, 'partfield_semantic_confidence_min_similarity', -1.0)}")
+                print(f"  - Semantic confidence margin: {getattr(cfg, 'partfield_semantic_confidence_margin', 0.0)}")
+                print(f"  - Semantic confidence floor: {getattr(cfg, 'partfield_semantic_confidence_floor', 1.0)}")
+                print(f"  - Semantic confidence power: {getattr(cfg, 'partfield_semantic_confidence_power', 1.0)}")
+                print(f"  - Unbalanced transport weight: {getattr(cfg, 'partfield_unbalanced_transport_weight', 0.0)}")
+                print(f"  - Unbalanced transport rho: {getattr(cfg, 'partfield_unbalanced_transport_rho', 0.30)}")
                 print(f"  - Soft points: {getattr(cfg, 'partfield_soft_points', target_partfield_points)}")
                 print(f"  - Soft semantic weight: {getattr(cfg, 'partfield_soft_semantic_weight', 0.10)}")
                 print(f"  - Soft temperature: {getattr(cfg, 'partfield_soft_temperature', 0.03)}")
@@ -1457,6 +1644,14 @@ def loop_with_tracking(cfg):
                 print(f"  - Containment weight: {getattr(cfg, 'partfield_containment_weight', 0.0)}")
                 print(f"  - Containment margin: {getattr(cfg, 'partfield_containment_margin', 0.02)}")
                 print(f"  - Containment max weight: {getattr(cfg, 'partfield_containment_max_weight', 1.0)}")
+                print(f"  - Moment weight: {getattr(cfg, 'partfield_moment_weight', 0.0)}")
+                print(f"  - Moment extent weight: {getattr(cfg, 'partfield_moment_extent_weight', 0.5)}")
+                print(f"  - Profile weight: {getattr(cfg, 'partfield_profile_weight', 0.0)}")
+                print(f"  - Profile bins: {getattr(cfg, 'partfield_profile_bins', 9)}")
+                print(f"  - Profile trim: {getattr(cfg, 'partfield_profile_trim', 0.08)}")
+                print(f"  - Anchor weight: {getattr(cfg, 'partfield_anchor_weight', 0.0)}")
+                print(f"  - Anchor geometry sigma: {getattr(cfg, 'partfield_anchor_geometry_sigma', 0.35)}")
+                print(f"  - Anchor semantic weight: {getattr(cfg, 'partfield_anchor_semantic_weight', 0.0)}")
                 print(f"  - Weight: {target_partfield_weight}")
                 print(f"  - Points per bucket: {target_partfield_points}")
                 print(f"  - Warmup epochs: {target_partfield_warmup_epochs}")
@@ -1921,6 +2116,73 @@ def loop_with_tracking(cfg):
                 tb.add_scalar("target_mesh_chamfer/total", target_chamfer_loss.item(), global_step=epoch)
                 tb.add_scalar("target_mesh_chamfer/warmup_factor", chamfer_warmup, global_step=epoch)
 
+            if target_vertex_corr_weight > 0 and target_vertex_corr_available and target_mesh_vertices is not None:
+                vertex_corr_warmup = _linear_ramp(epoch, target_vertex_corr_warmup_epochs, 0.0)
+                target_vertex_corr_raw = (n_vert - target_mesh_vertices).pow(2).sum(dim=1).mean()
+                target_vertex_corr_loss = (
+                    target_vertex_corr_raw
+                    * target_vertex_corr_weight
+                    * vertex_corr_warmup
+                    * target_schedule_factor
+                )
+                total_loss = total_loss + target_vertex_corr_loss
+
+                tb.add_scalar("target_mesh_vertex_correspondence/raw", target_vertex_corr_raw.item(), global_step=epoch)
+                tb.add_scalar("target_mesh_vertex_correspondence/total", target_vertex_corr_loss.item(), global_step=epoch)
+                tb.add_scalar("target_mesh_vertex_correspondence/warmup_factor", vertex_corr_warmup, global_step=epoch)
+
+            if target_semantic_vertex_corr_weight > 0 and target_semantic_vertex_corr_fn is not None:
+                semantic_vertex_corr_warmup = _linear_ramp(
+                    epoch,
+                    target_semantic_vertex_corr_warmup_epochs,
+                    0.0,
+                )
+                semantic_vertex_corr_result = target_semantic_vertex_corr_fn(n_vert, return_components=True)
+                target_semantic_vertex_corr_raw = semantic_vertex_corr_result["raw"]
+                target_semantic_vertex_corr_loss = (
+                    target_semantic_vertex_corr_raw
+                    * target_semantic_vertex_corr_weight
+                    * semantic_vertex_corr_warmup
+                    * target_schedule_factor
+                )
+                total_loss = total_loss + target_semantic_vertex_corr_loss
+
+                tb.add_scalar(
+                    "target_mesh_semantic_vertex_correspondence/raw",
+                    target_semantic_vertex_corr_raw.item(),
+                    global_step=epoch,
+                )
+                tb.add_scalar(
+                    "target_mesh_semantic_vertex_correspondence/total",
+                    target_semantic_vertex_corr_loss.item(),
+                    global_step=epoch,
+                )
+                tb.add_scalar(
+                    "target_mesh_semantic_vertex_correspondence/warmup_factor",
+                    semantic_vertex_corr_warmup,
+                    global_step=epoch,
+                )
+                tb.add_scalar(
+                    "target_mesh_semantic_vertex_correspondence/mean_weight",
+                    semantic_vertex_corr_result["mean_weight"].item(),
+                    global_step=epoch,
+                )
+                tb.add_scalar(
+                    "target_mesh_semantic_vertex_correspondence/min_weight",
+                    semantic_vertex_corr_result["min_weight"].item(),
+                    global_step=epoch,
+                )
+                tb.add_scalar(
+                    "target_mesh_semantic_vertex_correspondence/max_weight",
+                    semantic_vertex_corr_result["max_weight"].item(),
+                    global_step=epoch,
+                )
+                tb.add_scalar(
+                    "target_mesh_semantic_vertex_correspondence/unique_targets",
+                    semantic_vertex_corr_result["unique_targets"],
+                    global_step=epoch,
+                )
+
             if target_part_chamfer_weight > 0 and target_part_chamfer_fn is not None:
                 part_chamfer_warmup = _linear_ramp(epoch, target_part_chamfer_warmup_epochs, 0.0)
                 part_chamfer_result = target_part_chamfer_fn(n_vert, return_components=True)
@@ -1999,6 +2261,9 @@ def loop_with_tracking(cfg):
                         "soft_raw": n_vert.sum() * 0.0,
                         "global_raw": n_vert.sum() * 0.0,
                         "containment_raw": n_vert.sum() * 0.0,
+                        "moment_raw": n_vert.sum() * 0.0,
+                        "profile_raw": n_vert.sum() * 0.0,
+                        "anchor_raw": n_vert.sum() * 0.0,
                         "active_buckets": 0.0,
                         "buckets": {},
                     }
@@ -2027,6 +2292,18 @@ def loop_with_tracking(cfg):
                             partfield_result.get("containment_raw", n_vert.sum() * 0.0)
                             + scale_result.get("containment_raw", n_vert.sum() * 0.0) * scale_weight
                         )
+                        partfield_result["moment_raw"] = (
+                            partfield_result.get("moment_raw", n_vert.sum() * 0.0)
+                            + scale_result.get("moment_raw", n_vert.sum() * 0.0) * scale_weight
+                        )
+                        partfield_result["profile_raw"] = (
+                            partfield_result.get("profile_raw", n_vert.sum() * 0.0)
+                            + scale_result.get("profile_raw", n_vert.sum() * 0.0) * scale_weight
+                        )
+                        partfield_result["anchor_raw"] = (
+                            partfield_result.get("anchor_raw", n_vert.sum() * 0.0)
+                            + scale_result.get("anchor_raw", n_vert.sum() * 0.0) * scale_weight
+                        )
                         active_buckets_weighted += float(scale_result["active_buckets"]) * scale_weight
 
                         tb.add_scalar(
@@ -2047,6 +2324,21 @@ def loop_with_tracking(cfg):
                         tb.add_scalar(
                             f"target_mesh_partfield_chamfer/scales/{scale['name']}/containment_raw",
                             scale_result.get("containment_raw", n_vert.sum() * 0.0).item(),
+                            global_step=epoch,
+                        )
+                        tb.add_scalar(
+                            f"target_mesh_partfield_chamfer/scales/{scale['name']}/moment_raw",
+                            scale_result.get("moment_raw", n_vert.sum() * 0.0).item(),
+                            global_step=epoch,
+                        )
+                        tb.add_scalar(
+                            f"target_mesh_partfield_chamfer/scales/{scale['name']}/profile_raw",
+                            scale_result.get("profile_raw", n_vert.sum() * 0.0).item(),
+                            global_step=epoch,
+                        )
+                        tb.add_scalar(
+                            f"target_mesh_partfield_chamfer/scales/{scale['name']}/anchor_raw",
+                            scale_result.get("anchor_raw", n_vert.sum() * 0.0).item(),
                             global_step=epoch,
                         )
                         tb.add_scalar(
@@ -2078,6 +2370,9 @@ def loop_with_tracking(cfg):
                 tb.add_scalar("target_mesh_partfield_chamfer/soft_raw", partfield_result.get("soft_raw", n_vert.sum() * 0.0).item(), global_step=epoch)
                 tb.add_scalar("target_mesh_partfield_chamfer/global_raw", partfield_result["global_raw"].item(), global_step=epoch)
                 tb.add_scalar("target_mesh_partfield_chamfer/containment_raw", partfield_result.get("containment_raw", n_vert.sum() * 0.0).item(), global_step=epoch)
+                tb.add_scalar("target_mesh_partfield_chamfer/moment_raw", partfield_result.get("moment_raw", n_vert.sum() * 0.0).item(), global_step=epoch)
+                tb.add_scalar("target_mesh_partfield_chamfer/profile_raw", partfield_result.get("profile_raw", n_vert.sum() * 0.0).item(), global_step=epoch)
+                tb.add_scalar("target_mesh_partfield_chamfer/anchor_raw", partfield_result.get("anchor_raw", n_vert.sum() * 0.0).item(), global_step=epoch)
                 tb.add_scalar("target_mesh_partfield_chamfer/total", target_partfield_loss.item(), global_step=epoch)
                 tb.add_scalar("target_mesh_partfield_chamfer/warmup_factor", partfield_warmup, global_step=epoch)
                 tb.add_scalar("target_mesh_partfield_chamfer/active_buckets", partfield_result["active_buckets"], global_step=epoch)

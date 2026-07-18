@@ -1,0 +1,18 @@
+# Cross-animal spike sweep report
+
+Generated: Sat Jun 20 20:39:03 CEST 2026
+
+Run directories:
+- `./jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991`
+- `./jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/cat_to_bulldog_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090994`
+- `./jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/cat_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090988`
+- `./jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979`
+- `./jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090987`
+- `./jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_golden_retriever_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090983`
+- `./jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/golden_retriever_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090984`
+
+Each run has:
+- `mesh_final/mesh.obj`: final deformation mesh
+- `displacement_viz/outlier_analysis/summary.md`: simple spike/outlier report
+- `evaluation/target_metrics.json`: global and PartField evaluation metrics
+- `evaluation/partfield_part_metrics.csv`: per-part metrics

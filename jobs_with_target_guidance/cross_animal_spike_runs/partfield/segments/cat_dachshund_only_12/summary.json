@@ -1,0 +1,351 @@
+{
+  "n_buckets": 12,
+  "cluster_mode": "joint_kmeans",
+  "feature_mode": "auto",
+  "position_weight": 0.05,
+  "normal_weight": 0.0,
+  "items": {
+    "hound_to_cat_no_dino": {
+      "mesh_path": "experiments/dog_morphs/outputs/hound_to_cat_no_dino_exp/mesh_final/mesh.obj",
+      "feature_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_cat_no_dino_0_batch.npy",
+      "feature_rows": 9420,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 4712,
+      "n_faces": 9420,
+      "face_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_12/labels/hound_to_cat_no_dino_face_labels.npy",
+      "vertex_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_12/labels/hound_to_cat_no_dino_vertex_labels.npy",
+      "label_npz": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_12/labels/hound_to_cat_no_dino_partfield_labels.npz",
+      "colored_mesh": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_12/colored/hound_to_cat_no_dino_partfield_12_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 662,
+          "centroid_xyz01": [
+            0.7400000095367432,
+            0.2630999982357025,
+            0.3091999888420105
+          ],
+          "extent_xyz01": [
+            0.13439999520778656,
+            0.5814999938011169,
+            0.3555000126361847
+          ]
+        },
+        "bucket_01": {
+          "count": 69,
+          "centroid_xyz01": [
+            0.35580000281333923,
+            0.6215000152587891,
+            0.364300012588501
+          ],
+          "extent_xyz01": [
+            0.05429999902844429,
+            0.18979999423027039,
+            0.1005999967455864
+          ]
+        },
+        "bucket_02": {
+          "count": 6,
+          "centroid_xyz01": [
+            0.7800999879837036,
+            0.7674000263214111,
+            0.609499990940094
+          ],
+          "extent_xyz01": [
+            0.015799999237060547,
+            0.0035000001080334187,
+            0.10520000010728836
+          ]
+        },
+        "bucket_03": {
+          "count": 1143,
+          "centroid_xyz01": [
+            0.5878999829292297,
+            0.5285999774932861,
+            0.526199996471405
+          ],
+          "extent_xyz01": [
+            0.26260000467300415,
+            0.30649998784065247,
+            0.45320001244544983
+          ]
+        },
+        "bucket_04": {
+          "count": 738,
+          "centroid_xyz01": [
+            0.5412999987602234,
+            0.7440999746322632,
+            0.4869000017642975
+          ],
+          "extent_xyz01": [
+            0.32580000162124634,
+            0.12349999696016312,
+            0.43470001220703125
+          ]
+        },
+        "bucket_05": {
+          "count": 1143,
+          "centroid_xyz01": [
+            0.38989999890327454,
+            0.42750000953674316,
+            0.5335999727249146
+          ],
+          "extent_xyz01": [
+            0.18490000069141388,
+            0.678600013256073,
+            0.2387000024318695
+          ]
+        },
+        "bucket_06": {
+          "count": 3,
+          "centroid_xyz01": [
+            0.3643999993801117,
+            0.7335000038146973,
+            0.45570001006126404
+          ],
+          "extent_xyz01": [
+            0.004900000058114529,
+            0.013899999670684338,
+            0.01510000042617321
+          ]
+        },
+        "bucket_07": {
+          "count": 1399,
+          "centroid_xyz01": [
+            0.8988000154495239,
+            0.8083000183105469,
+            0.649399995803833
+          ],
+          "extent_xyz01": [
+            0.22859999537467957,
+            0.35830000042915344,
+            0.3626999855041504
+          ]
+        },
+        "bucket_08": {
+          "count": 1212,
+          "centroid_xyz01": [
+            0.42080000042915344,
+            0.44909998774528503,
+            0.2709999978542328
+          ],
+          "extent_xyz01": [
+            0.17759999632835388,
+            0.692799985408783,
+            0.23250000178813934
+          ]
+        },
+        "bucket_09": {
+          "count": 914,
+          "centroid_xyz01": [
+            0.188400000333786,
+            0.7516000270843506,
+            0.20880000293254852
+          ],
+          "extent_xyz01": [
+            0.3797999918460846,
+            0.13109999895095825,
+            0.4422999918460846
+          ]
+        },
+        "bucket_10": {
+          "count": 1406,
+          "centroid_xyz01": [
+            0.7731999754905701,
+            0.5914999842643738,
+            0.583899974822998
+          ],
+          "extent_xyz01": [
+            0.21170000731945038,
+            0.3887999951839447,
+            0.4383000135421753
+          ]
+        },
+        "bucket_11": {
+          "count": 725,
+          "centroid_xyz01": [
+            0.7853999733924866,
+            0.31290000677108765,
+            0.8352000117301941
+          ],
+          "extent_xyz01": [
+            0.21279999613761902,
+            0.5533999800682068,
+            0.32109999656677246
+          ]
+        }
+      }
+    },
+    "hound_to_dachshund": {
+      "mesh_path": "experiments/dog_morphs/outputs/hound_to_dachshund_exp/mesh_final/mesh.obj",
+      "feature_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_dachshund_0_batch.npy",
+      "feature_rows": 9420,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 4712,
+      "n_faces": 9420,
+      "face_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_12/labels/hound_to_dachshund_face_labels.npy",
+      "vertex_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_12/labels/hound_to_dachshund_vertex_labels.npy",
+      "label_npz": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_12/labels/hound_to_dachshund_partfield_labels.npz",
+      "colored_mesh": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_12/colored/hound_to_dachshund_partfield_12_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 679,
+          "centroid_xyz01": [
+            0.6574000120162964,
+            0.20880000293254852,
+            0.25429999828338623
+          ],
+          "extent_xyz01": [
+            0.16339999437332153,
+            0.5105000138282776,
+            0.3734999895095825
+          ]
+        },
+        "bucket_01": {
+          "count": 1088,
+          "centroid_xyz01": [
+            0.16670000553131104,
+            0.3637000024318695,
+            0.4514000117778778
+          ],
+          "extent_xyz01": [
+            0.1776999980211258,
+            0.5426999926567078,
+            0.3571999967098236
+          ]
+        },
+        "bucket_02": {
+          "count": 1098,
+          "centroid_xyz01": [
+            0.7451000213623047,
+            0.842199981212616,
+            0.504800021648407
+          ],
+          "extent_xyz01": [
+            0.26109999418258667,
+            0.33739998936653137,
+            1.0
+          ]
+        },
+        "bucket_03": {
+          "count": 1298,
+          "centroid_xyz01": [
+            0.4375999867916107,
+            0.4034999907016754,
+            0.5917999744415283
+          ],
+          "extent_xyz01": [
+            0.3743000030517578,
+            0.3474000096321106,
+            0.6459000110626221
+          ]
+        },
+        "bucket_04": {
+          "count": 1097,
+          "centroid_xyz01": [
+            0.40860000252723694,
+            0.6065999865531921,
+            0.6079000234603882
+          ],
+          "extent_xyz01": [
+            0.4417000114917755,
+            0.1867000013589859,
+            0.5745999813079834
+          ]
+        },
+        "bucket_05": {
+          "count": 39,
+          "centroid_xyz01": [
+            0.22859999537467957,
+            0.41850000619888306,
+            0.7063999772071838
+          ],
+          "extent_xyz01": [
+            0.11219999939203262,
+            0.11320000141859055,
+            0.25949999690055847
+          ]
+        },
+        "bucket_06": {
+          "count": 1385,
+          "centroid_xyz01": [
+            0.1559000015258789,
+            0.4253000020980835,
+            0.8215000033378601
+          ],
+          "extent_xyz01": [
+            0.18310000002384186,
+            0.5257999897003174,
+            0.29919999837875366
+          ]
+        },
+        "bucket_07": {
+          "count": 370,
+          "centroid_xyz01": [
+            0.892799973487854,
+            0.8248000144958496,
+            0.5526999831199646
+          ],
+          "extent_xyz01": [
+            0.17659999430179596,
+            0.20649999380111694,
+            0.4634000062942505
+          ]
+        },
+        "bucket_08": {
+          "count": 1,
+          "centroid_xyz01": [
+            0.27129998803138733,
+            0.4675999879837036,
+            0.43299999833106995
+          ],
+          "extent_xyz01": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "bucket_09": {
+          "count": 628,
+          "centroid_xyz01": [
+            0.06790000200271606,
+            0.46480000019073486,
+            0.8626999855041504
+          ],
+          "extent_xyz01": [
+            0.17560000717639923,
+            0.24230000376701355,
+            0.33399999141693115
+          ]
+        },
+        "bucket_10": {
+          "count": 1080,
+          "centroid_xyz01": [
+            0.7059000134468079,
+            0.5016999840736389,
+            0.5379999876022339
+          ],
+          "extent_xyz01": [
+            0.23109999299049377,
+            0.49149999022483826,
+            0.7907999753952026
+          ]
+        },
+        "bucket_11": {
+          "count": 657,
+          "centroid_xyz01": [
+            0.660099983215332,
+            0.22030000388622284,
+            0.8100000023841858
+          ],
+          "extent_xyz01": [
+            0.16590000689029694,
+            0.5117999911308289,
+            0.25609999895095825
+          ]
+        }
+      }
+    }
+  }
+}

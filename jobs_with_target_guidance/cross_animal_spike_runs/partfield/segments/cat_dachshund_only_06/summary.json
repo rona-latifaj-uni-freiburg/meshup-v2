@@ -1,0 +1,195 @@
+{
+  "n_buckets": 6,
+  "cluster_mode": "joint_kmeans",
+  "feature_mode": "auto",
+  "position_weight": 0.05,
+  "normal_weight": 0.0,
+  "items": {
+    "hound_to_cat_no_dino": {
+      "mesh_path": "experiments/dog_morphs/outputs/hound_to_cat_no_dino_exp/mesh_final/mesh.obj",
+      "feature_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_cat_no_dino_0_batch.npy",
+      "feature_rows": 9420,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 4712,
+      "n_faces": 9420,
+      "face_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_06/labels/hound_to_cat_no_dino_face_labels.npy",
+      "vertex_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_06/labels/hound_to_cat_no_dino_vertex_labels.npy",
+      "label_npz": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_06/labels/hound_to_cat_no_dino_partfield_labels.npz",
+      "colored_mesh": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_06/colored/hound_to_cat_no_dino_partfield_06_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 1484,
+          "centroid_xyz01": [
+            0.7621999979019165,
+            0.4311999976634979,
+            0.4205000102519989
+          ],
+          "extent_xyz01": [
+            0.19930000603199005,
+            0.7560999989509583,
+            0.5928000211715698
+          ]
+        },
+        "bucket_01": {
+          "count": 1007,
+          "centroid_xyz01": [
+            0.3813999891281128,
+            0.4122999906539917,
+            0.5315999984741211
+          ],
+          "extent_xyz01": [
+            0.16449999809265137,
+            0.6988000273704529,
+            0.21809999644756317
+          ]
+        },
+        "bucket_02": {
+          "count": 1077,
+          "centroid_xyz01": [
+            0.7782999873161316,
+            0.4027000069618225,
+            0.8026000261306763
+          ],
+          "extent_xyz01": [
+            0.22050000727176666,
+            0.6818000078201294,
+            0.385699987411499
+          ]
+        },
+        "bucket_03": {
+          "count": 1541,
+          "centroid_xyz01": [
+            0.8902999758720398,
+            0.7991999983787537,
+            0.6478999853134155
+          ],
+          "extent_xyz01": [
+            0.25929999351501465,
+            0.3799999952316284,
+            0.3626999855041504
+          ]
+        },
+        "bucket_04": {
+          "count": 2228,
+          "centroid_xyz01": [
+            0.32120001316070557,
+            0.5856000185012817,
+            0.2508000135421753
+          ],
+          "extent_xyz01": [
+            0.5181999802589417,
+            0.7412999868392944,
+            0.43700000643730164
+          ]
+        },
+        "bucket_05": {
+          "count": 2083,
+          "centroid_xyz01": [
+            0.5724999904632568,
+            0.6054999828338623,
+            0.5178999900817871
+          ],
+          "extent_xyz01": [
+            0.33739998936653137,
+            0.3788999915122986,
+            0.48089998960494995
+          ]
+        }
+      }
+    },
+    "hound_to_dachshund": {
+      "mesh_path": "experiments/dog_morphs/outputs/hound_to_dachshund_exp/mesh_final/mesh.obj",
+      "feature_path": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/no_dino_animals/part_feat_hound_to_dachshund_0_batch.npy",
+      "feature_rows": 9420,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 4712,
+      "n_faces": 9420,
+      "face_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_06/labels/hound_to_dachshund_face_labels.npy",
+      "vertex_labels": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_06/labels/hound_to_dachshund_vertex_labels.npy",
+      "label_npz": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_06/labels/hound_to_dachshund_partfield_labels.npz",
+      "colored_mesh": "jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/cat_dachshund_only_06/colored/hound_to_dachshund_partfield_06_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 1378,
+          "centroid_xyz01": [
+            0.6872000098228455,
+            0.3452000021934509,
+            0.33390000462532043
+          ],
+          "extent_xyz01": [
+            0.21819999814033508,
+            0.6761000156402588,
+            0.6154000163078308
+          ]
+        },
+        "bucket_01": {
+          "count": 2137,
+          "centroid_xyz01": [
+            0.13300000131130219,
+            0.4431999921798706,
+            0.8274999856948853
+          ],
+          "extent_xyz01": [
+            0.26759999990463257,
+            0.5324000120162964,
+            0.3553999960422516
+          ]
+        },
+        "bucket_02": {
+          "count": 943,
+          "centroid_xyz01": [
+            0.6646999716758728,
+            0.3061999976634979,
+            0.8098000288009644
+          ],
+          "extent_xyz01": [
+            0.1808999925851822,
+            0.6539000272750854,
+            0.2833999991416931
+          ]
+        },
+        "bucket_03": {
+          "count": 1548,
+          "centroid_xyz01": [
+            0.7802000045776367,
+            0.8292999863624573,
+            0.5260999798774719
+          ],
+          "extent_xyz01": [
+            0.3767000138759613,
+            0.38119998574256897,
+            1.0
+          ]
+        },
+        "bucket_04": {
+          "count": 1100,
+          "centroid_xyz01": [
+            0.17000000178813934,
+            0.3686000108718872,
+            0.44859999418258667
+          ],
+          "extent_xyz01": [
+            0.18410000205039978,
+            0.5533000230789185,
+            0.33160001039505005
+          ]
+        },
+        "bucket_05": {
+          "count": 2314,
+          "centroid_xyz01": [
+            0.43369999527931213,
+            0.4927000105381012,
+            0.5957000255584717
+          ],
+          "extent_xyz01": [
+            0.4438000023365021,
+            0.44749999046325684,
+            0.6459000110626221
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "base_variant": "pf8",
+  "max_vertices": 6000,
+  "n_buckets": 8,
+  "output_variant": "pf8bucketavg",
+  "prepared_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630",
+  "shared_bucket_counts": {
+    "group_00": 924,
+    "group_01": 431,
+    "group_02": 552,
+    "group_03": 630,
+    "group_04": 571,
+    "group_05": 569,
+    "group_06": 666,
+    "group_07": 655
+  },
+  "smooth_alpha": 0.08,
+  "smooth_steps": 1,
+  "source": {
+    "balancing": {
+      "bucket_counts_after": {
+        "group_00": 924,
+        "group_01": 431,
+        "group_02": 552,
+        "group_03": 630,
+        "group_04": 571,
+        "group_05": 569,
+        "group_06": 666,
+        "group_07": 655
+      },
+      "bucket_counts_before": {
+        "group_00": 862,
+        "group_01": 3,
+        "group_02": 454,
+        "group_03": 763,
+        "group_04": 673,
+        "group_05": 446,
+        "group_06": 1242,
+        "group_07": 557
+      },
+      "faces_after": 9996,
+      "operations_by_bucket": {
+        "group_00": {
+          "collapse": 0,
+          "split": 62
+        },
+        "group_01": {
+          "collapse": 0,
+          "split": 428
+        },
+        "group_02": {
+          "collapse": 0,
+          "split": 98
+        },
+        "group_03": {
+          "collapse": 133,
+          "split": 0
+        },
+        "group_04": {
+          "collapse": 102,
+          "split": 0
+        },
+        "group_05": {
+          "collapse": 0,
+          "split": 123
+        },
+        "group_06": {
+          "collapse": 576,
+          "split": 0
+        },
+        "group_07": {
+          "collapse": 0,
+          "split": 98
+        }
+      },
+      "operations_by_type": {
+        "collapse": 811,
+        "split": 809
+      },
+      "vertices_after": 4998,
+      "vertices_before": 5000
+    },
+    "bucket_vertex_counts": {
+      "group_00": 924,
+      "group_01": 431,
+      "group_02": 552,
+      "group_03": 630,
+      "group_04": 571,
+      "group_05": 569,
+      "group_06": 666,
+      "group_07": 655
+    },
+    "colored_mesh": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/colored/2d6b3_toy_animals_009_densecorr3d_pf8bucketavg_groups.ply",
+    "faces": 9996,
+    "labels": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/2d6b3_toy_animals_009_densecorr3d_pf8bucketavg_labels.npz",
+    "mesh": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/2d6b3_toy_animals_009_densecorr3d_pf8bucketavg.obj",
+    "n_buckets": 8,
+    "object": "2d6b3_toy_animals_009",
+    "vertices": 4998
+  },
+  "source_base_bucket_counts": {
+    "group_00": 862,
+    "group_01": 3,
+    "group_02": 454,
+    "group_03": 763,
+    "group_04": 673,
+    "group_05": 446,
+    "group_06": 1242,
+    "group_07": 557
+  },
+  "source_object": "2d6b3_toy_animals_009",
+  "target": {
+    "balancing": {
+      "bucket_counts_after": {
+        "group_00": 924,
+        "group_01": 431,
+        "group_02": 552,
+        "group_03": 630,
+        "group_04": 571,
+        "group_05": 569,
+        "group_06": 666,
+        "group_07": 655
+      },
+      "bucket_counts_before": {
+        "group_00": 986,
+        "group_01": 859,
+        "group_02": 649,
+        "group_03": 496,
+        "group_04": 469,
+        "group_05": 692,
+        "group_06": 91,
+        "group_07": 754
+      },
+      "faces_after": 10002,
+      "operations_by_bucket": {
+        "group_00": {
+          "collapse": 62,
+          "split": 0
+        },
+        "group_01": {
+          "collapse": 428,
+          "split": 0
+        },
+        "group_02": {
+          "collapse": 97,
+          "split": 0
+        },
+        "group_03": {
+          "collapse": 0,
+          "split": 134
+        },
+        "group_04": {
+          "collapse": 0,
+          "split": 102
+        },
+        "group_05": {
+          "collapse": 123,
+          "split": 0
+        },
+        "group_06": {
+          "collapse": 0,
+          "split": 575
+        },
+        "group_07": {
+          "collapse": 99,
+          "split": 0
+        }
+      },
+      "operations_by_type": {
+        "collapse": 809,
+        "split": 811
+      },
+      "vertices_after": 4998,
+      "vertices_before": 4996
+    },
+    "bucket_vertex_counts": {
+      "group_00": 924,
+      "group_01": 431,
+      "group_02": 552,
+      "group_03": 630,
+      "group_04": 571,
+      "group_05": 569,
+      "group_06": 666,
+      "group_07": 655
+    },
+    "colored_mesh": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/colored/34fb4_toy_animals_019_densecorr3d_pf8bucketavg_groups.ply",
+    "faces": 10002,
+    "labels": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/labels/34fb4_toy_animals_019_densecorr3d_pf8bucketavg_labels.npz",
+    "mesh": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630/meshes/34fb4_toy_animals_019_densecorr3d_pf8bucketavg.obj",
+    "n_buckets": 8,
+    "object": "34fb4_toy_animals_019",
+    "vertices": 4998
+  },
+  "target_base_bucket_counts": {
+    "group_00": 986,
+    "group_01": 859,
+    "group_02": 649,
+    "group_03": 496,
+    "group_04": 469,
+    "group_05": 692,
+    "group_06": 91,
+    "group_07": 754
+  },
+  "target_mode": "average",
+  "target_object": "34fb4_toy_animals_019"
+}

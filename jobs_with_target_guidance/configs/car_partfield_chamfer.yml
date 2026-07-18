@@ -88,6 +88,7 @@ pca_interval: 300
 pca_n_views: 8
 pca_render_res: 518
 pca_dino_model: dinov2_vitl14
+pca_use_extra_log_epochs: false
 
 # Existing target mesh DINO/render guidance
 use_dino_loss: false
@@ -112,6 +113,8 @@ target_mesh_view_rounding_fov: 2.0
 target_mesh_chamfer_weight: 750.0
 target_mesh_chamfer_warmup_epochs: 20
 target_mesh_chamfer_points: 3072
+target_mesh_vertex_correspondence_weight: 0.0
+target_mesh_vertex_correspondence_warmup_epochs: 0
 target_mesh_part_chamfer_weight: 0.0
 target_mesh_semantic_bucket_chamfer_weight: 0.0
 target_mesh_sampart3d_chamfer_weight: 0.0
@@ -137,6 +140,16 @@ partfield_guidance_mode: hard
 partfield_hard_weight: 1.0
 partfield_source_to_target_weight: 1.0
 partfield_target_to_source_weight: 1.0
+partfield_tgt_to_src_robust_scale: 0.0
+partfield_src_to_tgt_unmatched_weight: 1.0
+partfield_hard_semantic_weight: 0.0
+partfield_hard_geometry_sigma: 1.0
+partfield_semantic_confidence_min_similarity: -1.0
+partfield_semantic_confidence_margin: 0.0
+partfield_semantic_confidence_floor: 1.0
+partfield_semantic_confidence_power: 1.0
+partfield_unbalanced_transport_weight: 0.0
+partfield_unbalanced_transport_rho: 0.30
 partfield_soft_weight: 1.0
 partfield_soft_points: 512
 partfield_soft_semantic_weight: 0.10
@@ -148,6 +161,14 @@ partfield_balanced_sinkhorn_iters: 30
 partfield_containment_weight: 0.0
 partfield_containment_margin: 0.02
 partfield_containment_max_weight: 1.0
+partfield_moment_weight: 0.0
+partfield_moment_extent_weight: 0.5
+partfield_profile_weight: 0.0
+partfield_profile_bins: 9
+partfield_profile_trim: 0.08
+partfield_anchor_weight: 0.0
+partfield_anchor_geometry_sigma: 0.35
+partfield_anchor_semantic_weight: 0.0
 partfield_multiscale_enabled: false
 partfield_multiscale_buckets: [8, 12, 20]
 partfield_multiscale_stage_epochs: []

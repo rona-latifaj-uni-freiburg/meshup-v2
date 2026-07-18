@@ -15,8 +15,11 @@ venv/
 *.log
 *.out
 *.err
-*.png
 *.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
 
 # System files
 .DS_Store
@@ -27,6 +30,14 @@ Thumbs.db
 
 *.npy
 *.npz
+
+# Curated handoff arrays used as run inputs; keep optimizer/cache arrays ignored.
+!jobs_with_target_guidance/cross_animal_spike_runs/partfield/features/**/*.npy
+!jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/**/labels/*.npy
+!jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/**/labels/*.npz
+!jobs_with_target_guidance/densematcher_runs/**/labels/*.npy
+!jobs_with_target_guidance/densematcher_runs/**/labels/*.npz
+!jobs_with_target_guidance/oracle_semantic_buckets/**/labels/*.npz
 
 # Generated experiment artifacts
 outputs/
@@ -45,7 +56,10 @@ outputs/
 **/mesh_final/
 **/partfield_labels/
 **/pca_initial_final/
+**/pca_visualization/
 **/tmp/
+**/cache/
+**/caches/
 *.mp4
 *.tfevents.*
 
@@ -58,12 +72,11 @@ external/
 # Local mesh/data drops used by experiments
 meshes_from_SAM3D/
 new_car_meshes/
-jobs_with_sam3D/meshes/
+jobs_with_sam3D/meshes/new_car_meshes_tmp_oriented/
 
 # Older local job collections not needed for the target-guidance handoff
-dino_jobs/
-jobs/
-jobs_with_sam3D/
+/dino_jobs/
+/jobs/
 jobs_with_sampart3d_guidance/
 jobs_with_semantic_buckets/
 experiments/simple_meshes/
@@ -73,6 +86,19 @@ data/
 
 # External dependencies
 nvdiffrast/
+sam2/
+mesh_creator_for_meshup/sam2/
+mesh_creator_for_meshup/sam-3d-objects/
+
+# Local package managers, model caches, and build artifacts
+**/.cache/
+**/.conda_envs/
+**/.conda_pkgs*/
+**/.mypy_cache/
+**/.pytest_cache/
+**/build/
+**/dist/
+**/*.egg-info/
 
 # Local assistant/editor state
 .codex/

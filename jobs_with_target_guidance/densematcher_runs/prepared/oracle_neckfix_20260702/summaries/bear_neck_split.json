@@ -1,0 +1,16 @@
+{
+  "mesh": "jobs_with_target_guidance/densematcher_runs/prepared/oracle_neckfix_20260702/meshes/bear_oracle_neckfix.obj",
+  "labels": "jobs_with_target_guidance/densematcher_runs/prepared/oracle_neckfix_20260702/labels/bear_oracle_neckfix_8buckets_labels.npz",
+  "n_buckets_before": 8,
+  "n_buckets_after": 9,
+  "split": {
+    "torso_label": 1,
+    "neck_label": 8,
+    "vertical_axis": 1,
+    "median_y": 0.1616533249616623,
+    "torso_count_before": 2256,
+    "torso_count_after": 1128,
+    "neck_count_after": 1128,
+    "skipped": false
+  }
+}
