@@ -291,9 +291,9 @@ d_{\mathrm{Chamfer}}(P,Q) =
 \frac{1}{|Q|}\sum_{q \in Q}\min_{p \in P}\|q-p\|_2 .
 \]
 % [ARTUR-FIX 8/9, revised per Artur comment 2026-10-06] L1 distance now defined via cite{chamferl1} instead of explained in prose.
-Following~\cite{chamferl1}, the point-to-point term is L1-distance when $d(x,y) = \|x-y\|$ (the
-unsquared Euclidean norm used above), and L2-distance when $d(x,y) = \|x-y\|^2$ -- the squared
-variant used instead in this project's training loss (Section~\ref{sec:loss-function}). The first term asks whether every deformed source point is near the target. The second term asks
+The point-to-point term is L1 distance when $d(x,y) = \|x-y\|$ (the unsquared Euclidean norm used
+above), and L2 distance when $d(x,y) = \|x-y\|^2$~\cite{chamferl1} -- the squared variant used
+instead in this project's training loss (Section~\ref{sec:loss-function}). The first term asks whether every deformed source point is near the target. The second term asks
 whether every target point is covered by the deformed source. The symmetry is important: otherwise
 a small collapsed source could be close to part of the target while ignoring the rest.
 
@@ -752,13 +752,11 @@ Time limit & 30\,min & $\sim$4--18\,min & 20--30\,min (safe margin) \\
 \end{table}
 
 % [ARTUR-FIX 6/9, shortened per Artur comment 2026-10-06] Trimmed DenseMatcher stage breakdown; kept the headline ratio.
-This cost should be weighed against DenseMatcher's own reported inference cost: DenseMatcher takes
-$8.4$--$12.4$ seconds per pair on a single A100 GPU, a single feed-forward pass with no iterative
-optimization~\cite{densematcher}. This pipeline's $4$--$18$ minutes per pair
-(Table~\ref{tab:runtime}), measured on a comparable or faster GPU (H100 rather than A100), is
-therefore roughly $20$ to $130\times$ slower, since it solves a per-pair iterative optimization
-problem instead of one forward pass -- a real advantage for DenseMatcher that the accuracy
-comparison in Section~\ref{sec:densematcher-fair} does not capture on its own.
+DenseMatcher's paper reports that computing one pair's correspondence takes $8.4$--$12.4$ seconds
+on an A100 GPU, a single feed-forward pass with no iterative
+optimization~\cite{densematcher}. This pipeline takes $4$--$18$ minutes per pair
+(Table~\ref{tab:runtime}) on an H100, since it solves a per-pair iterative optimization
+problem instead of one forward pass.
 
 \subsection{Reproducibility and held-out evaluation}
 
