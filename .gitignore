@@ -106,3 +106,80 @@ mesh_creator_for_meshup/sam-3d-objects/
 
 # Download scratch logs
 wget-log*
+
+# --- Repo cleanup additions ---
+
+# Vendored pip install left in the working tree (use requirements.txt / README instead)
+jobs_with_target_guidance/vendor_pydeps/
+
+# Derived/regeneratable mesh previews (reproducible via orient_*.py / *_prepare_mesh_variants.py
+# against external/DenseCorr3D, which is already gitignored above)
+jobs_with_target_guidance/rotated_meshes/
+jobs_with_target_guidance/densematcher_runs/prepared/
+jobs_with_target_guidance/mesh_alignment_checks/
+
+# PyTorch JIT build cache
+.torch_extensions/
+
+# Superseded report drafts -- report_final/ is current
+/report/
+/report_new/
+
+# Duplicate convenience bundle (self-documented as copies; originals elsewhere)
+/mesh_collections/
+
+# Redundant archive (same files already under gitignored external/DenseCorr3D/densecorr_test/)
+/densecorr_test.zip
+
+# Unreferenced report exploration (not cited by main.tex; superseded by the tracked figures subset)
+report_final/generated_assets/
+report_final/densematcher_visuals/
+report_final/main_title_*.pdf
+report_final/report_for_overleaf.zip
+
+# Showcase video clips are curated and small; override the blanket *.mp4 ignore above for them
+!report_final/site_src/videos/**/*.mp4
+
+# report_final/figures/ has ~260 exploration renders; only the ones main.tex actually
+# \includegraphics/\input are tracked.
+report_final/figures/*
+!report_final/figures/bulldog_dachshund_spike_failure.png
+!report_final/figures/densematcher_category_comparison.png
+!report_final/figures/densematcher_deformation_coherence.png
+!report_final/figures/densematcher_edge_distortion_bars.png
+!report_final/figures/domain_animals_showcase.png
+!report_final/figures/domain_cars_showcase.png
+!report_final/figures/domain_shampoo_showcase.png
+!report_final/figures/failure_bucket_chamfer.png
+!report_final/figures/failure_vertex_heatmap.png
+!report_final/figures/failure_worst_buckets.png
+!report_final/figures/goldie_pug_tail_points.png
+!report_final/figures/good_vertex_heatmap_horse2_giraffe4.png
+!report_final/figures/partfield_bear_pose_mismatch.png
+!report_final/figures/partfield_buckets_giraffe_elephant.png
+!report_final/figures/partfield_buckets_horse2_giraffe4.png
+!report_final/figures/partfield_orientation_aligned.png
+!report_final/figures/partfield_orientation_unaligned.png
+!report_final/figures/pf8_bucket_balance_counts.png
+!report_final/figures/pipeline_overview_tikz.tex
+!report_final/figures/pipeline_tikz.tex
+!report_final/figures/qual_giraffe_to_elephant_grid.png
+!report_final/figures/qual_hammer_result.png
+!report_final/figures/qual_horse2_to_giraffe4_grid.png
+!report_final/figures/sam3d_extended_fscore.png
+!report_final/figures/title_row_3pairs.png
+!report_final/figures/tosca_dense_corr_ceiling.png
+
+# LaTeX build byproducts
+report_final/main.aux
+report_final/main.fdb_latexmk
+report_final/main.fls
+report_final/main.toc
+
+# Generated site HTML (build output of report_final/scripts/build_site*.py; docs/index.html
+# is the tracked, deployed copy for GitHub Pages)
+report_final/site_src/index.html
+report_final/site_src/index_simple.html
+
+# Internal scratch analysis, not part of the report
+report_final/scratch_self_intersection_analysis.md
