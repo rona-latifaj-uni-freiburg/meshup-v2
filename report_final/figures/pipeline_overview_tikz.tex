@@ -1,0 +1,64 @@
+% Bird's-eye system overview: LLM bucket selection -> PartField -> guided deformation.
+% Companion to pipeline_tikz.tex, which expands the PartField + deformation stages
+% (semantic extraction chain, loss terms, curriculum, evaluation branch) in full detail.
+\begin{tikzpicture}[
+  font=\sffamily\scriptsize,
+  node distance=9mm and 14mm,
+  stage/.style={draw, rounded corners=3pt, align=center, minimum height=20mm, inner sep=4pt, line width=0.7pt, text width=34mm},
+  input/.style={draw, rounded corners=2pt, align=center, minimum height=8mm, inner sep=3pt, line width=0.6pt, text width=24mm, fill=blue!12, draw=blue!55},
+  llm/.style={stage, fill=cyan!12, draw=cyan!60!black},
+  sem/.style={stage, fill=violet!12, draw=violet!55},
+  deform/.style={stage, fill=orange!15, draw=orange!70!black},
+  ev/.style={draw, rounded corners=2pt, align=center, minimum height=8mm, inner sep=3pt, line width=0.6pt, text width=44mm, fill=teal!12, draw=teal!60!black},
+  arr/.style={-{Latex[length=2.2mm]}, line width=0.6pt, draw=black!60},
+  darr/.style={arr, dashed},
+  lbl/.style={font=\sffamily\tiny, align=center, text width=26mm, color=black!55}
+]
+
+% --- inputs ---
+\node[input] (src) {Source Mesh\\ \tiny + Target Mesh};
+
+% --- stage 1: LLM bucket selector ---
+\node[llm, right=of src, yshift=-9mm] (llmbox) {
+  \textbf{Bucket Selector}\\[2pt]
+  \tiny Language model (opt-in) or\\
+  \tiny calibrated offline heuristic\\[3pt]
+  \tiny mesh stats + category\\
+  \tiny prior $\rightarrow$ bucket count $K$
+};
+\node[lbl, above=1mm of llmbox, xshift=2mm] {geometry stats,\\ category guess,\\ calibration priors};
+
+% --- stage 2: PartField ---
+\node[sem, right=of llmbox] (pfbox) {
+  \textbf{PartField Co-Segmentation}\\[2pt]
+  \tiny joint clustering into\\
+  \tiny $K$ buckets, source + target\\[3pt]
+  \tiny hard or soft\\
+  \tiny bucket assignment
+};
+\node[lbl, above=1mm of pfbox] {$K$ (bucket count)};
+
+% --- stage 3: guided deformation ---
+\node[deform, right=of pfbox] (defbox) {
+  \textbf{Guided Deformation}\\[2pt]
+  \tiny global + per-bucket Chamfer\\
+  \tiny + Jacobian regularization\\[3pt]
+  \tiny Adam, 3-stage curriculum,\\
+  \tiny $N$ epochs \quad (full detail: Fig.~\ref{fig:pipeline})
+};
+\node[lbl, above=1mm of defbox] {hard/soft\\ bucket labels};
+
+% --- output ---
+\node[input, right=of defbox] (out) {Deformed\\ Mesh};
+
+% --- evaluation, dashed / held out ---
+\node[ev, below=10mm of pfbox, xshift=18mm] (eval) {Held-out evaluation: DenseCorr3D groups $\cdot$ DenseMatcher predictions $\cdot$ surface metrics};
+
+% --- arrows ---
+\draw[arr] (src) -- (llmbox);
+\draw[arr] (llmbox) -- (pfbox);
+\draw[arr] (pfbox) -- (defbox);
+\draw[arr] (defbox) -- (out);
+\draw[darr] (out.south) .. controls +(0,-18mm) and +(24mm,10mm) .. (eval.east);
+
+\end{tikzpicture}

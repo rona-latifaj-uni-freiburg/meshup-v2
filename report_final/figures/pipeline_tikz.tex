@@ -1,0 +1,84 @@
+% Pipeline figure, native TikZ (no external renderer needed).
+% A separately editable, freely colorable version of the same diagram lives in
+% figures/pipeline.drawio -- open it in diagrams.net / draw.io to restyle or extend it;
+% this file is what actually gets compiled into the PDF report.
+\begin{tikzpicture}[
+  font=\sffamily\scriptsize,
+  node distance=10mm and 12mm,
+  box/.style={draw, rounded corners=2pt, align=center, minimum height=9mm, inner sep=3pt, line width=0.6pt, text width=26mm},
+  input/.style={box, fill=blue!12, draw=blue!55, text width=22mm},
+  prep/.style={box, fill=black!5, draw=black!45, text width=22mm},
+  sem/.style={box, fill=violet!12, draw=violet!55, text width=26mm},
+  deform/.style={box, fill=orange!15, draw=orange!70!black, text width=24mm},
+  loss/.style={box, fill=red!10, draw=red!55, minimum height=8mm, text width=30mm},
+  optim/.style={box, fill=green!12, draw=green!45!black, text width=24mm},
+  ev/.style={box, fill=teal!12, draw=teal!60!black, text width=26mm},
+  arr/.style={-{Latex[length=2mm]}, line width=0.5pt, draw=black!60},
+  darr/.style={arr, dashed}
+]
+
+% --- row 1: inputs ---
+\node[input] (src) {Source Mesh};
+\node[input, right=26mm of src] (tgt) {Target Mesh};
+
+% --- row 2: preprocessing ---
+\node[prep, below=of src] (prepS) {Preprocess\\ \tiny normalize / align / sample};
+\node[prep, below=of tgt] (prepT) {Preprocess\\ \tiny normalize / align / sample};
+
+% --- row 3: semantic extraction ---
+\node[sem, below=12mm of $(prepS)!0.5!(prepT)$, xshift=-30mm] (pf) {PartField Segmentation\\ \tiny PF5 $\to$ PF9};
+\node[sem, right=of pf] (buckets) {$K$ Semantic Buckets};
+\node[sem, right=of buckets] (assign) {Hard / Soft\\ Bucket Assignment};
+
+% --- row 4: deformation + losses ---
+\node[deform, below=16mm of assign] (deform) {Deformation Field\\ \tiny learnable per-vertex};
+
+\node[loss, right=18mm of deform, yshift=13mm] (lglobal) {$\mathcal{L}_{\text{global}}$ Chamfer};
+\node[loss, right=18mm of deform] (llocal) {$\mathcal{L}_{\text{local}}$ per-bucket Chamfer};
+\node[loss, right=18mm of deform, yshift=-13mm] (lreg) {$\mathcal{L}_{\text{reg}}$ neighbor-Jacobian};
+
+\node[loss, right=14mm of llocal, fill=red!18, text width=34mm] (ltotal) {$\mathcal{L}_{\text{total}} = \lambda_g\mathcal{L}_{\text{global}} + \lambda_l\mathcal{L}_{\text{local}} + \lambda_r\mathcal{L}_{\text{reg}}$};
+
+\node[optim, below=14mm of ltotal] (opt) {Adam Optimizer\\ \tiny 3-stage curriculum};
+
+\node[input, right=16mm of ltotal] (out) {Deformed Mesh};
+
+% --- row 5: evaluation branch ---
+\node[ev, below=24mm of deform, xshift=-8mm] (dc) {DenseCorr3D\\ Semantic Groups};
+\node[ev, right=14mm of dc, text width=30mm] (metrics) {Err $\cdot$ AUC $\cdot$ same-bucket $\cdot$ F-score};
+
+% --- arrows: preprocessing ---
+\draw[arr] (src) -- (prepS);
+\draw[arr] (tgt) -- (prepT);
+\draw[arr] (prepS.south) -- ++(0,-4mm) -| (pf.north);
+\draw[arr] (prepT.south) -- ++(0,-4mm) -| (assign.north);
+
+% --- semantic extraction chain ---
+\draw[arr] (pf) -- (buckets);
+\draw[arr] (buckets) -- (assign);
+
+% --- into deformation field ---
+\draw[arr] (assign.south) -- ++(0,-4mm) -| (deform.north);
+
+% --- losses ---
+\draw[arr] (deform) -- (lglobal);
+\draw[arr] (deform) -- (llocal);
+\draw[arr] (deform) -- (lreg);
+\draw[arr] (lglobal) -- (ltotal);
+\draw[arr] (llocal) -- (ltotal);
+\draw[arr] (lreg) -- (ltotal);
+\draw[arr] (ltotal) -- (opt);
+\draw[darr] (opt.west) .. controls +(-14mm,0) and +(0,-18mm) .. (deform.south);
+\draw[arr] (ltotal) -- (out);
+
+% --- evaluation branch (dashed, post-hoc only) ---
+\draw[darr] (out.south) .. controls +(0,-30mm) and +(20mm,-20mm) .. (metrics.south east);
+\draw[arr] (dc) -- (metrics);
+
+% --- eval box outline ---
+\begin{scope}[on background layer]
+\node[draw=teal!50, dashed, rounded corners=3pt, fit=(dc)(metrics), inner sep=4mm,
+      label={[font=\sffamily\tiny,teal!60!black]below:Evaluation only -- never used for training}] {};
+\end{scope}
+
+\end{tikzpicture}
