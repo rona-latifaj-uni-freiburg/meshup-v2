@@ -183,7 +183,7 @@ def render_pair_cell_shared_scale(image: np.ndarray, rect: tuple[int, int, int, 
     """Like render_pair_cell, but Source and Final share one normalization and one
     on-screen scale so their real relative size survives (see module docstring)."""
     x0, y0, w, h = rect
-    text_h = int(0.10 * h)
+    text_h = int(0.14 * h)
     panel_h = h - text_h
 
     gap = int(0.08 * w)
@@ -212,17 +212,17 @@ def render_pair_cell_shared_scale(image: np.ndarray, rect: tuple[int, int, int, 
     draw_arrow(image, x0 + panel_w + int(0.015 * w), x0 + panel_w + gap - int(0.015 * w), arrow_y, supersample)
 
     title_y = y0 + panel_h + int(text_h * 0.5)
-    (title_w, _), _ = cv2.getTextSize(title, cv2.FONT_HERSHEY_SIMPLEX, 0.56 * supersample, max(1, int(1.5 * supersample)))
+    (title_w, _), _ = cv2.getTextSize(title, cv2.FONT_HERSHEY_SIMPLEX, 0.9 * supersample, max(1, int(2.2 * supersample)))
     title_x = x0 + max(0, (w - title_w) // 2)
-    draw_text(image, title, (title_x, title_y), scale=0.56 * supersample, color=INK,
-              thickness=max(1, int(1.5 * supersample)))
+    draw_text(image, title, (title_x, title_y), scale=0.9 * supersample, color=INK,
+              thickness=max(1, int(2.2 * supersample)))
 
 
 def render_pair_cell(image: np.ndarray, rect: tuple[int, int, int, int], title: str,
                       src: Mesh, fin: Mesh, az: float, el: float, zoom: float,
                       supersample: int) -> None:
     x0, y0, w, h = rect
-    text_h = int(0.10 * h)
+    text_h = int(0.14 * h)
     panel_h = h - text_h
 
     gap = int(0.08 * w)
@@ -240,10 +240,10 @@ def render_pair_cell(image: np.ndarray, rect: tuple[int, int, int, int], title: 
     draw_arrow(image, x0 + panel_w + int(0.015 * w), x0 + panel_w + gap - int(0.015 * w), arrow_y, supersample)
 
     title_y = y0 + panel_h + int(text_h * 0.5)
-    (title_w, _), _ = cv2.getTextSize(title, cv2.FONT_HERSHEY_SIMPLEX, 0.56 * supersample, max(1, int(1.5 * supersample)))
+    (title_w, _), _ = cv2.getTextSize(title, cv2.FONT_HERSHEY_SIMPLEX, 0.9 * supersample, max(1, int(2.2 * supersample)))
     title_x = x0 + max(0, (w - title_w) // 2)
-    draw_text(image, title, (title_x, title_y), scale=0.56 * supersample, color=INK,
-              thickness=max(1, int(1.5 * supersample)))
+    draw_text(image, title, (title_x, title_y), scale=0.9 * supersample, color=INK,
+              thickness=max(1, int(2.2 * supersample)))
 
 
 def build_row() -> None:
