@@ -2,6 +2,17 @@
 
 This folder contains the next target-guidance direction for MeshUp: make the target pull geometry directly, but keep the pull part-aware so vertex identity stays meaningful.
 
+## Dependencies
+
+Besides the main `meshup_new` conda environment, a couple of evaluation scripts need:
+
+```
+pip install numpy==2.2.6 pygeodesic==0.1.11
+```
+
+(A `vendor_pydeps/` directory with these pre-installed used to be committed by accident; it is now
+gitignored -- install the two packages above instead of relying on it.)
+
 ## What Changed
 
 - `part_aware_chamfer.py` adds a part-aware Chamfer loss.
@@ -197,6 +208,30 @@ summary.json
 ```
 
 The labels are produced by `partfield_segment.py`, which clusters the PartField features jointly across all three cars. That means bucket `03`, for example, is fit as one shared feature-space cluster across the set rather than being an unrelated per-car id. PartField is class-agnostic, so the buckets do not come pre-named as `wheel` or `hood`; inspect the colored meshes and `summary.json` to decide which buckets correspond to wheels, front, rear, cabin, and so on.
+
+### Optional LLM Bucket Selection
+
+Manual bucket selection remains the default. To ask the new selector for a fixed bucket count in a direct deformation job, opt in with:
+
+```bash
+PARTFIELD_BUCKET_SELECTOR=llm \
+PARTFIELD_BUCKET_SELECTOR_MODE=fixed \
+PARTFIELD_BUCKET_SELECTOR_CANDIDATES=4,5,6,7,8 \
+bash jobs_with_target_guidance/artur_soft_runs/jobs/run_artur_chamfer_ablation.sh 1 4000 outputs llm_test
+```
+
+The selector writes a JSON decision file and then sets `PARTFIELD_N_BUCKETS` before `main.py` starts. Use `PARTFIELD_BUCKET_SELECTOR_PROVIDER=openai` with `OPENAI_API_KEY` for a live LLM call, or `PARTFIELD_BUCKET_SELECTOR_PROVIDER=heuristic` for offline calibration/dry runs.
+
+For DenseCorr3D sweep specs, filter an existing multi-bucket TSV into a fixed or range-selected TSV without modifying the original:
+
+```bash
+python -m jobs_with_target_guidance.select_partfield_buckets_for_specs \
+  --spec jobs_with_target_guidance/cross_animal_spike_runs/jobs/densecorr3d_backpack_expanded_pf0408_specs.tsv \
+  --output jobs_with_target_guidance/cross_animal_spike_runs/jobs/densecorr3d_backpack_expanded_llm_range_specs.tsv \
+  --decisions-output jobs_with_target_guidance/cross_animal_spike_runs/jobs/densecorr3d_backpack_expanded_llm_range_decisions.jsonl \
+  --mode range \
+  --provider openai
+```
 
 If you pass these generated label files directly into MeshUp, also pass:
 

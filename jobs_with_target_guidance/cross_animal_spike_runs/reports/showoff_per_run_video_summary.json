@@ -1,0 +1,1302 @@
+{
+  "input_paths": 16,
+  "unique_runs": 14,
+  "runs": [
+    {
+      "title": "horse2 -> giraffe4",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558",
+      "front_azimuth": 1.721677522955659,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 8,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/horse2_to_giraffe4_sam3d_selected_pf08_4000_hard_partfield_chamfer_only_horse2_to_giraffe4_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5816558/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "panda3 -> bear",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242",
+      "front_azimuth": -1.6519350981004335,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 7,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/panda3_to_bear_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_panda3_to_bear_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5817242/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "cat -> dachshund",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193",
+      "front_azimuth": -75.53236659123117,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 8,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/best_asym035_jump500/cat_to_dachshund_catdach_only_pf08_4000_hard_partfield_chamfer_only_catdach_only_08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5168193/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "elephant -> moose",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351",
+      "front_azimuth": -90.14152060139908,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 8,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_srcstable_requested_5k_best_asym035/elephant_to_moose_elephant_moose_srcstable5000_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5708351/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "goldie -> pug",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938",
+      "front_azimuth": -2.1415365703150213,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 9,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_more_selected_best_asym035_jump500_4000/goldie_to_pug_sam3d_more_selected_pf09_4000_hard_partfield_chamfer_only_goldie_to_pug_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829938/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "fox -> cat2",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235",
+      "front_azimuth": 5.898794014045606,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 7,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/sam3d_selected_best_asym035_jump500_4000/fox_to_cat2_sam3d_selected_pf07_4000_hard_partfield_chamfer_only_fox_to_cat2_pf07_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5818235/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "bulldog -> cat",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991",
+      "front_azimuth": -96.5799479254528,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_bulldog_no_dino_partfield_labels.npz:vertex_labels",
+      "n_buckets": 12,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090991/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "bulldog -> dachshund",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154",
+      "front_azimuth": -96.5799479254528,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_bulldog_no_dino_partfield_labels.npz:vertex_labels",
+      "n_buckets": 12,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/bulldog_to_dachshund_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5167154/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "dachshund -> cat",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979",
+      "front_azimuth": -97.86859325628778,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/partfield/segments/no_dino_animals_12/labels/hound_to_dachshund_partfield_labels.npz:vertex_labels",
+      "n_buckets": 12,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/topomatch_vcorr/dachshund_to_cat_topomatch_vcorr_dev_h100_hard_partfield_chamfer_only_topomatch_vcorr20000_vertex_2500ep_5090979/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "elephant -> giraffe",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438",
+      "front_azimuth": -90.14152060139908,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 8,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/densecorr3d_requested_animals_best_asym035/elephant_to_giraffe_5k_densecorr3d_requested_animals_hard_partfield_chamfer_only_densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500_4000ep_5546438/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "panther -> horse2",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892",
+      "front_azimuth": -116.84254785211513,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 6,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse2_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse2_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829892/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "horse2 -> dense giraffe",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931",
+      "front_azimuth": -88.2783225977337,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 8,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse2_to_dense_giraffe_chain_face_x_pf08_4000_hard_partfield_chamfer_only_horse2_to_dense_giraffe_pf08_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "panther -> horse3",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931",
+      "front_azimuth": -116.84254785211513,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 6,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/panther_to_horse3_chain_face_x_pf06_4000_hard_partfield_chamfer_only_panther_to_horse3_pf06_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    },
+    {
+      "title": "horse3 -> dense giraffe",
+      "run_dir": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931",
+      "front_azimuth": -89.52866999654914,
+      "color_source": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/partfield_labels/bucket_labels.npz:source_labels",
+      "n_buckets": 9,
+      "checkpoints": [
+        {
+          "label": "epoch 1",
+          "epoch": 1,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1.ply"
+        },
+        {
+          "label": "epoch 250",
+          "epoch": 250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_250.ply"
+        },
+        {
+          "label": "epoch 500",
+          "epoch": 500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_500.ply"
+        },
+        {
+          "label": "epoch 750",
+          "epoch": 750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_750.ply"
+        },
+        {
+          "label": "epoch 1000",
+          "epoch": 1000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1000.ply"
+        },
+        {
+          "label": "epoch 1250",
+          "epoch": 1250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1250.ply"
+        },
+        {
+          "label": "epoch 1500",
+          "epoch": 1500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1500.ply"
+        },
+        {
+          "label": "epoch 1750",
+          "epoch": 1750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_1750.ply"
+        },
+        {
+          "label": "epoch 2000",
+          "epoch": 2000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2000.ply"
+        },
+        {
+          "label": "epoch 2250",
+          "epoch": 2250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2250.ply"
+        },
+        {
+          "label": "epoch 2500",
+          "epoch": 2500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2500.ply"
+        },
+        {
+          "label": "epoch 2750",
+          "epoch": 2750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_2750.ply"
+        },
+        {
+          "label": "epoch 3000",
+          "epoch": 3000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3000.ply"
+        },
+        {
+          "label": "epoch 3250",
+          "epoch": 3250,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3250.ply"
+        },
+        {
+          "label": "epoch 3500",
+          "epoch": 3500,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3500.ply"
+        },
+        {
+          "label": "epoch 3750",
+          "epoch": 3750,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_3750.ply"
+        },
+        {
+          "label": "epoch 4000",
+          "epoch": 4000,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_epoch_4000.ply"
+        },
+        {
+          "label": "final",
+          "epoch": null,
+          "path": "/pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2/jobs_with_target_guidance/cross_animal_spike_runs/outputs/chain_panther_horse_giraffe_face_x_best_asym035_jump500_4000/horse3_to_dense_giraffe_chain_face_x_pf09_4000_hard_partfield_chamfer_only_horse3_to_dense_giraffe_pf09_pfonly_best_asym035_jneighbor1000_jump500_4000ep_4000ep_5829931/colored_meshes/mesh_final_position.ply"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "n_buckets": 6,
+  "cluster_mode": "joint_kmeans",
+  "feature_mode": "auto",
+  "position_weight": 0.05,
+  "normal_weight": 0.0,
+  "items": {
+    "horse2": {
+      "mesh_path": "jobs_with_target_guidance/aligned_meshes/chain_animals/panther_horse_giraffe_face_x_20260707/horse2.obj",
+      "feature_path": "jobs_with_target_guidance/partfield_features/chain_animals/panther_horse_giraffe_face_x_20260707/part_feat_horse2_0_batch.npy",
+      "feature_rows": 11000,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 5502,
+      "n_faces": 11000,
+      "face_labels": "jobs_with_target_guidance/full_pipeline_runs/horse2_to_giraffe_llm_bucket_20260819/partfield_segments/horse2_to_giraffe_buckets_6_6366963/labels/horse2_face_labels.npy",
+      "vertex_labels": "jobs_with_target_guidance/full_pipeline_runs/horse2_to_giraffe_llm_bucket_20260819/partfield_segments/horse2_to_giraffe_buckets_6_6366963/labels/horse2_vertex_labels.npy",
+      "label_npz": "jobs_with_target_guidance/full_pipeline_runs/horse2_to_giraffe_llm_bucket_20260819/partfield_segments/horse2_to_giraffe_buckets_6_6366963/labels/horse2_partfield_labels.npz",
+      "colored_mesh": "jobs_with_target_guidance/full_pipeline_runs/horse2_to_giraffe_llm_bucket_20260819/partfield_segments/horse2_to_giraffe_buckets_6_6366963/colored/horse2_partfield_06_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 2504,
+          "centroid_xyz01": [
+            0.1446000039577484,
+            0.6327000260353088,
+            0.5418000221252441
+          ],
+          "extent_xyz01": [
+            0.3050999939441681,
+            0.23109999299049377,
+            0.7250999808311462
+          ]
+        },
+        "bucket_01": {
+          "count": 2919,
+          "centroid_xyz01": [
+            0.8059999942779541,
+            0.8037999868392944,
+            0.4593999981880188
+          ],
+          "extent_xyz01": [
+            0.42480000853538513,
+            0.46320000290870667,
+            0.8134999871253967
+          ]
+        },
+        "bucket_02": {
+          "count": 903,
+          "centroid_xyz01": [
+            0.7383000254631042,
+            0.33309999108314514,
+            0.26570001244544983
+          ],
+          "extent_xyz01": [
+            0.20059999823570251,
+            0.6352999806404114,
+            0.428600013256073
+          ]
+        },
+        "bucket_03": {
+          "count": 1456,
+          "centroid_xyz01": [
+            0.3869999945163727,
+            0.4189000129699707,
+            0.26600000262260437
+          ],
+          "extent_xyz01": [
+            0.24390000104904175,
+            0.6606000065803528,
+            0.5368000268936157
+          ]
+        },
+        "bucket_04": {
+          "count": 1387,
+          "centroid_xyz01": [
+            0.3887999951839447,
+            0.4260999858379364,
+            0.7526999711990356
+          ],
+          "extent_xyz01": [
+            0.21449999511241913,
+            0.7626000046730042,
+            0.7376000285148621
+          ]
+        },
+        "bucket_05": {
+          "count": 1831,
+          "centroid_xyz01": [
+            0.7002999782562256,
+            0.4309999942779541,
+            0.6704000234603882
+          ],
+          "extent_xyz01": [
+            0.460999995470047,
+            0.6434999704360962,
+            0.9434000253677368
+          ]
+        }
+      }
+    },
+    "giraffe": {
+      "mesh_path": "jobs_with_target_guidance/aligned_meshes/chain_animals/panther_horse_giraffe_face_x_20260707/giraffe.obj",
+      "feature_path": "jobs_with_target_guidance/partfield_features/chain_animals/panther_horse_giraffe_face_x_20260707/part_feat_giraffe_0_batch.npy",
+      "feature_rows": 3802,
+      "feature_dim": 448,
+      "resolved_feature_mode": "face",
+      "n_vertices": 1896,
+      "n_faces": 3802,
+      "face_labels": "jobs_with_target_guidance/full_pipeline_runs/horse2_to_giraffe_llm_bucket_20260819/partfield_segments/horse2_to_giraffe_buckets_6_6366963/labels/giraffe_face_labels.npy",
+      "vertex_labels": "jobs_with_target_guidance/full_pipeline_runs/horse2_to_giraffe_llm_bucket_20260819/partfield_segments/horse2_to_giraffe_buckets_6_6366963/labels/giraffe_vertex_labels.npy",
+      "label_npz": "jobs_with_target_guidance/full_pipeline_runs/horse2_to_giraffe_llm_bucket_20260819/partfield_segments/horse2_to_giraffe_buckets_6_6366963/labels/giraffe_partfield_labels.npz",
+      "colored_mesh": "jobs_with_target_guidance/full_pipeline_runs/horse2_to_giraffe_llm_bucket_20260819/partfield_segments/horse2_to_giraffe_buckets_6_6366963/colored/giraffe_partfield_06_parts.ply",
+      "bucket_stats": {
+        "bucket_00": {
+          "count": 212,
+          "centroid_xyz01": [
+            0.04910000041127205,
+            0.3799000084400177,
+            0.5486999750137329
+          ],
+          "extent_xyz01": [
+            0.20640000700950623,
+            0.38690000772476196,
+            0.3027999997138977
+          ]
+        },
+        "bucket_01": {
+          "count": 967,
+          "centroid_xyz01": [
+            0.7071999907493591,
+            0.7627000212669373,
+            0.5072000026702881
+          ],
+          "extent_xyz01": [
+            0.6567000150680542,
+            0.5135999917984009,
+            0.5490000247955322
+          ]
+        },
+        "bucket_02": {
+          "count": 549,
+          "centroid_xyz01": [
+            0.4657000005245209,
+            0.2847999930381775,
+            0.20280000567436218
+          ],
+          "extent_xyz01": [
+            0.22020000219345093,
+            0.6169000267982483,
+            0.42750000953674316
+          ]
+        },
+        "bucket_03": {
+          "count": 707,
+          "centroid_xyz01": [
+            0.1956000030040741,
+            0.30720001459121704,
+            0.2020999938249588
+          ],
+          "extent_xyz01": [
+            0.3248000144958496,
+            0.5867000222206116,
+            0.4814999997615814
+          ]
+        },
+        "bucket_04": {
+          "count": 740,
+          "centroid_xyz01": [
+            0.15240000188350677,
+            0.3248000144958496,
+            0.7421000003814697
+          ],
+          "extent_xyz01": [
+            0.3231000006198883,
+            0.611299991607666,
+            0.5673999786376953
+          ]
+        },
+        "bucket_05": {
+          "count": 627,
+          "centroid_xyz01": [
+            0.4169999957084656,
+            0.3237999975681305,
+            0.7031000256538391
+          ],
+          "extent_xyz01": [
+            0.2345999926328659,
+            0.6252999901771545,
+            0.9491000175476074
+          ]
+        }
+      }
+    }
+  }
+}

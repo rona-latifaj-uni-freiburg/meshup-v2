@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semantic-Part-Preserving Mesh Deformation — Results Showcase</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg-alt: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --accent: #58a6ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: var(--accent); }
+  header {
+    padding: 3.2rem 1.5rem 2.2rem;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  header h1 {
+    font-size: 2.1rem;
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.01em;
+  }
+  header p.lede {
+    color: var(--text-dim);
+    max-width: 68ch;
+    font-size: 1.02rem;
+  }
+  .badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.1rem;
+  }
+  .badge {
+    border: 1px solid var(--border);
+    background: var(--bg-alt);
+    color: var(--text-dim);
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+  }
+  section {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 1.6rem 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.6rem;
+    margin-top: 0.4rem;
+  }
+  .showreels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+    margin-top: 1.2rem;
+  }
+  @media (max-width: 860px) { .showreels { grid-template-columns: 1fr; } }
+  .showreel-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .showreel-card video { width: 100%; display: block; background: #000; }
+  .showreel-card .cap {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.3rem;
+    margin-top: 1.3rem;
+  }
+  .card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1rem 0.5rem;
+    gap: 0.6rem;
+  }
+  .card-head h3 {
+    font-size: 1.0rem;
+    margin: 0;
+    font-weight: 600;
+  }
+  .card-head .arrow { color: var(--text-dim); }
+  .dataset-chip {
+    font-size: 0.68rem;
+    white-space: nowrap;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--dc) 18%, transparent);
+    color: var(--dc);
+    border: 1px solid color-mix(in srgb, var(--dc) 45%, transparent);
+  }
+  .video-wrap { background: #000; }
+  video.player { width: 100%; display: block; max-height: 260px; }
+  .toggle-row {
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.6rem 1rem 0.2rem;
+  }
+  .toggle-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.76rem;
+    cursor: pointer;
+  }
+  .toggle-btn.active {
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+    border-color: var(--accent);
+    color: var(--text);
+  }
+  .metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0.7rem 1rem 0.2rem;
+  }
+  .chip {
+    font-size: 0.72rem;
+    padding: 0.22rem 0.5rem;
+    border-radius: 6px;
+    background: #0d1117;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+  .chip.pattern { color: var(--pc); border-color: color-mix(in srgb, var(--pc) 50%, transparent); }
+  .chip.muted { color: var(--text-dim); font-style: italic; }
+  .method-line {
+    padding: 0.3rem 1rem 0.9rem;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+  }
+  .failure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .failure-grid figure {
+    margin: 0;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .failure-grid img { width: 100%; display: block; }
+  .failure-grid figcaption {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+  .note {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 0.9rem 1.1rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  footer {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Semantic-Part-Preserving Mesh-to-Mesh Deformation</h1>
+  <p class="lede">
+    Results showcase for the study project pipeline: a source animal mesh is deformed toward a
+    target animal mesh under a global Chamfer loss plus a PartField-bucket-guided local Chamfer
+    loss and a neighbor-Jacobian regularizer. This page is a local viewer — open it directly in a
+    browser, or run <code>python3 -m http.server</code> in this folder to view it over the local network.
+  </p>
+  <div class="badges">
+    <span class="badge">14 showcased pairs</span>
+    <span class="badge">7 with DenseCorr3D geodesic metrics</span>
+    <span class="badge">PartField-guided (PF5–PF9)</span>
+    <span class="badge">Datasets: DenseCorr3D · TOSCA · self-created SAM3D set</span>
+  </div>
+</header>
+
+<section>
+  <h2>Showreels</h2>
+  <div class="showreels">
+    <div class="showreel-card">
+      <video controls preload="none" muted playsinline
+             src="showoff_deformation_slow_partfield_showreel.mp4"></video>
+      <div class="cap">All deformations, slow — full compilation across pairs.</div>
+    </div>
+    <div class="showreel-card">
+      <video controls preload="none" muted playsinline
+             src="showoff_start_final_partfield_showreel.mp4"></video>
+      <div class="cap">Start vs. final, colored side by side — semantic buckets visualized as consistent colors from source to target.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Per-pair results (14)</h2>
+  <div class="grid">
+    
+      <article class="card">
+        <div class="card-head">
+          <h3>horse2 <span class="arrow">→</span> giraffe4</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/01_horse2_giraffe4_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/01_horse2_giraffe4_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/01_horse2_giraffe4_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip" title="Mean F-score at Chamfer threshold 0.02">F@0.02 0.985</span>
+          <span class="chip" title="DenseCorr3D-style AUC of threshold-accuracy curve">AUC 0.816</span>
+          <span class="chip" title="Worst-performing semantic bucket F-score">min-bucket F 0.960</span>
+          <span class="chip pattern" style="--pc:#3fb950" title="Qualitative bucket-error pattern">Uniformly good</span>
+        </div>
+        <div class="method-line">guided by PartField · scored with SAM3D selected eval set</div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>panda3 <span class="arrow">→</span> bear</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/02_panda3_bear_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/02_panda3_bear_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/02_panda3_bear_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip" title="Mean F-score at Chamfer threshold 0.02">F@0.02 0.986</span>
+          <span class="chip" title="DenseCorr3D-style AUC of threshold-accuracy curve">AUC 0.721</span>
+          <span class="chip" title="Worst-performing semantic bucket F-score">min-bucket F 0.976</span>
+          <span class="chip pattern" style="--pc:#3fb950" title="Qualitative bucket-error pattern">Uniformly good</span>
+        </div>
+        <div class="method-line">guided by PartField · scored with SAM3D selected eval set</div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>cat <span class="arrow">→</span> dachshund</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D / TOSCA</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/03_cat_dachshund_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/03_cat_dachshund_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/03_cat_dachshund_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip muted">no DenseCorr3D geodesic metric (pair outside the annotated animal category)</span>
+        </div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>elephant <span class="arrow">→</span> moose</h3>
+          <span class="dataset-chip" style="--dc:#58a6ff">DenseCorr3D</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/04_elephant_moose_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/04_elephant_moose_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/04_elephant_moose_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip" title="Mean F-score at Chamfer threshold 0.02">F@0.02 0.886</span>
+          <span class="chip" title="DenseCorr3D-style AUC of threshold-accuracy curve">AUC 0.675</span>
+          <span class="chip" title="Worst-performing semantic bucket F-score">min-bucket F 0.699</span>
+          <span class="chip pattern" style="--pc:#f85149" title="Qualitative bucket-error pattern">Localized bad buckets</span>
+        </div>
+        <div class="method-line">guided by PartField · scored with DenseCorr source-stable 5k eval set</div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>goldie <span class="arrow">→</span> pug</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D / TOSCA</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/05_goldie_pug_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/05_goldie_pug_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/05_goldie_pug_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip muted">no DenseCorr3D geodesic metric (pair outside the annotated animal category)</span>
+        </div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>fox <span class="arrow">→</span> cat2</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/06_fox_cat2_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/06_fox_cat2_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/06_fox_cat2_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip" title="Mean F-score at Chamfer threshold 0.02">F@0.02 0.955</span>
+          <span class="chip" title="DenseCorr3D-style AUC of threshold-accuracy curve">AUC 0.721</span>
+          <span class="chip" title="Worst-performing semantic bucket F-score">min-bucket F 0.873</span>
+          <span class="chip pattern" style="--pc:#3fb950" title="Qualitative bucket-error pattern">Uniformly good</span>
+        </div>
+        <div class="method-line">guided by PartField · scored with SAM3D selected eval set</div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>bulldog <span class="arrow">→</span> cat</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D / TOSCA</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/07_bulldog_cat_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/07_bulldog_cat_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/07_bulldog_cat_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip muted">no DenseCorr3D geodesic metric (pair outside the annotated animal category)</span>
+        </div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>bulldog <span class="arrow">→</span> dachshund</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D / TOSCA</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/08_bulldog_dachshund_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/08_bulldog_dachshund_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/08_bulldog_dachshund_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip muted">no DenseCorr3D geodesic metric (pair outside the annotated animal category)</span>
+        </div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>dachshund <span class="arrow">→</span> cat</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D / TOSCA</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/09_dachshund_cat_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/09_dachshund_cat_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/09_dachshund_cat_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip muted">no DenseCorr3D geodesic metric (pair outside the annotated animal category)</span>
+        </div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>elephant <span class="arrow">→</span> giraffe</h3>
+          <span class="dataset-chip" style="--dc:#58a6ff">DenseCorr3D</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/10_elephant_giraffe_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/10_elephant_giraffe_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/10_elephant_giraffe_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip" title="Mean F-score at Chamfer threshold 0.02">F@0.02 0.802</span>
+          <span class="chip" title="DenseCorr3D-style AUC of threshold-accuracy curve">AUC 0.659</span>
+          <span class="chip" title="Worst-performing semantic bucket F-score">min-bucket F 0.605</span>
+          <span class="chip pattern" style="--pc:#f85149" title="Qualitative bucket-error pattern">Localized bad buckets</span>
+        </div>
+        <div class="method-line">guided by PartField · scored with DenseCorr bucket-balanced 5k eval set</div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>panther <span class="arrow">→</span> horse2</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D chain</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/11_panther_horse2_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/11_panther_horse2_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/11_panther_horse2_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip" title="Mean F-score at Chamfer threshold 0.02">F@0.02 0.902</span>
+          <span class="chip" title="DenseCorr3D-style AUC of threshold-accuracy curve">AUC 0.739</span>
+          <span class="chip" title="Worst-performing semantic bucket F-score">min-bucket F 0.707</span>
+          <span class="chip pattern" style="--pc:#d29922" title="Qualitative bucket-error pattern">Mixed</span>
+        </div>
+        <div class="method-line">guided by PartField · scored with Chain eval set</div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>horse2 <span class="arrow">→</span> dense giraffe</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D chain</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/12_horse2_dense_giraffe_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/12_horse2_dense_giraffe_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/12_horse2_dense_giraffe_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip" title="Mean F-score at Chamfer threshold 0.02">F@0.02 0.952</span>
+          <span class="chip" title="DenseCorr3D-style AUC of threshold-accuracy curve">AUC 0.624</span>
+          <span class="chip" title="Worst-performing semantic bucket F-score">min-bucket F 0.904</span>
+          <span class="chip pattern" style="--pc:#3fb950" title="Qualitative bucket-error pattern">Uniformly good</span>
+        </div>
+        <div class="method-line">guided by PartField · scored with Chain eval set</div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>panther <span class="arrow">→</span> horse3</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D / TOSCA</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/13_panther_horse3_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/13_panther_horse3_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/13_panther_horse3_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip muted">no DenseCorr3D geodesic metric (pair outside the annotated animal category)</span>
+        </div>
+        
+      </article>
+    
+
+      <article class="card">
+        <div class="card-head">
+          <h3>horse3 <span class="arrow">→</span> dense giraffe</h3>
+          <span class="dataset-chip" style="--dc:#8957e5">self-created · SAM3D / TOSCA</span>
+        </div>
+        <div class="video-wrap">
+          <video class="player" data-slow="showoff_per_run_front_scaled/deformation_slow/14_horse3_dense_giraffe_deformation_slow_partfield.mp4" data-sf="showoff_per_run_front_scaled/start_final/14_horse3_dense_giraffe_start_final_partfield.mp4"
+                 src="showoff_per_run_front_scaled/deformation_slow/14_horse3_dense_giraffe_deformation_slow_partfield.mp4" controls preload="none" muted playsinline></video>
+        </div>
+        <div class="toggle-row">
+          <button class="toggle-btn active" data-mode="slow">Slow deformation</button>
+          <button class="toggle-btn" data-mode="sf">Start / final side-by-side</button>
+        </div>
+        
+        <div class="metrics">
+          <span class="chip muted">no DenseCorr3D geodesic metric (pair outside the annotated animal category)</span>
+        </div>
+        
+      </article>
+    
+  </div>
+</section>
+
+<section>
+  <h2>Failure case spotlight: elephant ↔ giraffe</h2>
+  <p style="color:var(--text-dim); max-width:75ch;">
+    The hardest pair in the set. The giraffe's long thin neck and the elephant's trunk/head region
+    are structurally mismatched — fixed topology cannot invent new anatomy, Chamfer distance is
+    set-based rather than point-to-point, and thin parts are prone to folding and sliding under
+    optimization. This is a structural limit of the representation, not a failed optimization run.
+  </p>
+  <div class="failure-grid">
+    <figure>
+      <img src="../evaluation/bucket_discrepancy/plots/giraffe_to_elephant/giraffe_to_elephant_giraffe_elephant_srcstable4996_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densec_worst_chamfer_buckets.png" loading="lazy">
+      <figcaption>3 worst semantic buckets by Chamfer distance.</figcaption>
+    </figure>
+    <figure>
+      <img src="../evaluation/bucket_discrepancy/plots/giraffe_to_elephant/giraffe_to_elephant_giraffe_elephant_srcstable4996_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densec_global_vertex_chamfer_heatmap.png" loading="lazy">
+      <figcaption>Per-vertex Chamfer distance heatmap.</figcaption>
+    </figure>
+    <figure>
+      <img src="../evaluation/bucket_discrepancy/plots/giraffe_to_elephant/giraffe_to_elephant_giraffe_elephant_srcstable4996_densecorr3d_srcstable_requested_5k_hard_partfield_chamfer_only_densec_bucket_chamfer.png" loading="lazy">
+      <figcaption>Bucket Chamfer / F-score bars, per semantic bucket.</figcaption>
+    </figure>
+  </div>
+  <div class="note">
+    This pipeline is only as good as the segmentation feeding it — PartField buckets ensure
+    topology fits and points stay in-region, but they are not point-to-point correspondence.
+    Adding true semantic point matching (e.g. a DenseMatcher-style correspondence prior) is the
+    most direct path to closing this gap; see Future Work in the report.
+  </div>
+</section>
+
+<footer>
+  Generated locally from <code>jobs_with_target_guidance/cross_animal_spike_runs/reports/</code> and
+  <code>jobs_with_target_guidance/cross_animal_spike_runs/evaluation/bucket_discrepancy/</code>.
+  Metrics: F@0.02 = fraction of vertices with bidirectional Chamfer error below 0.02 in MeshUp
+  unit-box normalization; AUC = area under the DenseCorr3D-style threshold-accuracy curve (0–0.25
+  normalized geodesic error).
+</footer>
+
+<script>
+  document.querySelectorAll('.card').forEach(card => {
+    const video = card.querySelector('video.player');
+    const buttons = card.querySelectorAll('.toggle-btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const mode = btn.dataset.mode;
+        const newSrc = mode === 'slow' ? video.dataset.slow : video.dataset.sf;
+        if (!video.src.endsWith(newSrc)) {
+          const wasPlaying = !video.paused;
+          video.src = newSrc;
+          if (wasPlaying) video.play();
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

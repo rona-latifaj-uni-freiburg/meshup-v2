@@ -125,7 +125,7 @@ def resolve_run(path: str | Path) -> ResolvedRun:
     if not target_mesh:
         raise ValueError(f"{output_dir}: config.yml does not contain target_mesh")
 
-    source_mesh = cfg.get("mesh")
+    source_mesh = cfg.get("staged_original_source_mesh") or cfg.get("mesh")
     return ResolvedRun(
         output_dir=output_dir,
         deformed_mesh=resolve_path(deformed_default),

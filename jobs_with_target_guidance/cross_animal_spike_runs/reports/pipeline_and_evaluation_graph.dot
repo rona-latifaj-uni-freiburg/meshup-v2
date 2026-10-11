@@ -1,0 +1,134 @@
+digraph MeshupPipeline {
+  graph [
+    rankdir=LR,
+    bgcolor="white",
+    pad="0.35",
+    nodesep="0.55",
+    ranksep="0.75",
+    fontname="Helvetica",
+    label="PartField-Guided Cross-Animal Mesh Deformation Pipeline",
+    labelloc=t,
+    fontsize=22
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fontname="Helvetica",
+    fontsize=12,
+    margin="0.12,0.08",
+    color="#333333",
+    penwidth=1.2
+  ];
+
+  edge [
+    fontname="Helvetica",
+    fontsize=10,
+    color="#555555",
+    arrowsize=0.8
+  ];
+
+  subgraph cluster_inputs {
+    label="1. Inputs";
+    fontsize=15;
+    color="#6b7280";
+    style="rounded";
+    source [label="Source mesh\nvertices, faces, topology", fillcolor="#e8f3ff"];
+    target [label="Target mesh\ntarget surface geometry", fillcolor="#e8f3ff"];
+    normalize [label="MeshUp normalization\ncenter + unit-box scale", fillcolor="#f3f4f6"];
+  }
+
+  subgraph cluster_semantics {
+    label="2. Semantic Label Construction";
+    fontsize=15;
+    color="#6b7280";
+    style="rounded";
+    partfield [label="PartField path\nfeatures -> clusters -> buckets", fillcolor="#ecfdf3"];
+    densecorr [label="DenseCorr3D path\ngroups.txt -> supervised buckets", fillcolor="#ecfdf3"];
+    labels [label="Aligned per-vertex labels\nsource bucket k <-> target bucket k", fillcolor="#d8f5df"];
+  }
+
+  subgraph cluster_bucket_manager {
+    label="3. Bucket Manager";
+    fontsize=15;
+    color="#6b7280";
+    style="rounded";
+    freeze [label="Freeze source bucket identity\nlabels move with vertices", fillcolor="#fff7d6"];
+    active [label="Active bucket filtering\nmin points + matching ids", fillcolor="#fff7d6"];
+    balance [label="Sampling policy\n512 points per bucket\nbucket-balanced or source-stable 5k", fillcolor="#fff7d6"];
+  }
+
+  subgraph cluster_optimizer {
+    label="4. Deformation Optimizer";
+    fontsize=15;
+    color="#6b7280";
+    style="rounded";
+    jac [label="Per-face Jacobian variables\nlocal affine deformation field", fillcolor="#fce7f3"];
+    reconstruct [label="Reconstruct vertices\npreserve source topology", fillcolor="#fce7f3"];
+    loop [label="4000 epoch Adam loop\nlr 0.0025, batch size 8", fillcolor="#fce7f3"];
+  }
+
+  subgraph cluster_losses {
+    label="5. Loss Stack";
+    fontsize=15;
+    color="#6b7280";
+    style="rounded";
+    local_cd [label="Local semantic Chamfer\nwithin matching buckets", fillcolor="#fee2e2"];
+    asym [label="Asymmetric matching\nsource->target 0.35\ntarget->source 1.0", fillcolor="#fee2e2"];
+    global_cd [label="Optional global Chamfer\nwhole surface coverage", fillcolor="#fee2e2"];
+    smooth [label="Jacobian neighbor smoothness\nneighbor faces deform coherently", fillcolor="#ede9fe"];
+    jump [label="Edge displacement jump guard\nsuppresses spikes and sudden jumps", fillcolor="#ede9fe"];
+    optional [label="Optional research switches\nsoft features, Sinkhorn, anchors,\nmoments, profile, robust cap", fillcolor="#f5f3ff"];
+  }
+
+  subgraph cluster_outputs {
+    label="6. Outputs";
+    fontsize=15;
+    color="#6b7280";
+    style="rounded";
+    mesh_final [label="Final deformed mesh\nmesh_final/mesh.obj", fillcolor="#e0f2fe"];
+    colored [label="Colored mesh overlays\nposition/error/bucket colors", fillcolor="#e0f2fe"];
+    renders [label="Multi-view render grids\nshowreel frames/videos", fillcolor="#e0f2fe"];
+  }
+
+  subgraph cluster_eval {
+    label="7. Evaluation";
+    fontsize=15;
+    color="#6b7280";
+    style="rounded";
+    surface [label="Target surface accuracy\nChamfer, F-score,\nHausdorff p95/p99, normals", fillcolor="#f0fdf4"];
+    semantic [label="Semantic bucket accuracy\nsame-label Chamfer/F-score\nNN label agreement", fillcolor="#f0fdf4"];
+    regularity [label="Deformation regularity\nedge stretch, Laplacian change,\narea distortion, normal flips", fillcolor="#f0fdf4"];
+    auc [label="DenseCorr-style AUC/Err\nnormalized target geodesic error", fillcolor="#f0fdf4"];
+    plots [label="Per-bucket plots\nheatmaps, CDFs, worst buckets", fillcolor="#f0fdf4"];
+  }
+
+  source -> normalize;
+  target -> normalize;
+  normalize -> partfield [label="general meshes"];
+  normalize -> densecorr [label="DenseCorr3D animals"];
+  partfield -> labels;
+  densecorr -> labels;
+  labels -> freeze;
+  freeze -> active;
+  active -> balance;
+  balance -> local_cd;
+  normalize -> jac;
+  jac -> reconstruct;
+  reconstruct -> loop;
+  local_cd -> loop;
+  asym -> local_cd;
+  global_cd -> loop;
+  smooth -> loop;
+  jump -> loop;
+  optional -> loop;
+  loop -> mesh_final;
+  mesh_final -> colored;
+  mesh_final -> renders;
+  mesh_final -> surface;
+  mesh_final -> semantic;
+  mesh_final -> regularity;
+  mesh_final -> auc;
+  semantic -> plots;
+  surface -> plots;
+}

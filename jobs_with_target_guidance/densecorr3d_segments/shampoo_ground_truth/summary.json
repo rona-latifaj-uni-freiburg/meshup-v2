@@ -1,0 +1,80 @@
+{
+  "source": "DenseCorr3D",
+  "category": "shampoo",
+  "objects": [
+    {
+      "name": "4161c_shampoo_007",
+      "object_dir": "external/DenseCorr3D/shampoo/4161c_shampoo_007",
+      "mesh": "external/DenseCorr3D/shampoo/4161c_shampoo_007/simple_mesh.obj",
+      "groups": "external/DenseCorr3D/shampoo/4161c_shampoo_007/groups.txt",
+      "label_npz": "jobs_with_target_guidance/densecorr3d_segments/shampoo_ground_truth/labels/4161c_shampoo_007_densecorr3d_labels.npz",
+      "vertex_labels": "jobs_with_target_guidance/densecorr3d_segments/shampoo_ground_truth/labels/4161c_shampoo_007_vertex_labels.npy",
+      "face_labels": "jobs_with_target_guidance/densecorr3d_segments/shampoo_ground_truth/labels/4161c_shampoo_007_face_labels.npy",
+      "colored_mesh": "jobs_with_target_guidance/densecorr3d_segments/shampoo_ground_truth/colored/4161c_shampoo_007_densecorr3d_groups.ply",
+      "bucket_stats": {
+        "group_00": {
+          "vertices": 536
+        },
+        "group_01": {
+          "vertices": 83
+        },
+        "group_02": {
+          "vertices": 499
+        },
+        "group_03": {
+          "vertices": 254
+        },
+        "group_04": {
+          "vertices": 97
+        },
+        "group_05": {
+          "vertices": 34
+        }
+      },
+      "groups_path": "external/DenseCorr3D/shampoo/4161c_shampoo_007/groups.txt",
+      "index_base": 0,
+      "n_groups": 6,
+      "n_vertices": 1503,
+      "duplicate_assignments": 0,
+      "unassigned_vertices_filled": 5,
+      "fill_unassigned": "nearest"
+    },
+    {
+      "name": "cffa8_facial_cream_005",
+      "object_dir": "external/DenseCorr3D/shampoo/cffa8_facial_cream_005",
+      "mesh": "external/DenseCorr3D/shampoo/cffa8_facial_cream_005/simple_mesh.obj",
+      "groups": "external/DenseCorr3D/shampoo/cffa8_facial_cream_005/groups.txt",
+      "label_npz": "jobs_with_target_guidance/densecorr3d_segments/shampoo_ground_truth/labels/cffa8_facial_cream_005_densecorr3d_labels.npz",
+      "vertex_labels": "jobs_with_target_guidance/densecorr3d_segments/shampoo_ground_truth/labels/cffa8_facial_cream_005_vertex_labels.npy",
+      "face_labels": "jobs_with_target_guidance/densecorr3d_segments/shampoo_ground_truth/labels/cffa8_facial_cream_005_face_labels.npy",
+      "colored_mesh": "jobs_with_target_guidance/densecorr3d_segments/shampoo_ground_truth/colored/cffa8_facial_cream_005_densecorr3d_groups.ply",
+      "bucket_stats": {
+        "group_00": {
+          "vertices": 459
+        },
+        "group_01": {
+          "vertices": 73
+        },
+        "group_02": {
+          "vertices": 587
+        },
+        "group_03": {
+          "vertices": 126
+        },
+        "group_04": {
+          "vertices": 155
+        },
+        "group_05": {
+          "vertices": 17
+        }
+      },
+      "groups_path": "external/DenseCorr3D/shampoo/cffa8_facial_cream_005/groups.txt",
+      "index_base": 0,
+      "n_groups": 6,
+      "n_vertices": 1417,
+      "duplicate_assignments": 0,
+      "unassigned_vertices_filled": 0,
+      "fill_unassigned": "nearest"
+    }
+  ]
+}

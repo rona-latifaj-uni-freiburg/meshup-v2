@@ -1,0 +1,199 @@
+#!/bin/bash
+set -euo pipefail
+
+if [[ "$#" -lt 6 ]]; then
+  echo "Usage: $0 SOURCE_OBJECT TARGET_OBJECT MESH_VARIANT EPOCHS OUTPUT_ROOT RUN_TAG"
+  echo "Example: $0 2d6b3_toy_animals_009 071b8_toy_animals_017 elephant_panther_bucketavg 4000 outputs tag"
+  exit 2
+fi
+
+SOURCE_OBJECT="$1"
+TARGET_OBJECT="$2"
+MESH_VARIANT="$3"
+EPOCHS="$4"
+OUTPUT_ROOT="$5"
+RUN_TAG="$6"
+
+cd /pfs/work9/workspace/scratch/fr_rl187-my_project_ws/projects/meshup_v2
+
+BASE_DIR=${BASE_DIR:-./jobs_with_target_guidance/cross_animal_spike_runs}
+PREPARED_DIR=${PREPARED_DIR:-./jobs_with_target_guidance/densematcher_runs/prepared/requested_animals_20260630}
+
+REQUESTED_EDGE_STRETCH_WEIGHT=${EDGE_STRETCH_WEIGHT:-}
+REQUESTED_EDGE_STRETCH_THRESHOLD=${EDGE_STRETCH_THRESHOLD:-}
+REQUESTED_EDGE_STRETCH_MAX_WEIGHT=${EDGE_STRETCH_MAX_WEIGHT:-}
+REQUESTED_EDGE_DISPLACEMENT_JUMP_WEIGHT=${EDGE_DISPLACEMENT_JUMP_WEIGHT:-}
+REQUESTED_EDGE_DISPLACEMENT_JUMP_THRESHOLD=${EDGE_DISPLACEMENT_JUMP_THRESHOLD:-}
+REQUESTED_EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT=${EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT:-}
+REQUESTED_DEFORMATION_GRAD_CLIP_NORM=${DEFORMATION_GRAD_CLIP_NORM:-}
+REQUESTED_VARIANT_SUFFIX=${VARIANT_SUFFIX:-}
+
+for value in "${SOURCE_OBJECT}" "${TARGET_OBJECT}" "${MESH_VARIANT}"; do
+  if [[ ! "${value}" =~ ^[A-Za-z0-9_.-]+$ ]]; then
+    echo "Unsafe object/variant value: ${value}"
+    exit 2
+  fi
+done
+
+animal_key_from_object() {
+  case "$1" in
+    071b8_toy_animals_017) echo "panther" ;;
+    13cf7_toy_animals_055) echo "animal13cf7" ;;
+    188f4_toy_animals_022) echo "animal188f4" ;;
+    1d6d1_toy_animals_015) echo "moose" ;;
+    2d6b3_toy_animals_009) echo "elephant" ;;
+    34fb4_toy_animals_019) echo "giraffe" ;;
+    4e94a_toy_animals_020) echo "animal4e94a" ;;
+    96615_toy_animals_018) echo "bear" ;;
+    bdfd0_toy_animals_016) echo "cheetah" ;;
+    d1889_dinosaur_002) echo "dinosaur" ;;
+    *) echo "$1" ;;
+  esac
+}
+
+animal_prompt_from_key() {
+  case "$1" in
+    elephant) echo "an elephant" ;;
+    moose) echo "a moose" ;;
+    giraffe) echo "a giraffe" ;;
+    panther) echo "a panther" ;;
+    bear) echo "a bear" ;;
+    cheetah) echo "a cheetah" ;;
+    dinosaur) echo "a dinosaur" ;;
+    *) echo "an animal" ;;
+  esac
+}
+
+SOURCE_KEY=$(animal_key_from_object "${SOURCE_OBJECT}")
+TARGET_KEY=$(animal_key_from_object "${TARGET_OBJECT}")
+
+export PAIR_SLUG="${SOURCE_KEY}_to_${TARGET_KEY}_${MESH_VARIANT}"
+export SOURCE="${PREPARED_DIR}/meshes/${SOURCE_OBJECT}_densecorr3d_${MESH_VARIANT}.obj"
+export TARGET="${PREPARED_DIR}/meshes/${TARGET_OBJECT}_densecorr3d_${MESH_VARIANT}.obj"
+export SOURCE_NAME="${SOURCE_OBJECT}_densecorr3d_${MESH_VARIANT}"
+export TARGET_NAME="${TARGET_OBJECT}_densecorr3d_${MESH_VARIANT}"
+export PROMPT=${PROMPT:-$(animal_prompt_from_key "${TARGET_KEY}")}
+
+export SOURCE_PARTFIELD_LABELS="${PREPARED_DIR}/labels/${SOURCE_OBJECT}_densecorr3d_${MESH_VARIANT}_labels.npz"
+export TARGET_PARTFIELD_LABELS="${PREPARED_DIR}/labels/${TARGET_OBJECT}_densecorr3d_${MESH_VARIANT}_labels.npz"
+
+for path in "${SOURCE}" "${TARGET}" "${SOURCE_PARTFIELD_LABELS}" "${TARGET_PARTFIELD_LABELS}"; do
+  if [[ ! -f "${path}" ]]; then
+    echo "Missing required DenseCorr3D prepared input: ${path}"
+    exit 1
+  fi
+done
+
+export PARTFIELD_USE_FEATURES=0
+export PARTFIELD_N_BUCKETS=8
+export PARTFIELD_LABELS_ALIGNED=1
+
+export GLOBAL_CHAMFER_WEIGHT_OVERRIDE=0.0
+export PARTFIELD_CHAMFER_WEIGHT_OVERRIDE=8000.0
+export DEFORMATION_PARAMETERIZATION=jacobian
+export JACOBIAN_REG_WEIGHT=0.0
+export JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT=1000.0
+export JACOBIAN_OUTLIER_WEIGHT=0.0
+export JACOBIAN_OUTLIER_POWER=4.0
+export DEFORMATION_GRAD_CLIP_NORM=0.0
+export EDGE_STRETCH_WEIGHT=0.0
+export EDGE_STRETCH_THRESHOLD=1.5
+export EDGE_STRETCH_MAX_WEIGHT=1.0
+export EDGE_DISPLACEMENT_JUMP_WEIGHT=500.0
+export EDGE_DISPLACEMENT_JUMP_THRESHOLD=1.2
+export EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT=2.0
+
+export TARGET_VERTEX_CORRESPONDENCE_WEIGHT=0.0
+export TARGET_VERTEX_CORRESPONDENCE_WARMUP_EPOCHS=0
+export TARGET_SEMANTIC_VERTEX_CORRESPONDENCE_WEIGHT=0.0
+export TARGET_SEMANTIC_VERTEX_CORRESPONDENCE_WARMUP_EPOCHS=0
+export SEMANTIC_VERTEX_CORRESPONDENCE_CACHE=
+export SEMANTIC_VERTEX_CORRESPONDENCE_REBUILD_CACHE=0
+
+export TARGET_CHAMFER_WARMUP_EPOCHS=0
+export PARTFIELD_CHAMFER_WARMUP_EPOCHS=0
+export ENABLE_SOURCE_DINO_LOSS=0
+export ENABLE_TARGET_DINO_GUIDANCE=0
+
+export PARTFIELD_GUIDANCE_MODE=hard
+export PARTFIELD_SOURCE_TO_TARGET_WEIGHT=0.35
+export PARTFIELD_TARGET_TO_SOURCE_WEIGHT=1.0
+export PARTFIELD_TGT_TO_SRC_ROBUST_SCALE=0.0
+export PARTFIELD_SRC_TO_TGT_UNMATCHED_WEIGHT=1.0
+export PARTFIELD_HARD_SEMANTIC_WEIGHT=0.0
+export PARTFIELD_HARD_GEOMETRY_SIGMA=1.0
+export PARTFIELD_SEMANTIC_CONFIDENCE_MIN_SIMILARITY=-1.0
+export PARTFIELD_SEMANTIC_CONFIDENCE_MARGIN=0.0
+export PARTFIELD_SEMANTIC_CONFIDENCE_FLOOR=1.0
+export PARTFIELD_SEMANTIC_CONFIDENCE_POWER=1.0
+export PARTFIELD_UNBALANCED_TRANSPORT_WEIGHT=0.0
+export PARTFIELD_UNBALANCED_TRANSPORT_RHO=0.30
+export ARTUR_SOFT_MATCH_SPACE=hybrid
+export ARTUR_SOFT_POINTS=1024
+export ARTUR_SOFT_GEOMETRY_SIGMA=0.5
+export ARTUR_SOFT_SEMANTIC_WEIGHT=1.0
+export ARTUR_SOFT_TEMPERATURE=0.1
+export PARTFIELD_BALANCED_SINKHORN_ITERS=30
+export PARTFIELD_MIN_POINTS=12
+export PARTFIELD_CONTAINMENT_WEIGHT=0.0
+export PARTFIELD_CONTAINMENT_MARGIN=0.02
+export PARTFIELD_CONTAINMENT_MAX_WEIGHT=1.0
+export PARTFIELD_MOMENT_WEIGHT=0.0
+export PARTFIELD_MOMENT_EXTENT_WEIGHT=0.0
+export PARTFIELD_PROFILE_WEIGHT=0.0
+export PARTFIELD_PROFILE_BINS=9
+export PARTFIELD_PROFILE_TRIM=0.08
+export PARTFIELD_ANCHOR_WEIGHT=0.0
+export PARTFIELD_ANCHOR_GEOMETRY_SIGMA=0.35
+export PARTFIELD_ANCHOR_SEMANTIC_WEIGHT=0.50
+
+export LOG_INTERVAL_IM=250
+export SAVE_RENDERS_INTERVAL=250
+export SAVE_PCA_VISUALIZATION=0
+export PCA_INTERVAL=250
+export PCA_N_VIEWS=8
+export PCA_RENDER_RES=518
+export PCA_DINO_MODEL=dinov2_vitl14
+export PCA_USE_EXTRA_LOG_EPOCHS=0
+export VARIANT_SUFFIX=densecorr3d_groups_pfonly_best_asym035_jneighbor1000_jump500
+
+apply_requested_override() {
+  local name="$1"
+  local value="$2"
+  if [[ -n "${value}" ]]; then
+    export "${name}=${value}"
+  fi
+}
+
+apply_requested_override EDGE_STRETCH_WEIGHT "${REQUESTED_EDGE_STRETCH_WEIGHT}"
+apply_requested_override EDGE_STRETCH_THRESHOLD "${REQUESTED_EDGE_STRETCH_THRESHOLD}"
+apply_requested_override EDGE_STRETCH_MAX_WEIGHT "${REQUESTED_EDGE_STRETCH_MAX_WEIGHT}"
+apply_requested_override EDGE_DISPLACEMENT_JUMP_WEIGHT "${REQUESTED_EDGE_DISPLACEMENT_JUMP_WEIGHT}"
+apply_requested_override EDGE_DISPLACEMENT_JUMP_THRESHOLD "${REQUESTED_EDGE_DISPLACEMENT_JUMP_THRESHOLD}"
+apply_requested_override EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT "${REQUESTED_EDGE_DISPLACEMENT_JUMP_MAX_WEIGHT}"
+apply_requested_override DEFORMATION_GRAD_CLIP_NORM "${REQUESTED_DEFORMATION_GRAD_CLIP_NORM}"
+apply_requested_override VARIANT_SUFFIX "${REQUESTED_VARIANT_SUFFIX}"
+
+if [[ "${DRY_RUN:-0}" == "1" ]]; then
+  echo "PAIR_SLUG=${PAIR_SLUG}"
+  echo "SOURCE=${SOURCE}"
+  echo "TARGET=${TARGET}"
+  echo "SOURCE_PARTFIELD_LABELS=${SOURCE_PARTFIELD_LABELS}"
+  echo "TARGET_PARTFIELD_LABELS=${TARGET_PARTFIELD_LABELS}"
+  echo "PROMPT=${PROMPT}"
+  echo "MESH_VARIANT=${MESH_VARIANT}"
+  echo "PARTFIELD_N_BUCKETS=${PARTFIELD_N_BUCKETS}"
+  echo "PARTFIELD_GUIDANCE_MODE=${PARTFIELD_GUIDANCE_MODE}"
+  echo "PARTFIELD_SOURCE_TO_TARGET_WEIGHT=${PARTFIELD_SOURCE_TO_TARGET_WEIGHT}"
+  echo "PARTFIELD_TARGET_TO_SOURCE_WEIGHT=${PARTFIELD_TARGET_TO_SOURCE_WEIGHT}"
+  echo "JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT=${JACOBIAN_NEIGHBOR_SMOOTH_WEIGHT}"
+  echo "EDGE_DISPLACEMENT_JUMP_WEIGHT=${EDGE_DISPLACEMENT_JUMP_WEIGHT}"
+  echo "VARIANT_SUFFIX=${VARIANT_SUFFIX}"
+  exit 0
+fi
+
+bash ./jobs_with_target_guidance/artur_soft_runs/jobs/run_artur_chamfer_ablation.sh \
+  1 \
+  "${EPOCHS}" \
+  "${OUTPUT_ROOT}" \
+  "${RUN_TAG}"

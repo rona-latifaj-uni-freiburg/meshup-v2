@@ -1,0 +1,259 @@
+{
+  "mesh_root": "./external/TOSCA/meshup_prepared_zup_xfront/objs",
+  "labels_root": "./jobs_with_target_guidance/partfield_segments/tosca_correspondence_guided/dummy_labels",
+  "pairs": [
+    {
+      "class": "cat",
+      "pair_slug": "cat0_to_cat1",
+      "source_vertices": 27894,
+      "target_vertices": 27894,
+      "source_faces": 55712,
+      "target_faces": 55712,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat0.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat1.obj"
+    },
+    {
+      "class": "cat",
+      "pair_slug": "cat0_to_cat2",
+      "source_vertices": 27894,
+      "target_vertices": 27894,
+      "source_faces": 55712,
+      "target_faces": 55712,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat0.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat2.obj"
+    },
+    {
+      "class": "cat",
+      "pair_slug": "cat1_to_cat4",
+      "source_vertices": 27894,
+      "target_vertices": 27894,
+      "source_faces": 55712,
+      "target_faces": 55712,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat1.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat4.obj"
+    },
+    {
+      "class": "cat",
+      "pair_slug": "cat2_to_cat5",
+      "source_vertices": 27894,
+      "target_vertices": 27894,
+      "source_faces": 55712,
+      "target_faces": 55712,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat2.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat5.obj"
+    },
+    {
+      "class": "cat",
+      "pair_slug": "cat3_to_cat9",
+      "source_vertices": 27894,
+      "target_vertices": 27894,
+      "source_faces": 55712,
+      "target_faces": 55712,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat3.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/cat9.obj"
+    },
+    {
+      "class": "dog",
+      "pair_slug": "dog0_to_dog1",
+      "source_vertices": 25290,
+      "target_vertices": 25290,
+      "source_faces": 50528,
+      "target_faces": 50528,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog0.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog1.obj"
+    },
+    {
+      "class": "dog",
+      "pair_slug": "dog0_to_dog2",
+      "source_vertices": 25290,
+      "target_vertices": 25290,
+      "source_faces": 50528,
+      "target_faces": 50528,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog0.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog2.obj"
+    },
+    {
+      "class": "dog",
+      "pair_slug": "dog1_to_dog3",
+      "source_vertices": 25290,
+      "target_vertices": 25290,
+      "source_faces": 50528,
+      "target_faces": 50528,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog1.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog3.obj"
+    },
+    {
+      "class": "dog",
+      "pair_slug": "dog2_to_dog5",
+      "source_vertices": 25290,
+      "target_vertices": 25290,
+      "source_faces": 50528,
+      "target_faces": 50528,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog2.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog5.obj"
+    },
+    {
+      "class": "dog",
+      "pair_slug": "dog6_to_dog8",
+      "source_vertices": 25290,
+      "target_vertices": 25290,
+      "source_faces": 50528,
+      "target_faces": 50528,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog6.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/dog8.obj"
+    },
+    {
+      "class": "horse",
+      "pair_slug": "horse0_to_horse5",
+      "source_vertices": 19248,
+      "target_vertices": 19248,
+      "source_faces": 38492,
+      "target_faces": 38488,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse0.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse5.obj"
+    },
+    {
+      "class": "horse",
+      "pair_slug": "horse0_to_horse6",
+      "source_vertices": 19248,
+      "target_vertices": 19248,
+      "source_faces": 38492,
+      "target_faces": 38488,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse0.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse6.obj"
+    },
+    {
+      "class": "horse",
+      "pair_slug": "horse5_to_horse7",
+      "source_vertices": 19248,
+      "target_vertices": 19248,
+      "source_faces": 38488,
+      "target_faces": 38492,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse5.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse7.obj"
+    },
+    {
+      "class": "horse",
+      "pair_slug": "horse6_to_horse10",
+      "source_vertices": 19248,
+      "target_vertices": 19248,
+      "source_faces": 38488,
+      "target_faces": 38492,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse6.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse10.obj"
+    },
+    {
+      "class": "horse",
+      "pair_slug": "horse14_to_horse15",
+      "source_vertices": 19248,
+      "target_vertices": 19248,
+      "source_faces": 38492,
+      "target_faces": 38492,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse14.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/horse15.obj"
+    },
+    {
+      "class": "wolf",
+      "pair_slug": "wolf0_to_wolf1",
+      "source_vertices": 4344,
+      "target_vertices": 4344,
+      "source_faces": 8684,
+      "target_faces": 8684,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/wolf0.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/wolf1.obj"
+    },
+    {
+      "class": "wolf",
+      "pair_slug": "wolf0_to_wolf2",
+      "source_vertices": 4344,
+      "target_vertices": 4344,
+      "source_faces": 8684,
+      "target_faces": 8684,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/wolf0.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/wolf2.obj"
+    },
+    {
+      "class": "wolf",
+      "pair_slug": "wolf1_to_wolf2",
+      "source_vertices": 4344,
+      "target_vertices": 4344,
+      "source_faces": 8684,
+      "target_faces": 8684,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/wolf1.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/wolf2.obj"
+    },
+    {
+      "class": "gorilla",
+      "pair_slug": "gorilla1_to_gorilla5",
+      "source_vertices": 25438,
+      "target_vertices": 25438,
+      "source_faces": 50868,
+      "target_faces": 50872,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla1.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla5.obj"
+    },
+    {
+      "class": "gorilla",
+      "pair_slug": "gorilla1_to_gorilla8",
+      "source_vertices": 25438,
+      "target_vertices": 25438,
+      "source_faces": 50868,
+      "target_faces": 50872,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla1.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla8.obj"
+    },
+    {
+      "class": "gorilla",
+      "pair_slug": "gorilla1_to_gorilla14",
+      "source_vertices": 25438,
+      "target_vertices": 25438,
+      "source_faces": 50868,
+      "target_faces": 50872,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla1.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla14.obj"
+    },
+    {
+      "class": "gorilla",
+      "pair_slug": "gorilla5_to_gorilla8",
+      "source_vertices": 25438,
+      "target_vertices": 25438,
+      "source_faces": 50872,
+      "target_faces": 50872,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla5.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla8.obj"
+    },
+    {
+      "class": "gorilla",
+      "pair_slug": "gorilla8_to_gorilla14",
+      "source_vertices": 25438,
+      "target_vertices": 25438,
+      "source_faces": 50872,
+      "target_faces": 50872,
+      "same_face_array": false,
+      "source": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla8.obj",
+      "target": "./external/TOSCA/meshup_prepared_zup_xfront/objs/gorilla14.obj"
+    }
+  ]
+}

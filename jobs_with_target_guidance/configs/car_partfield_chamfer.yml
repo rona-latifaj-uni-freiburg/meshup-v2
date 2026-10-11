@@ -115,6 +115,7 @@ target_mesh_chamfer_warmup_epochs: 20
 target_mesh_chamfer_points: 3072
 target_mesh_vertex_correspondence_weight: 0.0
 target_mesh_vertex_correspondence_warmup_epochs: 0
+target_mesh_vertex_correspondence_require_same_faces: true
 target_mesh_part_chamfer_weight: 0.0
 target_mesh_semantic_bucket_chamfer_weight: 0.0
 target_mesh_sampart3d_chamfer_weight: 0.0

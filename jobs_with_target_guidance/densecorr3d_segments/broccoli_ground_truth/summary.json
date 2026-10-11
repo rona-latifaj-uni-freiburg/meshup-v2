@@ -1,0 +1,224 @@
+{
+  "source": "DenseCorr3D",
+  "category": "broccoli",
+  "objects": [
+    {
+      "name": "0349c93a75174dce821f05648aff5aa6",
+      "object_dir": "external/DenseCorr3D/broccoli/0349c93a75174dce821f05648aff5aa6",
+      "mesh": "external/DenseCorr3D/broccoli/0349c93a75174dce821f05648aff5aa6/simple_mesh.obj",
+      "groups": "external/DenseCorr3D/broccoli/0349c93a75174dce821f05648aff5aa6/groups.txt",
+      "label_npz": "jobs_with_target_guidance/densecorr3d_segments/broccoli_ground_truth/labels/0349c93a75174dce821f05648aff5aa6_densecorr3d_labels.npz",
+      "vertex_labels": "jobs_with_target_guidance/densecorr3d_segments/broccoli_ground_truth/labels/0349c93a75174dce821f05648aff5aa6_vertex_labels.npy",
+      "face_labels": "jobs_with_target_guidance/densecorr3d_segments/broccoli_ground_truth/labels/0349c93a75174dce821f05648aff5aa6_face_labels.npy",
+      "colored_mesh": "jobs_with_target_guidance/densecorr3d_segments/broccoli_ground_truth/colored/0349c93a75174dce821f05648aff5aa6_densecorr3d_groups.ply",
+      "bucket_stats": {
+        "group_00": {
+          "vertices": 12
+        },
+        "group_01": {
+          "vertices": 17
+        },
+        "group_02": {
+          "vertices": 10
+        },
+        "group_03": {
+          "vertices": 11
+        },
+        "group_04": {
+          "vertices": 14
+        },
+        "group_05": {
+          "vertices": 8
+        },
+        "group_06": {
+          "vertices": 16
+        },
+        "group_07": {
+          "vertices": 15
+        },
+        "group_08": {
+          "vertices": 17
+        },
+        "group_09": {
+          "vertices": 26
+        },
+        "group_10": {
+          "vertices": 25
+        },
+        "group_11": {
+          "vertices": 26
+        },
+        "group_12": {
+          "vertices": 28
+        },
+        "group_13": {
+          "vertices": 26
+        },
+        "group_14": {
+          "vertices": 38
+        },
+        "group_15": {
+          "vertices": 43
+        },
+        "group_16": {
+          "vertices": 46
+        },
+        "group_17": {
+          "vertices": 44
+        },
+        "group_18": {
+          "vertices": 60
+        },
+        "group_19": {
+          "vertices": 63
+        },
+        "group_20": {
+          "vertices": 72
+        },
+        "group_21": {
+          "vertices": 75
+        },
+        "group_22": {
+          "vertices": 77
+        },
+        "group_23": {
+          "vertices": 62
+        },
+        "group_24": {
+          "vertices": 116
+        },
+        "group_25": {
+          "vertices": 102
+        },
+        "group_26": {
+          "vertices": 101
+        },
+        "group_27": {
+          "vertices": 106
+        },
+        "group_28": {
+          "vertices": 106
+        },
+        "group_29": {
+          "vertices": 88
+        }
+      },
+      "groups_path": "external/DenseCorr3D/broccoli/0349c93a75174dce821f05648aff5aa6/groups.txt",
+      "index_base": 0,
+      "n_groups": 30,
+      "n_vertices": 1450,
+      "duplicate_assignments": 0,
+      "unassigned_vertices_filled": 0,
+      "fill_unassigned": "nearest"
+    },
+    {
+      "name": "0fb58ca488b64298ab8af6f0372e66b9",
+      "object_dir": "external/DenseCorr3D/broccoli/0fb58ca488b64298ab8af6f0372e66b9",
+      "mesh": "external/DenseCorr3D/broccoli/0fb58ca488b64298ab8af6f0372e66b9/simple_mesh.obj",
+      "groups": "external/DenseCorr3D/broccoli/0fb58ca488b64298ab8af6f0372e66b9/groups.txt",
+      "label_npz": "jobs_with_target_guidance/densecorr3d_segments/broccoli_ground_truth/labels/0fb58ca488b64298ab8af6f0372e66b9_densecorr3d_labels.npz",
+      "vertex_labels": "jobs_with_target_guidance/densecorr3d_segments/broccoli_ground_truth/labels/0fb58ca488b64298ab8af6f0372e66b9_vertex_labels.npy",
+      "face_labels": "jobs_with_target_guidance/densecorr3d_segments/broccoli_ground_truth/labels/0fb58ca488b64298ab8af6f0372e66b9_face_labels.npy",
+      "colored_mesh": "jobs_with_target_guidance/densecorr3d_segments/broccoli_ground_truth/colored/0fb58ca488b64298ab8af6f0372e66b9_densecorr3d_groups.ply",
+      "bucket_stats": {
+        "group_00": {
+          "vertices": 38
+        },
+        "group_01": {
+          "vertices": 32
+        },
+        "group_02": {
+          "vertices": 27
+        },
+        "group_03": {
+          "vertices": 18
+        },
+        "group_04": {
+          "vertices": 19
+        },
+        "group_05": {
+          "vertices": 23
+        },
+        "group_06": {
+          "vertices": 21
+        },
+        "group_07": {
+          "vertices": 23
+        },
+        "group_08": {
+          "vertices": 19
+        },
+        "group_09": {
+          "vertices": 19
+        },
+        "group_10": {
+          "vertices": 16
+        },
+        "group_11": {
+          "vertices": 19
+        },
+        "group_12": {
+          "vertices": 19
+        },
+        "group_13": {
+          "vertices": 24
+        },
+        "group_14": {
+          "vertices": 27
+        },
+        "group_15": {
+          "vertices": 30
+        },
+        "group_16": {
+          "vertices": 32
+        },
+        "group_17": {
+          "vertices": 38
+        },
+        "group_18": {
+          "vertices": 63
+        },
+        "group_19": {
+          "vertices": 75
+        },
+        "group_20": {
+          "vertices": 113
+        },
+        "group_21": {
+          "vertices": 127
+        },
+        "group_22": {
+          "vertices": 115
+        },
+        "group_23": {
+          "vertices": 73
+        },
+        "group_24": {
+          "vertices": 174
+        },
+        "group_25": {
+          "vertices": 174
+        },
+        "group_26": {
+          "vertices": 172
+        },
+        "group_27": {
+          "vertices": 171
+        },
+        "group_28": {
+          "vertices": 149
+        },
+        "group_29": {
+          "vertices": 87
+        }
+      },
+      "groups_path": "external/DenseCorr3D/broccoli/0fb58ca488b64298ab8af6f0372e66b9/groups.txt",
+      "index_base": 0,
+      "n_groups": 30,
+      "n_vertices": 1937,
+      "duplicate_assignments": 0,
+      "unassigned_vertices_filled": 0,
+      "fill_unassigned": "nearest"
+    }
+  ]
+}
