@@ -1150,6 +1150,9 @@ def loop_with_tracking(cfg):
     target_vertex_corr_warmup_epochs = int(
         getattr(cfg, 'target_mesh_vertex_correspondence_warmup_epochs', target_chamfer_warmup_epochs)
     )
+    target_vertex_corr_require_same_faces = bool(
+        getattr(cfg, 'target_mesh_vertex_correspondence_require_same_faces', True)
+    )
     target_vertex_corr_available = False
     target_semantic_vertex_corr_weight = float(
         getattr(cfg, 'target_mesh_semantic_vertex_correspondence_weight', 0.0)
@@ -1244,16 +1247,20 @@ def loop_with_tracking(cfg):
                 target_mesh_faces,
                 source_faces_for_match,
             )
-            if same_vertices and same_faces:
+            if same_vertices and (same_faces or not target_vertex_corr_require_same_faces):
                 target_vertex_corr_available = True
                 print("Topology-matched target vertex correspondence enabled:")
                 print(f"  - Vertices: {target_mesh_vertices.shape[0]}")
+                print(f"  - Face topology matches: {same_faces}")
+                print(f"  - Require same faces: {target_vertex_corr_require_same_faces}")
                 print(f"  - Weight: {target_vertex_corr_weight}")
                 print(f"  - Warmup epochs: {target_vertex_corr_warmup_epochs}")
             else:
                 print("Warning: vertex-correspondence target loss disabled because source/target topology differs")
                 print(f"  - Source vertices/faces: {load_mesh.v_pos.shape[0]} / {source_faces_for_match.shape[0]}")
                 print(f"  - Target vertices/faces: {target_mesh_vertices.shape[0]} / {target_mesh_faces.shape[0]}")
+                print(f"  - Face topology matches: {same_faces}")
+                print(f"  - Require same faces: {target_vertex_corr_require_same_faces}")
                 target_vertex_corr_weight = 0.0
 
     if target_semantic_vertex_corr_weight > 0:

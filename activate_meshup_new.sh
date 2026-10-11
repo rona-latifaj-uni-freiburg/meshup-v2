@@ -17,6 +17,10 @@ source "${MESHUP_CONDA_ROOT}/etc/profile.d/conda.sh"
 conda activate "${MESHUP_CONDA_ENV}"
 module load devel/cuda/12.8
 export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:$LD_LIBRARY_PATH"
+export TORCH_CUDA_ARCH_LIST="${TORCH_CUDA_ARCH_LIST:-8.0;9.0}"
+export TORCH_EXTENSIONS_DIR="${TORCH_EXTENSIONS_DIR:-${SCRIPT_DIR}/.torch_extensions/py310_cu121_sm80_sm90}"
+mkdir -p "${TORCH_EXTENSIONS_DIR}"
+export PYTHONPATH="${SCRIPT_DIR}/nvdiffrast:${PYTHONPATH:-}"
 export HF_HUB_CACHE=/work/dlclarge1/jesslen-od3d/cache/huggingface
 export TRANSFORMERS_CACHE=/work/dlclarge1/jesslen-od3d/cache/transformers
 echo "Activated ${MESHUP_CONDA_ENV} from ${MESHUP_CONDA_ROOT} with CUDA module and env vars."

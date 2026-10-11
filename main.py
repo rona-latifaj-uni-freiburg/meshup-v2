@@ -134,6 +134,8 @@ def main():
     parser.add_argument('--target_mesh_chamfer_points', type=int, help='Number of source/target vertices sampled for Chamfer loss', default=argparse.SUPPRESS)
     parser.add_argument('--target_mesh_vertex_correspondence_weight', type=float, help='Weight for direct vertex-to-vertex target loss when source/target topology matches', default=argparse.SUPPRESS)
     parser.add_argument('--target_mesh_vertex_correspondence_warmup_epochs', type=int, help='Epochs for direct topology-matched target vertex loss warmup', default=argparse.SUPPRESS)
+    parser.add_argument('--target_mesh_vertex_correspondence_require_same_faces', action='store_true', help='Require source/target face indices to match for direct vertex correspondence', default=argparse.SUPPRESS)
+    parser.add_argument('--no-target_mesh_vertex_correspondence_require_same_faces', action='store_false', dest='target_mesh_vertex_correspondence_require_same_faces', default=argparse.SUPPRESS)
     parser.add_argument('--target_mesh_semantic_vertex_correspondence_weight', type=float, help='Weight for semantic source-vertex to target-vertex correspondence loss', default=argparse.SUPPRESS)
     parser.add_argument('--target_mesh_semantic_vertex_correspondence_warmup_epochs', type=int, help='Epochs for semantic vertex correspondence warmup', default=argparse.SUPPRESS)
     parser.add_argument('--semantic_vertex_correspondence_cache', type=str, help='Optional NPZ cache path for semantic source-to-target vertex map', default=argparse.SUPPRESS)

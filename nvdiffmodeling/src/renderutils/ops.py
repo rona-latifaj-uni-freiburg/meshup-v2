@@ -53,8 +53,10 @@ if _plugin is None:
         'c_src/torch_bindings.cpp'
     ]
 
-    # Some containers set this to contain old architectures that won't compile. We only need the one installed in the machine.
-    os.environ['TORCH_CUDA_ARCH_LIST'] = ''
+    # Preserve an explicit multi-architecture build list from the job environment.
+    # If unset, fall back to PyTorch's visible-device default.
+    if 'TORCH_CUDA_ARCH_LIST' not in os.environ:
+        os.environ['TORCH_CUDA_ARCH_LIST'] = ''
 
     # Compile and load.
     source_paths = [os.path.join(os.path.dirname(__file__), fn) for fn in source_files]
