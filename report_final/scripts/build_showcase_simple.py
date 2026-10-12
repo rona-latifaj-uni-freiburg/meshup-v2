@@ -39,6 +39,16 @@ PAIRS: list[tuple[str, str, str, str | None]] = [
     ("10_bpks2t3_backpackfix_pf07_4000_deformation_slow_partfield", "10_bpks2t3_backpackfix_pf07_4000_deformation_slow_partfield", "Backpack to Backpack (DenseCorr3D)", None),
     ("11_knfs4t2_knifeonly_pf05_4000_deformation_slow_partfield", "11_knfs4t2_knifeonly_pf05_4000_deformation_slow_partfield", "Knife to Knife (DenseCorr3D)", None),
     ("12_shps1t0_shampoo_pf03_4000_deformation_slow_partfield", "12_shps1t0_shampoo_pf03_4000_deformation_slow_partfield", "Shampoo to Shampoo (DenseCorr3D)", None),
+    ("13_hmrs0t1_hammeronly_pf04_4000_deformation_slow_partfield", "13_hmrs0t1_hammeronly_pf04_4000_deformation_slow_partfield", "Hammer to Hammer (DenseCorr3D)", None),
+    ("14_brearcs0t1_breadroundcluster_pf05_4000_deformation_slow_partfield", "14_brearcs0t1_breadroundcluster_pf05_4000_deformation_slow_partfield", "Bread to Bread (DenseCorr3D)", None),
+    ("15_eggs0t1_eggstemup_pf04_4000_deformation_slow_partfield", "15_eggs0t1_eggstemup_pf04_4000_deformation_slow_partfield", "Egg to Egg (DenseCorr3D)", None),
+    ("16_carrs0t1_carrotrealign_pf04_4000_deformation_slow_partfield", "16_carrs0t1_carrotrealign_pf04_4000_deformation_slow_partfield", "Carrot to Carrot (DenseCorr3D)", None),
+    ("17_zucbs0t1_zucchiniba_pf05_4000_deformation_slow_partfield", "17_zucbs0t1_zucchiniba_pf05_4000_deformation_slow_partfield", "Zucchini to Zucchini (DenseCorr3D)", None),
+    ("18_broccs0t1_broccolirealign_pf05_4000_deformation_slow_partfield", "18_broccs0t1_broccolirealign_pf05_4000_deformation_slow_partfield", "Broccoli to Broccoli (DenseCorr3D)", None),
+    ("19_celes0t1_deformation_slow_partfield", "19_celes0t1_deformation_slow_partfield", "Celery to Celery (DenseCorr3D)", None),
+    ("20_cucus0t1_cucumberstemup_pf05_4000_deformation_slow_partfield", "20_cucus0t1_cucumberstemup_pf05_4000_deformation_slow_partfield", "Cucumber to Cucumber (DenseCorr3D)", None),
+    ("21_eggps0t1_eggplant_pf05_4000_deformation_slow_partfield", "21_eggps0t1_eggplant_pf05_4000_deformation_slow_partfield", "Eggplant to Eggplant (DenseCorr3D)", None),
+    ("22_pears0t1_pearrealign_pf04_4000_deformation_slow_partfield", "22_pears0t1_pearrealign_pf04_4000_deformation_slow_partfield", "Pear to Pear (DenseCorr3D)", None),
 ]
 
 
