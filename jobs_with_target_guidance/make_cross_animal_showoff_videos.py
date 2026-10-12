@@ -332,24 +332,18 @@ def deformation_start_azimuth(assets: RunAssets, args: argparse.Namespace) -> fl
 
 
 def draw_header(frame: np.ndarray, title: str, subtitle: str, supersample: int) -> None:
-    x = 28 * supersample
-    cv2.putText(
-        frame,
-        title,
-        (x, 34 * supersample),
-        cv2.FONT_HERSHEY_SIMPLEX,
-        0.84 * supersample,
-        (30, 35, 43),
-        max(1, 2 * supersample),
-        cv2.LINE_AA,
-    )
+    # Title (pair name) is deliberately not drawn into the frame: the showcase site already
+    # shows it as an HTML caption under each video, so burning it into the pixels too was
+    # showing the same name twice. Only the bucket-count/epoch subtitle is drawn, promoted up
+    # to the title's old baseline.
     if subtitle:
+        x = 28 * supersample
         cv2.putText(
             frame,
             subtitle,
-            (x, 62 * supersample),
+            (x, 40 * supersample),
             cv2.FONT_HERSHEY_SIMPLEX,
-            0.52 * supersample,
+            0.6 * supersample,
             (85, 91, 102),
             max(1, 1 * supersample),
             cv2.LINE_AA,

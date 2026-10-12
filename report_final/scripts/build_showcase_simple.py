@@ -27,16 +27,18 @@ def data_uri(path: Path, mime: str) -> str:
 
 # (video basename without .mp4, still basename without .png, title, metrics-or-None)
 PAIRS: list[tuple[str, str, str, str | None]] = [
-    ("01_horse2_giraffe4_deformation_slow_partfield", "01_horse2_giraffe4_pair", "Horse → Giraffe", "Chamfer 0.0134 · F@0.02 0.992"),
-    ("02_panda3_bear_deformation_slow_partfield", "02_panda3_bear_pair", "Panda → Bear", "Chamfer 0.0199 · F@0.02 0.973"),
-    ("06_fox_cat2_deformation_slow_partfield", "06_fox_cat2_pair", "Fox → Cat", "Chamfer 0.0224 · F@0.02 0.946"),
-    ("05_goldie_pug_deformation_slow_partfield", "05_goldie_pug_pair", "Goldie → Pug", "Chamfer 0.0248 · F@0.02 0.906"),
-    ("10_elephant_giraffe_deformation_slow_partfield", "10_elephant_giraffe_pair", "Elephant → Giraffe", "Chamfer 0.0279 · F@0.02 0.857"),
-    ("07_bulldog_cat_deformation_slow_partfield", "07_bulldog_cat_pair", "Bulldog → Cat", None),
-    ("03_cat_dachshund_deformation_slow_partfield", "03_cat_dachshund_pair", "Cat → Dachshund", None),
-    ("04_elephant_moose_deformation_slow_partfield", "04_elephant_moose_pair", "Elephant → Moose", None),
-    ("19_mushroom_deformation_slow_partfield", "19_mushroom_deformation_slow_partfield", "Mushroom (DenseCorr3D)", None),
-    ("20_chair_deformation_slow_partfield", "20_chair_deformation_slow_partfield", "Chair (DenseCorr3D)", None),
+    ("01_horse2_giraffe4_deformation_slow_partfield", "01_horse2_giraffe4_deformation_slow_partfield", "Horse → Giraffe", "Chamfer 0.0134 · F@0.02 0.992"),
+    ("02_panda3_bear_deformation_slow_partfield", "02_panda3_bear_deformation_slow_partfield", "Panda → Bear", "Chamfer 0.0199 · F@0.02 0.973"),
+    ("03_cat_dachshund_deformation_slow_partfield", "03_cat_dachshund_deformation_slow_partfield", "Cat → Dachshund", None),
+    ("04_elephant_moose_deformation_slow_partfield", "04_elephant_moose_deformation_slow_partfield", "Elephant → Moose", None),
+    ("05_goldie_pug_deformation_slow_partfield", "05_goldie_pug_deformation_slow_partfield", "Goldie → Pug", "Chamfer 0.0248 · F@0.02 0.906"),
+    ("06_fox_cat2_deformation_slow_partfield", "06_fox_cat2_deformation_slow_partfield", "Fox → Cat", "Chamfer 0.0224 · F@0.02 0.946"),
+    ("07_elephant_giraffe_deformation_slow_partfield", "07_elephant_giraffe_deformation_slow_partfield", "Elephant → Giraffe", "Chamfer 0.0279 · F@0.02 0.857"),
+    ("08_mushs0t4_mushroom_pf01_4000_deformation_slow_partfield", "08_mushs0t4_mushroom_pf01_4000_deformation_slow_partfield", "Mushroom to Mushroom (DenseCorr3D)", None),
+    ("09_chrs2t0_chairsfix_pf07_4000_deformation_slow_partfield", "09_chrs2t0_chairsfix_pf07_4000_deformation_slow_partfield", "Chair to Chair (DenseCorr3D)", None),
+    ("10_bpks2t3_backpackfix_pf07_4000_deformation_slow_partfield", "10_bpks2t3_backpackfix_pf07_4000_deformation_slow_partfield", "Backpack to Backpack (DenseCorr3D)", None),
+    ("11_knfs4t2_knifeonly_pf05_4000_deformation_slow_partfield", "11_knfs4t2_knifeonly_pf05_4000_deformation_slow_partfield", "Knife to Knife (DenseCorr3D)", None),
+    ("12_shps1t0_shampoo_pf03_4000_deformation_slow_partfield", "12_shps1t0_shampoo_pf03_4000_deformation_slow_partfield", "Shampoo to Shampoo (DenseCorr3D)", None),
 ]
 
 
