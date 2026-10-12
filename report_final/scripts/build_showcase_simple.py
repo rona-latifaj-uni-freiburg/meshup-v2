@@ -47,8 +47,10 @@ PAIRS: list[tuple[str, str, str, str | None]] = [
     ("18_broccs0t1_broccolirealign_pf05_4000_deformation_slow_partfield", "18_broccs0t1_broccolirealign_pf05_4000_deformation_slow_partfield", "Broccoli to Broccoli (DenseCorr3D)", None),
     ("19_celes0t1_deformation_slow_partfield", "19_celes0t1_deformation_slow_partfield", "Celery to Celery (DenseCorr3D)", None),
     ("20_cucus0t1_cucumberstemup_pf05_4000_deformation_slow_partfield", "20_cucus0t1_cucumberstemup_pf05_4000_deformation_slow_partfield", "Cucumber to Cucumber (DenseCorr3D)", None),
-    ("21_eggps0t1_eggplant_pf05_4000_deformation_slow_partfield", "21_eggps0t1_eggplant_pf05_4000_deformation_slow_partfield", "Eggplant to Eggplant (DenseCorr3D)", None),
     ("22_pears0t1_pearrealign_pf04_4000_deformation_slow_partfield", "22_pears0t1_pearrealign_pf04_4000_deformation_slow_partfield", "Pear to Pear (DenseCorr3D)", None),
+    ("23_banas0t2_banana_pf04_4000_deformation_slow_partfield", "23_banas0t2_banana_pf04_4000_deformation_slow_partfield", "Banana to Banana (DenseCorr3D)", None),
+    ("24_onios0t1_onion_pf05_4000_deformation_slow_partfield", "24_onios0t1_onion_pf05_4000_deformation_slow_partfield", "Onion to Onion (DenseCorr3D)", None),
+    ("25_potas0t1_potato_pf06_4000_deformation_slow_partfield", "25_potas0t1_potato_pf06_4000_deformation_slow_partfield", "Potato to Potato (DenseCorr3D)", None),
 ]
 
 
